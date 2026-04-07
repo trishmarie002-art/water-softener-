@@ -45,7 +45,7 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
     try {
       // Send email via Web3Forms (goes directly to Jacinto's email)
       const web3FormData = new FormData();
-      web3FormData.append('access_key', 'YOUR_WEB3FORMS_KEY'); // Will be replaced with actual key
+      web3FormData.append('access_key', 'ae9f9861-8529-4c1f-868b-81da85aa613c');
       web3FormData.append('subject', `New Lead: ${formData.service} - ${formData.name}`);
       web3FormData.append('from_name', 'PNF Water Heaters Website');
       web3FormData.append('to', EMAIL);
