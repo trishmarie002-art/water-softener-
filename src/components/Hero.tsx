@@ -4,10 +4,9 @@ import { Phone, ArrowRight, ShieldCheck, Clock, MapPin, Star, Droplets } from 'l
 import { PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
 
 const images = [
-  "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1920", // Water system/plumbing
-  "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&q=80&w=1920", // Modern kitchen
-  "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&q=80&w=1920", // Technician working
-  "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=1920", // Happy family at home
+  "/input_file_0.png",
+  "/input_file_1.png",
+  "/input_file_2.png",
 ];
 
 const Hero = () => {

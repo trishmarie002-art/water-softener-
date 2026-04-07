@@ -55,8 +55,17 @@ const Reviews = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-blue-600 text-white text-center">
-        <div className="container mx-auto px-4">
+      <section className="py-20 text-white text-center relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1523362628242-f513a30ef270?auto=format&fit=crop&q=80&w=1920" 
+            alt="Water background" 
+            className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-blue-900/60 backdrop-blur-[1px]" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-3xl md:text-5xl font-bold mb-8">Ready for 5-Star Service?</h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
             Join our list of happy customers. Call us today for your free estimate.

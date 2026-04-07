@@ -62,7 +62,7 @@ const Home = () => {
                 className="rounded-2xl overflow-hidden shadow-2xl"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1585704032915-c3400ca1f963?auto=format&fit=crop&q=80&w=800" 
+                  src="/input_file_0.png" 
                   alt="Water system installation" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
@@ -203,12 +203,21 @@ const Home = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-blue-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+      <section className="py-20 text-white relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1523362628242-f513a30ef270?auto=format&fit=crop&q=80&w=1920" 
+            alt="Water background" 
+            className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-blue-900/60 backdrop-blur-[1px]" />
+        </div>
+        <div className="absolute inset-0 opacity-10 z-10">
           <Droplets className="absolute top-0 left-0 w-64 h-64 -translate-x-1/2 -translate-y-1/2" />
           <Droplets className="absolute bottom-0 right-0 w-64 h-64 translate-x-1/2 translate-y-1/2" />
         </div>
-        <div className="container mx-auto px-4 text-center relative z-10">
+        <div className="container mx-auto px-4 text-center relative z-20">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready for Better Water?</h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
             Join thousands of satisfied San Antonio homeowners. Call us today for a free consultation and estimate.
