@@ -50,12 +50,12 @@ const About = () => {
             </div>
             <div className="lg:w-1/2">
               <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Our Story</h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Serving San Antonio Homeowners Since 2010</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">28+ Years of Plumbing Excellence</h3>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Founded with a simple mission to provide San Antonio residents with better water, {COMPANY_NAME} has grown from a small local operation into the city's premier water system service provider.
+                Led by owner Jacinto Lefebre, a master plumber with over 10 years of master certification and 28+ years of hands-on experience, {COMPANY_NAME} has grown into San Antonio&apos;s premier water system service provider.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                We understand the unique challenges of San Antonio's hard water. Our team lives and works right here in the community, and we treat every home as if it were our own. We don't just install systems; we build lasting relationships based on trust and exceptional service.
+                Jacinto understands the unique challenges of San Antonio&apos;s hard water. His dedication to quality craftsmanship and honest service has built a reputation that speaks for itself. We don&apos;t just install systems; we build lasting relationships based on trust and exceptional service.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-center gap-3">

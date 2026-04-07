@@ -122,7 +122,7 @@ const Services = () => {
               <p className="text-navy-200">Installations Completed</p>
             </div>
             <div>
-              <p className="text-5xl font-black text-pnf-red-400 mb-2">15+</p>
+              <p className="text-5xl font-black text-pnf-red-400 mb-2">28+</p>
               <p className="text-navy-200">Years Experience</p>
             </div>
             <div>
