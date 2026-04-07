@@ -7,7 +7,7 @@ const About = () => {
   return (
     <div className="pt-24">
       {/* Hero Header */}
-      <section className="bg-blue-900 py-20 text-white relative overflow-hidden">
+      <section className="bg-navy-900 py-20 text-white relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -20,7 +20,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-blue-100 text-center max-w-3xl mx-auto"
+            className="text-xl text-navy-200 text-center max-w-3xl mx-auto"
           >
             Your local plumbing company. Family-owned water system specialists dedicated to quality, integrity, and your home's comfort.
           </motion.p>
@@ -48,7 +48,7 @@ const About = () => {
               />
             </div>
             <div className="lg:w-1/2">
-              <h2 className="text-blue-600 font-bold uppercase tracking-wider mb-4">Our Story</h2>
+              <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Our Story</h2>
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Serving San Antonio Homeowners Since 2010</h3>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 Founded with a simple mission to provide San Antonio residents with better water, {COMPANY_NAME} has grown from a small local operation into the city's premier water system service provider.
@@ -58,19 +58,19 @@ const About = () => {
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 className="text-blue-600" />
+                  <CheckCircle2 className="text-pnf-red-600" />
                   <span className="font-bold">Locally Owned</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 className="text-blue-600" />
+                  <CheckCircle2 className="text-pnf-red-600" />
                   <span className="font-bold">Family Operated</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 className="text-blue-600" />
+                  <CheckCircle2 className="text-pnf-red-600" />
                   <span className="font-bold">Expert Technicians</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 className="text-blue-600" />
+                  <CheckCircle2 className="text-pnf-red-600" />
                   <span className="font-bold">Quality Guaranteed</span>
                 </div>
               </div>
@@ -82,29 +82,29 @@ const About = () => {
       {/* Values */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-blue-600 font-bold uppercase tracking-wider mb-4">Our Values</h2>
+          <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Our Values</h2>
           <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-16">The Principles That Drive Us</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="bg-white p-10 rounded-2xl shadow-lg">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <ShieldCheck className="text-blue-600" size={32} />
+              <div className="bg-navy-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <ShieldCheck className="text-pnf-red-600" size={32} />
               </div>
               <h4 className="text-2xl font-bold mb-4">Unmatched Integrity</h4>
               <p className="text-gray-600">We believe in honest pricing and transparent communication. No hidden fees, no unnecessary upsells—just what your home needs.</p>
             </div>
             <div className="bg-white p-10 rounded-2xl shadow-lg">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="text-blue-600" size={32} />
+              <div className="bg-navy-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users className="text-pnf-red-600" size={32} />
               </div>
               <h4 className="text-2xl font-bold mb-4">Customer First</h4>
               <p className="text-gray-600">Your satisfaction is our top priority. We go above and beyond to ensure every customer is happy with their new water system.</p>
             </div>
             <div className="bg-white p-10 rounded-2xl shadow-lg">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Heart className="text-blue-600" size={32} />
+              <div className="bg-navy-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Heart className="text-pnf-red-600" size={32} />
               </div>
               <h4 className="text-2xl font-bold mb-4">Local Commitment</h4>
-              <p className="text-gray-600">We're proud to be a part of the San Antonio community. We support local initiatives and strive to make our city a better place.</p>
+              <p className="text-gray-600">We&apos;re proud to be a part of the San Antonio community. We support local initiatives and strive to make our city a better place.</p>
             </div>
           </div>
         </div>
@@ -119,22 +119,22 @@ const About = () => {
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-blue-900/60 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-navy-900/60 backdrop-blur-[1px]" />
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl md:text-5xl font-bold mb-8">Experience the Difference</h2>
-          <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-navy-200 mb-10 max-w-2xl mx-auto">
             Ready to work with a team that actually cares about your home? Give us a call today.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <a 
               href={`tel:${PHONE_NUMBER_RAW}`} 
-              className="bg-white text-blue-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-blue-50 transition-all flex items-center justify-center gap-3"
+              className="bg-white text-pnf-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition-all flex items-center justify-center gap-3"
             >
               <Phone size={28} />
               {PHONE_NUMBER}
             </a>
-            <button className="bg-blue-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-blue-900 transition-all">
+            <button className="bg-navy-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-navy-700 transition-all">
               Get a Free Estimate
             </button>
           </div>

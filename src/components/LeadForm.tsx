@@ -38,7 +38,7 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
         <p className="text-gray-600">Your request has been received. One of our experts will contact you shortly.</p>
         <button 
           onClick={() => setIsSubmitted(false)}
-          className="mt-6 text-blue-600 font-semibold hover:underline"
+          className="mt-6 text-pnf-red-600 font-semibold hover:underline"
         >
           Send another message
         </button>
@@ -59,7 +59,7 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
               required
               type="text" 
               placeholder="John Doe"
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-pnf-red-500 focus:border-transparent outline-none transition-all"
             />
           </div>
           <div>
@@ -68,7 +68,7 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
               required
               type="tel" 
               placeholder="(210) 555-0123"
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-pnf-red-500 focus:border-transparent outline-none transition-all"
             />
           </div>
         </div>
@@ -80,7 +80,7 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
               required
               type="email" 
               placeholder="john@example.com"
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-pnf-red-500 focus:border-transparent outline-none transition-all"
             />
           </div>
         )}
@@ -108,7 +108,7 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
         <button 
           disabled={isLoading}
           type="submit"
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70"
+          className="w-full bg-pnf-red-600 hover:bg-pnf-red-700 text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70"
         >
           {isLoading ? (
             <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>

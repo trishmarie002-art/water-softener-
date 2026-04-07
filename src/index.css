@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+@theme inline {
+  /* PNF Brand Colors - Navy Blue, Red, White */
+  --color-navy-50: #f0f4f8;
+  --color-navy-100: #d9e2ec;
+  --color-navy-200: #bcccdc;
+  --color-navy-300: #9fb3c8;
+  --color-navy-400: #829ab1;
+  --color-navy-500: #627d98;
+  --color-navy-600: #486581;
+  --color-navy-700: #334e68;
+  --color-navy-800: #243b53;
+  --color-navy-900: #102a43;
+  --color-navy-950: #0a1929;
+
+  --color-pnf-red-50: #fff5f5;
+  --color-pnf-red-100: #fed7d7;
+  --color-pnf-red-200: #feb2b2;
+  --color-pnf-red-300: #fc8181;
+  --color-pnf-red-400: #f56565;
+  --color-pnf-red-500: #e53e3e;
+  --color-pnf-red-600: #c53030;
+  --color-pnf-red-700: #9b2c2c;
+  --color-pnf-red-800: #822727;
+  --color-pnf-red-900: #63171b;
+}

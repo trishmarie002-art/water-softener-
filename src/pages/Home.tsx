@@ -21,7 +21,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-blue-600 font-bold uppercase tracking-wider mb-4">Welcome to PNF Water Heaters & Softeners</h2>
+                <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Welcome to PNF Water Heaters & Softeners</h2>
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                   Your Local Experts for Premium Water Systems in San Antonio
                 </h3>
@@ -30,25 +30,25 @@ const Home = () => {
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                   <div className="flex items-center gap-3">
-                    <CheckCircle2 className="text-blue-600" size={24} />
-                    <span className="font-semibold text-gray-800">Licensed & Insured</span>
+                    <CheckCircle2 className="text-pnf-red-600" size={24} />
+                    <span className="font-semibold text-navy-800">Licensed & Insured</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CheckCircle2 className="text-blue-600" size={24} />
-                    <span className="font-semibold text-gray-800">Same-Day Service Available</span>
+                    <CheckCircle2 className="text-pnf-red-600" size={24} />
+                    <span className="font-semibold text-navy-800">Same-Day Service Available</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CheckCircle2 className="text-blue-600" size={24} />
-                    <span className="font-semibold text-gray-800">Free On-Site Estimates</span>
+                    <CheckCircle2 className="text-pnf-red-600" size={24} />
+                    <span className="font-semibold text-navy-800">Free On-Site Estimates</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CheckCircle2 className="text-blue-600" size={24} />
-                    <span className="font-semibold text-gray-800">Financing Options</span>
+                    <CheckCircle2 className="text-pnf-red-600" size={24} />
+                    <span className="font-semibold text-navy-800">Financing Options</span>
                   </div>
                 </div>
                 <Link 
                   to="/about" 
-                  className="inline-flex items-center gap-2 text-blue-600 font-bold hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 text-pnf-red-600 font-bold hover:gap-3 transition-all"
                 >
                   Learn More About Us <ArrowRight size={20} />
                 </Link>
@@ -68,7 +68,7 @@ const Home = () => {
                   referrerPolicy="no-referrer"
                 />
               </motion.div>
-              <div className="absolute -bottom-6 -left-6 bg-blue-600 text-white p-8 rounded-2xl shadow-xl hidden md:block">
+              <div className="absolute -bottom-6 -left-6 bg-pnf-red-600 text-white p-8 rounded-2xl shadow-xl hidden md:block">
                 <p className="text-4xl font-bold mb-1">15+</p>
                 <p className="text-sm font-medium uppercase tracking-widest">Years of Excellence</p>
               </div>
@@ -81,7 +81,7 @@ const Home = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-blue-600 font-bold uppercase tracking-wider mb-4">Our Core Services</h2>
+            <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Our Core Services</h2>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Complete Water Solutions for Your Home</h3>
             <p className="text-lg text-gray-600">
               From installation to maintenance, we provide comprehensive services to ensure your home has the best water quality possible.
@@ -98,10 +98,10 @@ const Home = () => {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all group"
               >
-                <div className="bg-blue-50 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                  {service.id === 'water-softeners' && <Droplets className="text-blue-600 group-hover:text-white" size={32} />}
-                  {service.id === 'water-heaters' && <Thermometer className="text-blue-600 group-hover:text-white" size={32} />}
-                  {service.id === 'water-filtration' && <Filter className="text-blue-600 group-hover:text-white" size={32} />}
+                <div className="bg-navy-50 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-pnf-red-600 transition-colors">
+                  {service.id === 'water-softeners' && <Droplets className="text-navy-600 group-hover:text-white" size={32} />}
+                  {service.id === 'water-heaters' && <Thermometer className="text-navy-600 group-hover:text-white" size={32} />}
+                  {service.id === 'water-filtration' && <Filter className="text-navy-600 group-hover:text-white" size={32} />}
                 </div>
                 <h4 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h4>
                 <p className="text-gray-600 mb-6 leading-relaxed">
@@ -109,7 +109,7 @@ const Home = () => {
                 </p>
                 <Link 
                   to={service.href} 
-                  className="inline-flex items-center gap-2 text-blue-600 font-bold group-hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 text-pnf-red-600 font-bold group-hover:gap-3 transition-all"
                 >
                   Service Details <ArrowRight size={18} />
                 </Link>
@@ -120,40 +120,40 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-blue-900 text-white">
+      <section className="py-20 bg-navy-900 text-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
-              <h2 className="text-blue-400 font-bold uppercase tracking-wider mb-4">Why Choose Us</h2>
+              <h2 className="text-pnf-red-400 font-bold uppercase tracking-wider mb-4">Why Choose Us</h2>
               <h3 className="text-3xl md:text-4xl font-bold mb-10 leading-tight">
                 San Antonio's Most Trusted Water System Specialists
               </h3>
               <div className="space-y-8">
                 <div className="flex gap-4">
-                  <div className="bg-blue-800 p-3 rounded-lg shrink-0">
-                    <ShieldCheck className="text-blue-400" size={28} />
+                  <div className="bg-navy-800 p-3 rounded-lg shrink-0">
+                    <ShieldCheck className="text-pnf-red-400" size={28} />
                   </div>
                   <div>
                     <h4 className="text-xl font-bold mb-2">Licensed & Certified</h4>
-                    <p className="text-blue-100">Our technicians are fully licensed and undergo regular training to stay ahead of industry standards.</p>
+                    <p className="text-navy-200">Our technicians are fully licensed and undergo regular training to stay ahead of industry standards.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="bg-blue-800 p-3 rounded-lg shrink-0">
-                    <Clock className="text-blue-400" size={28} />
+                  <div className="bg-navy-800 p-3 rounded-lg shrink-0">
+                    <Clock className="text-pnf-red-400" size={28} />
                   </div>
                   <div>
                     <h4 className="text-xl font-bold mb-2">Punctual & Professional</h4>
-                    <p className="text-blue-100">We respect your time. We arrive on schedule and treat your home with the utmost care and cleanliness.</p>
+                    <p className="text-navy-200">We respect your time. We arrive on schedule and treat your home with the utmost care and cleanliness.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="bg-blue-800 p-3 rounded-lg shrink-0">
-                    <Award className="text-blue-400" size={28} />
+                  <div className="bg-navy-800 p-3 rounded-lg shrink-0">
+                    <Award className="text-pnf-red-400" size={28} />
                   </div>
                   <div>
                     <h4 className="text-xl font-bold mb-2">Premium Equipment</h4>
-                    <p className="text-blue-100">We only install top-tier, high-efficiency systems from brands we trust and stand behind.</p>
+                    <p className="text-navy-200">We only install top-tier, high-efficiency systems from brands we trust and stand behind.</p>
                   </div>
                 </div>
               </div>
@@ -173,7 +173,7 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-blue-600 font-bold uppercase tracking-wider mb-4">Customer Success</h2>
+            <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Customer Success</h2>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900">What Your Neighbors Are Saying</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -195,7 +195,7 @@ const Home = () => {
             ))}
           </div>
           <div className="text-center">
-            <Link to="/reviews" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold transition-all inline-block">
+            <Link to="/reviews" className="bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-bold transition-all inline-block">
               Read More Reviews
             </Link>
           </div>
@@ -211,7 +211,7 @@ const Home = () => {
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-blue-900/60 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-navy-900/60 backdrop-blur-[1px]" />
         </div>
         <div className="absolute inset-0 opacity-10 z-10">
           <Droplets className="absolute top-0 left-0 w-64 h-64 -translate-x-1/2 -translate-y-1/2" />
@@ -219,20 +219,20 @@ const Home = () => {
         </div>
         <div className="container mx-auto px-4 text-center relative z-20">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready for Better Water?</h2>
-          <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-navy-100 mb-10 max-w-2xl mx-auto">
             Join thousands of satisfied San Antonio homeowners. Call us today for a free consultation and estimate.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a 
               href={`tel:${PHONE_NUMBER_RAW}`} 
-              className="bg-white text-blue-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-blue-50 transition-all flex items-center justify-center gap-3 shadow-2xl"
+              className="bg-white text-pnf-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition-all flex items-center justify-center gap-3 shadow-2xl"
             >
               <Phone size={28} />
               {PHONE_NUMBER}
             </a>
             <Link 
               to="/contact" 
-              className="bg-blue-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-blue-900 transition-all flex items-center justify-center"
+              className="bg-navy-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-navy-700 transition-all flex items-center justify-center"
             >
               Contact Us Online
             </Link>

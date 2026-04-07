@@ -56,9 +56,9 @@ const Header = () => {
               key={link.path}
               to={link.path}
               className={({ isActive }) => cn(
-                "text-sm font-medium transition-colors hover:text-blue-500",
-                isScrolled ? "text-gray-700" : "text-white",
-                isActive && "text-blue-500 border-b-2 border-blue-500"
+                "text-sm font-medium transition-colors hover:text-pnf-red-600",
+                isScrolled ? "text-navy-800" : "text-white",
+                isActive && "text-pnf-red-600 border-b-2 border-pnf-red-600"
               )}
             >
               {link.name}
@@ -69,7 +69,7 @@ const Header = () => {
         <div className="flex items-center gap-4">
           <a
             href={`tel:${PHONE_NUMBER_RAW}`}
-            className="hidden md:flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-bold transition-transform hover:scale-105"
+            className="hidden md:flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-4 py-2 rounded-full font-bold transition-transform hover:scale-105"
           >
             <Phone size={18} />
             <span>{PHONE_NUMBER}</span>
@@ -104,7 +104,7 @@ const Header = () => {
                   to={link.path}
                   className={({ isActive }) => cn(
                     "text-lg font-semibold py-2 border-b border-gray-100",
-                    isActive ? "text-blue-600" : "text-gray-800"
+                    isActive ? "text-pnf-red-600" : "text-navy-800"
                   )}
                 >
                   {link.name}
@@ -112,7 +112,7 @@ const Header = () => {
               ))}
               <a
                 href={`tel:${PHONE_NUMBER_RAW}`}
-                className="flex items-center justify-center gap-2 bg-blue-600 text-white py-4 rounded-xl font-bold mt-4"
+                className="flex items-center justify-center gap-2 bg-pnf-red-600 text-white py-4 rounded-xl font-bold mt-4"
               >
                 <Phone size={20} />
                 <span>Call Now: {PHONE_NUMBER}</span>

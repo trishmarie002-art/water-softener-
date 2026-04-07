@@ -33,7 +33,7 @@ const Hero = () => {
             transition={{ duration: 1.5, ease: "easeInOut" }}
             className="absolute inset-0"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-950/90 via-blue-900/70 to-transparent z-10" />
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-900/70 to-transparent z-10" />
             <img
               src={images[currentIndex]}
               alt="PNF Water Heaters & Softeners"
@@ -50,7 +50,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 bg-blue-600/20 backdrop-blur-md border border-blue-400/30 text-blue-100 px-4 py-2 rounded-full mb-6"
+            className="inline-flex items-center gap-2 bg-pnf-red-600/20 backdrop-blur-md border border-pnf-red-400/30 text-white px-4 py-2 rounded-full mb-6"
           >
             <Star className="text-yellow-400 fill-yellow-400 w-4 h-4" />
             <span className="text-sm font-bold uppercase tracking-wider">Your Local Plumbing Company</span>
@@ -62,7 +62,7 @@ const Hero = () => {
             transition={{ delay: 0.4 }}
             className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6"
           >
-            Clean, Reliable <span className="text-blue-400">Water Solutions</span> for San Antonio Homes
+            Clean, Reliable <span className="text-pnf-red-400">Water Solutions</span> for San Antonio Homes
           </motion.h1>
 
           <motion.p
@@ -82,14 +82,14 @@ const Hero = () => {
           >
             <a
               href={`tel:${PHONE_NUMBER_RAW}`}
-              className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl text-lg font-bold transition-all transform hover:scale-105 shadow-lg shadow-blue-600/30"
+              className="flex items-center justify-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl text-lg font-bold transition-all transform hover:scale-105 shadow-lg shadow-pnf-red-600/30"
             >
               <Phone size={24} />
               <span>Call Now</span>
             </a>
             <a
               href="#estimate"
-              className="flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-blue-900 px-8 py-4 rounded-xl text-lg font-bold transition-all transform hover:scale-105"
+              className="flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-navy-900 px-8 py-4 rounded-xl text-lg font-bold transition-all transform hover:scale-105"
             >
               <span>Get a Free Estimate</span>
               <ArrowRight size={20} />
@@ -103,19 +103,19 @@ const Hero = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-6"
           >
             <div className="flex items-center gap-3 text-white">
-              <Clock className="text-blue-400 shrink-0" size={24} />
+              <Clock className="text-pnf-red-400 shrink-0" size={24} />
               <span className="text-sm font-medium">Fast Response Times</span>
             </div>
             <div className="flex items-center gap-3 text-white">
-              <MapPin className="text-blue-400 shrink-0" size={24} />
+              <MapPin className="text-pnf-red-400 shrink-0" size={24} />
               <span className="text-sm font-medium">Local SA Experts</span>
             </div>
             <div className="flex items-center gap-3 text-white">
-              <ShieldCheck className="text-blue-400 shrink-0" size={24} />
+              <ShieldCheck className="text-pnf-red-400 shrink-0" size={24} />
               <span className="text-sm font-medium">Quality Guaranteed</span>
             </div>
             <div className="flex items-center gap-3 text-white">
-              <Droplets className="text-blue-400 shrink-0" size={24} />
+              <Droplets className="text-pnf-red-400 shrink-0" size={24} />
               <span className="text-sm font-medium">Residential Pros</span>
             </div>
           </motion.div>
