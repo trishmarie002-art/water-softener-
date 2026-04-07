@@ -19,6 +19,7 @@ import FAQ from './pages/FAQ';
 import Gallery from './pages/Gallery';
 
 export default function App() {
+  console.log("[v0] App component rendering");
   return (
     <Router>
       <ScrollToTop />
