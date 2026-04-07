@@ -78,7 +78,7 @@ const Footer = () => {
                 <Mail className="text-pnf-red-600 mt-1 shrink-0" size={20} />
                 <div>
                   <p className="font-semibold text-navy-800">Email Us</p>
-                  <a href={`mailto:${EMAIL}`} className="text-gray-600 hover:text-pnf-red-600 transition-colors">
+                  <a href={`mailto:${EMAIL}`} className="text-gray-600 hover:text-pnf-red-600 transition-colors break-all">
                     {EMAIL}
                   </a>
                 </div>

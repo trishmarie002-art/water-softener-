@@ -52,7 +52,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="text-xl font-bold text-gray-900 mb-1">Email Us</h4>
-                    <a href={`mailto:${EMAIL}`} className="text-lg font-bold text-gray-700 hover:text-pnf-red-600 transition-colors">
+                    <a href={`mailto:${EMAIL}`} className="text-lg font-bold text-gray-700 hover:text-pnf-red-600 transition-colors break-all">
                       {EMAIL}
                     </a>
                   </div>
