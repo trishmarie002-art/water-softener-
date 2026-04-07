@@ -1,0 +1,67 @@
+{
+  "hash": "d45b9f49",
+  "configHash": "c7d250a0",
+  "lockfileHash": "f2f99c44",
+  "browserHash": "eaf231f2",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "dc617c0a",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "2381aab9",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "ae584ee7",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "ffda3917",
+      "needsInterop": false
+    },
+    "lucide-react": {
+      "src": "../../node_modules/lucide-react/dist/esm/lucide-react.js",
+      "file": "lucide-react.js",
+      "fileHash": "1d01521d",
+      "needsInterop": false
+    },
+    "motion/react": {
+      "src": "../../node_modules/motion/dist/es/react.mjs",
+      "file": "motion_react.js",
+      "fileHash": "37ca967f",
+      "needsInterop": false
+    },
+    "clsx": {
+      "src": "../../node_modules/clsx/dist/clsx.mjs",
+      "file": "clsx.js",
+      "fileHash": "3200a5f9",
+      "needsInterop": false
+    },
+    "tailwind-merge": {
+      "src": "../../node_modules/tailwind-merge/dist/bundle-mjs.mjs",
+      "file": "tailwind-merge.js",
+      "fileHash": "111f342b",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-PQNA2MYG": {
+      "file": "chunk-PQNA2MYG.js"
+    },
+    "chunk-VQJW32E7": {
+      "file": "chunk-VQJW32E7.js"
+    },
+    "chunk-PR4QN5HX": {
+      "file": "chunk-PR4QN5HX.js"
+    }
+  }
+}
