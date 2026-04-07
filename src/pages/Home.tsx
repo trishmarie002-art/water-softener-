@@ -206,8 +206,8 @@ const Home = () => {
       <section className="py-20 text-white relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1523362628242-f513a30ef270?auto=format&fit=crop&q=80&w=1920" 
-            alt="Water background" 
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%282%29-XSqDPqrNjs3jJof5tMG0gyMnleXSJm.webp" 
+            alt="Pressure gauge plumbing work" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
