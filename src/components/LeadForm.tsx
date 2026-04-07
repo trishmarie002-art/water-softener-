@@ -43,42 +43,43 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
     setError(null);
 
     try {
-      // Save to Supabase database
-      const { error: dbError } = await supabase
-        .from('leads')
-        .insert([
-          {
-            full_name: formData.name,
-            phone: formData.phone,
-            email: compact ? null : formData.email,
-            service: formData.service,
-            message: formData.message || null
-          }
-        ]);
+      // Send email via Web3Forms (goes directly to Jacinto's email)
+      const web3FormData = new FormData();
+      web3FormData.append('access_key', 'YOUR_WEB3FORMS_KEY'); // Will be replaced with actual key
+      web3FormData.append('subject', `New Lead: ${formData.service} - ${formData.name}`);
+      web3FormData.append('from_name', 'PNF Water Heaters Website');
+      web3FormData.append('to', EMAIL);
+      web3FormData.append('name', formData.name);
+      web3FormData.append('phone', formData.phone);
+      web3FormData.append('email', formData.email || 'Not provided');
+      web3FormData.append('service', formData.service);
+      web3FormData.append('message', formData.message || 'No message provided');
 
-      if (dbError) {
-        throw new Error(dbError.message);
+      const emailResponse = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: web3FormData
+      });
+
+      if (!emailResponse.ok) {
+        throw new Error('Failed to send email notification');
       }
 
-      // Send email notification via Edge Function
+      // Also save to Supabase database as backup
       try {
-        const { error: emailError } = await supabase.functions.invoke('send-lead-notification', {
-          body: {
-            name: formData.name,
-            phone: formData.phone,
-            email: formData.email || 'Not provided',
-            service: formData.service,
-            message: formData.message || 'No message provided',
-            toEmail: EMAIL
-          }
-        });
-
-        if (emailError) {
-          console.warn('Email notification failed, but lead was saved:', emailError);
-        }
+        await supabase
+          .from('leads')
+          .insert([
+            {
+              full_name: formData.name,
+              phone: formData.phone,
+              email: compact ? null : formData.email,
+              service: formData.service,
+              message: formData.message || null
+            }
+          ]);
       } catch {
-        // Email failed but lead was saved - don't fail the submission
-        console.warn('Email notification failed, but lead was saved');
+        // Database save failed but email was sent - don't fail the submission
+        console.warn('Database save failed, but email was sent');
       }
 
       setIsSubmitted(true);
