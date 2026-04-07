@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Droplets, Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
-import { COMPANY_NAME, PHONE_NUMBER, PHONE_NUMBER_RAW, EMAIL, SERVICE_AREAS } from '../constants';
+import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { COMPANY_NAME, PHONE_NUMBER, PHONE_NUMBER_RAW, EMAIL, SERVICE_AREAS, LOGO_URL } from '../constants';
 
 const Footer = () => {
   return (
@@ -10,16 +10,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <div className="bg-blue-600 p-2 rounded-lg">
-                <Droplets className="text-white w-6 h-6" />
-              </div>
-              <span className="font-bold text-xl tracking-tight">
-                {COMPANY_NAME}
-              </span>
+            <div className="mb-6">
+              <img 
+                src={LOGO_URL} 
+                alt={COMPANY_NAME}
+                className="h-16 w-auto rounded-lg bg-white p-1"
+              />
             </div>
             <p className="text-blue-100 mb-6 leading-relaxed">
-              San Antonio's trusted experts for water softeners, water heaters, and whole-home filtration. Quality service done right the first time.
+              Your local plumbing company. Trusted experts for water softeners, water heaters, and whole-home filtration. Quality service done right the first time.
             </p>
             <div className="flex gap-4">
               <a href="#" className="bg-blue-800 hover:bg-blue-700 p-2 rounded-full transition-colors">

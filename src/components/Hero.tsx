@@ -4,9 +4,10 @@ import { Phone, ArrowRight, ShieldCheck, Clock, MapPin, Star, Droplets } from 'l
 import { PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
 
 const images = [
-  "/input_file_0.png",
-  "/input_file_1.png",
-  "/input_file_2.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24-qXgwh1FXgUHroZUDBcq8eqniRQe4rI.webp",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%281%29-IuygaLd5EPfrCEPoqTS9z6mkARM4ST.webp",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%282%29-XSqDPqrNjs3jJof5tMG0gyMnleXSJm.webp",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%283%29-eVGKCjJfKNFf225V5TmycvQFh6jkWZ.webp",
 ];
 
 const Hero = () => {
@@ -35,7 +36,7 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-blue-950/90 via-blue-900/70 to-transparent z-10" />
             <img
               src={images[currentIndex]}
-              alt="San Antonio Water Solutions"
+              alt="PNF Water Heaters & Softeners"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
@@ -52,7 +53,7 @@ const Hero = () => {
             className="inline-flex items-center gap-2 bg-blue-600/20 backdrop-blur-md border border-blue-400/30 text-blue-100 px-4 py-2 rounded-full mb-6"
           >
             <Star className="text-yellow-400 fill-yellow-400 w-4 h-4" />
-            <span className="text-sm font-bold uppercase tracking-wider">San Antonio's #1 Rated Water Experts</span>
+            <span className="text-sm font-bold uppercase tracking-wider">Your Local Plumbing Company</span>
           </motion.div>
 
           <motion.h1

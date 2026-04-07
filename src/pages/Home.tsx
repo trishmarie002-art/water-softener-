@@ -21,7 +21,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-blue-600 font-bold uppercase tracking-wider mb-4">Welcome to San Antonio Water Solutions</h2>
+                <h2 className="text-blue-600 font-bold uppercase tracking-wider mb-4">Welcome to PNF Water Heaters & Softeners</h2>
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                   Your Local Experts for Premium Water Systems in San Antonio
                 </h3>
@@ -62,8 +62,8 @@ const Home = () => {
                 className="rounded-2xl overflow-hidden shadow-2xl"
               >
                 <img 
-                  src="/input_file_0.png" 
-                  alt="Water system installation" 
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%281%29-IuygaLd5EPfrCEPoqTS9z6mkARM4ST.webp" 
+                  alt="PNF Plumbing installation work" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />

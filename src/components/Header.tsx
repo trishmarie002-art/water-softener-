@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Phone, Menu, X, Droplets } from 'lucide-react';
+import { Phone, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { COMPANY_NAME, PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
+import { COMPANY_NAME, PHONE_NUMBER, PHONE_NUMBER_RAW, LOGO_URL } from '../constants';
 import { cn } from '../lib/utils';
 
 const Header = () => {
@@ -42,15 +42,11 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <div className="bg-blue-600 p-2 rounded-lg">
-            <Droplets className="text-white w-6 h-6" />
-          </div>
-          <span className={cn(
-            "font-bold text-xl tracking-tight hidden sm:block",
-            isScrolled ? "text-blue-900" : "text-white"
-          )}>
-            {COMPANY_NAME}
-          </span>
+          <img 
+            src={LOGO_URL} 
+            alt={COMPANY_NAME}
+            className="h-12 w-auto rounded-lg"
+          />
         </Link>
 
         {/* Desktop Nav */}

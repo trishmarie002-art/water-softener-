@@ -22,7 +22,7 @@ const About = () => {
             transition={{ delay: 0.1 }}
             className="text-xl text-blue-100 text-center max-w-3xl mx-auto"
           >
-            San Antonio's trusted family-owned water system specialists. Dedicated to quality, integrity, and your home's comfort.
+            Your local plumbing company. Family-owned water system specialists dedicated to quality, integrity, and your home's comfort.
           </motion.p>
         </div>
         <div className="absolute inset-0 opacity-20">
