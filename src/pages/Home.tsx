@@ -1,0 +1,254 @@
+import React from 'react';
+import { motion } from 'motion/react';
+import { Droplets, Thermometer, Filter, ShieldCheck, Clock, Award, CheckCircle2, ArrowRight, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import Hero from '../components/Hero';
+import LeadForm from '../components/LeadForm';
+import { SERVICES, PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
+
+const Home = () => {
+  return (
+    <div className="overflow-hidden">
+      <Hero />
+
+      {/* Intro Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="lg:w-1/2">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-blue-600 font-bold uppercase tracking-wider mb-4">Welcome to San Antonio Water Solutions</h2>
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                  Your Local Experts for Premium Water Systems in San Antonio
+                </h3>
+                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                  Don't let hard water damage your appliances or affect your family's health. We specialize in high-performance water softeners, efficient water heaters, and advanced filtration systems designed specifically for the unique water conditions in San Antonio and surrounding areas.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                  <div className="flex items-center gap-3">
+                    <CheckCircle2 className="text-blue-600" size={24} />
+                    <span className="font-semibold text-gray-800">Licensed & Insured</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle2 className="text-blue-600" size={24} />
+                    <span className="font-semibold text-gray-800">Same-Day Service Available</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle2 className="text-blue-600" size={24} />
+                    <span className="font-semibold text-gray-800">Free On-Site Estimates</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle2 className="text-blue-600" size={24} />
+                    <span className="font-semibold text-gray-800">Financing Options</span>
+                  </div>
+                </div>
+                <Link 
+                  to="/about" 
+                  className="inline-flex items-center gap-2 text-blue-600 font-bold hover:gap-3 transition-all"
+                >
+                  Learn More About Us <ArrowRight size={20} />
+                </Link>
+              </motion.div>
+            </div>
+            <div className="lg:w-1/2 relative">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="rounded-2xl overflow-hidden shadow-2xl"
+              >
+                <img 
+                  src="https://images.unsplash.com/photo-1585704032915-c3400ca1f963?auto=format&fit=crop&q=80&w=800" 
+                  alt="Water system installation" 
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </motion.div>
+              <div className="absolute -bottom-6 -left-6 bg-blue-600 text-white p-8 rounded-2xl shadow-xl hidden md:block">
+                <p className="text-4xl font-bold mb-1">15+</p>
+                <p className="text-sm font-medium uppercase tracking-widest">Years of Excellence</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Highlights */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-blue-600 font-bold uppercase tracking-wider mb-4">Our Core Services</h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Complete Water Solutions for Your Home</h3>
+            <p className="text-lg text-gray-600">
+              From installation to maintenance, we provide comprehensive services to ensure your home has the best water quality possible.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {SERVICES.map((service, index) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all group"
+              >
+                <div className="bg-blue-50 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+                  {service.id === 'water-softeners' && <Droplets className="text-blue-600 group-hover:text-white" size={32} />}
+                  {service.id === 'water-heaters' && <Thermometer className="text-blue-600 group-hover:text-white" size={32} />}
+                  {service.id === 'water-filtration' && <Filter className="text-blue-600 group-hover:text-white" size={32} />}
+                </div>
+                <h4 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h4>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {service.description}
+                </p>
+                <Link 
+                  to={service.href} 
+                  className="inline-flex items-center gap-2 text-blue-600 font-bold group-hover:gap-3 transition-all"
+                >
+                  Service Details <ArrowRight size={18} />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20 bg-blue-900 text-white">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="lg:w-1/2">
+              <h2 className="text-blue-400 font-bold uppercase tracking-wider mb-4">Why Choose Us</h2>
+              <h3 className="text-3xl md:text-4xl font-bold mb-10 leading-tight">
+                San Antonio's Most Trusted Water System Specialists
+              </h3>
+              <div className="space-y-8">
+                <div className="flex gap-4">
+                  <div className="bg-blue-800 p-3 rounded-lg shrink-0">
+                    <ShieldCheck className="text-blue-400" size={28} />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold mb-2">Licensed & Certified</h4>
+                    <p className="text-blue-100">Our technicians are fully licensed and undergo regular training to stay ahead of industry standards.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="bg-blue-800 p-3 rounded-lg shrink-0">
+                    <Clock className="text-blue-400" size={28} />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold mb-2">Punctual & Professional</h4>
+                    <p className="text-blue-100">We respect your time. We arrive on schedule and treat your home with the utmost care and cleanliness.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="bg-blue-800 p-3 rounded-lg shrink-0">
+                    <Award className="text-blue-400" size={28} />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold mb-2">Premium Equipment</h4>
+                    <p className="text-blue-100">We only install top-tier, high-efficiency systems from brands we trust and stand behind.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="lg:w-1/2 w-full">
+              <LeadForm 
+                title="Get Your Free Estimate" 
+                subtitle="Fill out the form below and we'll contact you within 24 hours."
+                className="text-gray-900"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Preview */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-blue-600 font-bold uppercase tracking-wider mb-4">Customer Success</h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900">What Your Neighbors Are Saying</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {[
+              { name: "Sarah J.", location: "Stone Oak", text: "The water softener installation was quick and professional. No more hard water spots on my dishes!" },
+              { name: "Michael R.", location: "Alamo Heights", text: "Switched to a tankless water heater and couldn't be happier. Endless hot water and lower bills." },
+              { name: "David L.", location: "Helotes", text: "Great service from start to finish. They explained everything clearly and the price was fair." }
+            ].map((review, i) => (
+              <div key={i} className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                <div className="flex text-yellow-400 mb-4">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={18} fill="currentColor" />)}
+                </div>
+                <p className="text-gray-700 italic mb-6">"{review.text}"</p>
+                <div>
+                  <p className="font-bold text-gray-900">{review.name}</p>
+                  <p className="text-sm text-gray-500">{review.location}, TX</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center">
+            <Link to="/reviews" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold transition-all inline-block">
+              Read More Reviews
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-20 bg-blue-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <Droplets className="absolute top-0 left-0 w-64 h-64 -translate-x-1/2 -translate-y-1/2" />
+          <Droplets className="absolute bottom-0 right-0 w-64 h-64 translate-x-1/2 translate-y-1/2" />
+        </div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready for Better Water?</h2>
+          <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+            Join thousands of satisfied San Antonio homeowners. Call us today for a free consultation and estimate.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a 
+              href={`tel:${PHONE_NUMBER_RAW}`} 
+              className="bg-white text-blue-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-blue-50 transition-all flex items-center justify-center gap-3 shadow-2xl"
+            >
+              <Phone size={28} />
+              {PHONE_NUMBER}
+            </a>
+            <Link 
+              to="/contact" 
+              className="bg-blue-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-blue-900 transition-all flex items-center justify-center"
+            >
+              Contact Us Online
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+// Helper Star component
+const Star = ({ size, fill, className }: { size: number, fill?: string, className?: string, key?: any }) => (
+  <svg 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill={fill || "none"} 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+  </svg>
+);
+
+export default Home;
