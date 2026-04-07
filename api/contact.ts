@@ -29,7 +29,7 @@ export default async function handler(request: Request) {
     // Send email notification
     const { data, error } = await resend.emails.send({
       from: 'PNF Water Heaters & Softeners <onboarding@resend.dev>',
-      to: ['service@pnfwaterheaters.com'], // Replace with actual email
+      to: ['pnfwaterheatersandsofteners@gmail.com'],
       subject: `New Lead: ${service || 'General Inquiry'} - ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
