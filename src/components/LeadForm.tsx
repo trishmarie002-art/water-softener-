@@ -48,7 +48,7 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
         .from('leads')
         .insert([
           {
-            name: formData.name,
+            full_name: formData.name,
             phone: formData.phone,
             email: compact ? null : formData.email,
             service: formData.service,
