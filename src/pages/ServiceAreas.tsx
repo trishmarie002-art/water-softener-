@@ -5,12 +5,20 @@ import { SERVICE_AREAS, PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
 const ServiceAreas = () => {
   return (
     <div className="pt-24">
-      <section className="bg-navy-900 py-20 text-white text-center">
-        <div className="container mx-auto px-4">
+      <section className="bg-navy-900 py-20 text-white text-center relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Service Areas</h1>
           <p className="text-xl text-navy-200 max-w-2xl mx-auto">
             Providing expert water system services to San Antonio and all surrounding communities.
           </p>
+        </div>
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24-qXgwh1FXgUHroZUDBcq8eqniRQe4rI.webp" 
+            alt="PNF Water Heaters & Softeners truck" 
+            className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+          />
         </div>
       </section>
 

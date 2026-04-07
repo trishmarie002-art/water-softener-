@@ -6,12 +6,20 @@ import { PHONE_NUMBER, PHONE_NUMBER_RAW, EMAIL } from '../constants';
 const Contact = () => {
   return (
     <div className="pt-24">
-      <section className="bg-navy-900 py-20 text-white text-center">
-        <div className="container mx-auto px-4">
+      <section className="bg-navy-900 py-20 text-white text-center relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Contact Us</h1>
           <p className="text-xl text-navy-200 max-w-2xl mx-auto">
-            Need better water at home? We're here to help. Reach out today for a free consultation.
+            Need better water at home? We&apos;re here to help. Reach out today for a free consultation.
           </p>
+        </div>
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24-qXgwh1FXgUHroZUDBcq8eqniRQe4rI.webp" 
+            alt="PNF Water Heaters & Softeners truck" 
+            className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+          />
         </div>
       </section>
 
@@ -96,8 +104,8 @@ const Contact = () => {
           </div>
         </div>
         <img 
-          src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1920" 
-          alt="San Antonio Map" 
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%281%29-IuygaLd5EPfrCEPoqTS9z6mkARM4ST.webp" 
+          alt="PNF plumbing work" 
           className="w-full h-full object-cover opacity-50"
           referrerPolicy="no-referrer"
         />

@@ -14,18 +14,26 @@ const Reviews = () => {
 
   return (
     <div className="pt-24">
-      <section className="bg-navy-50 py-20 text-center">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">Customer Reviews</h1>
+      <section className="bg-navy-900 py-20 text-center text-white relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">Customer Reviews</h1>
           <div className="flex justify-center items-center gap-2 mb-6">
             <div className="flex text-yellow-400">
               {[...Array(5)].map((_, i) => <Star key={i} size={24} fill="currentColor" />)}
             </div>
-            <span className="text-xl font-bold text-gray-900">4.9 / 5.0 Rating</span>
+            <span className="text-xl font-bold">4.9 / 5.0 Rating</span>
           </div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-navy-200 max-w-2xl mx-auto">
             See why hundreds of San Antonio homeowners trust us with their water systems.
           </p>
+        </div>
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24-qXgwh1FXgUHroZUDBcq8eqniRQe4rI.webp" 
+            alt="PNF Water Heaters & Softeners truck" 
+            className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+          />
         </div>
       </section>
 
@@ -58,8 +66,8 @@ const Reviews = () => {
       <section className="py-20 text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1523362628242-f513a30ef270?auto=format&fit=crop&q=80&w=1920" 
-            alt="Water background" 
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%282%29-XSqDPqrNjs3jJof5tMG0gyMnleXSJm.webp" 
+            alt="Pressure gauge plumbing work" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />

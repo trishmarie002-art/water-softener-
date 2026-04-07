@@ -27,8 +27,8 @@ const About = () => {
         </div>
         <div className="absolute inset-0 opacity-20">
           <img 
-            src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1920" 
-            alt="San Antonio background" 
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24-qXgwh1FXgUHroZUDBcq8eqniRQe4rI.webp" 
+            alt="PNF Water Heaters & Softeners truck" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -41,8 +41,8 @@ const About = () => {
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
               <img 
-                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800" 
-                alt="Our team" 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%281%29-IuygaLd5EPfrCEPoqTS9z6mkARM4ST.webp" 
+                alt="PNF plumbing installation work" 
                 className="rounded-2xl shadow-2xl"
                 referrerPolicy="no-referrer"
               />
@@ -114,8 +114,8 @@ const About = () => {
       <section className="py-20 text-white relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1523362628242-f513a30ef270?auto=format&fit=crop&q=80&w=1920" 
-            alt="Water background" 
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%282%29-XSqDPqrNjs3jJof5tMG0gyMnleXSJm.webp" 
+            alt="Pressure gauge plumbing work" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />

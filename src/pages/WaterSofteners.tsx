@@ -27,8 +27,8 @@ const WaterSofteners = () => {
             </div>
             <div className="lg:w-1/2">
               <img 
-                src="/input_file_1.png" 
-                alt="Water softener system" 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%283%29-eVGKCjJfKNFf225V5TmycvQFh6jkWZ.webp" 
+                alt="Kitchen sink with modern faucet" 
                 className="rounded-2xl shadow-2xl"
                 referrerPolicy="no-referrer"
               />
@@ -98,8 +98,8 @@ const WaterSofteners = () => {
       <section className="py-20 text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1523362628242-f513a30ef270?auto=format&fit=crop&q=80&w=1920" 
-            alt="Water background" 
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%282%29-XSqDPqrNjs3jJof5tMG0gyMnleXSJm.webp" 
+            alt="Pressure gauge plumbing work" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
