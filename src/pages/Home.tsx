@@ -85,9 +85,9 @@ const Home = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:w-1/3"
+              className="lg:w-1/4"
             >
-              <div className="relative">
+              <div className="relative max-w-[280px] mx-auto">
                 <img 
                   src="/images/jacinto-lefebre.jpg" 
                   alt="Jacinto Lefebre, Owner of PNF Water Heaters & Softeners" 
@@ -102,7 +102,7 @@ const Home = () => {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:w-2/3"
+              className="lg:w-3/4"
             >
               <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Meet the Owner</h2>
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Jacinto Lefebre</h3>
