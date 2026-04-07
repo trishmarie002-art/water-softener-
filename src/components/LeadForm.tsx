@@ -13,15 +13,42 @@ interface LeadFormProps {
 const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    service: 'Water Softener Installation',
+    message: '',
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    // Simulate API call
-    setTimeout(() => {
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
       setIsLoading(false);
       setIsSubmitted(true);
-    }, 1500);
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setIsLoading(false);
+      alert('There was an error submitting the form. Please try calling us directly at (210) 769-5161.');
+    }
   };
 
   if (isSubmitted) {
@@ -57,7 +84,10 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
             <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
             <input 
               required
-              type="text" 
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
               placeholder="John Doe"
               className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-pnf-red-500 focus:border-transparent outline-none transition-all"
             />
@@ -66,7 +96,10 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
             <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
             <input 
               required
-              type="tel" 
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
               placeholder="(210) 555-0123"
               className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-pnf-red-500 focus:border-transparent outline-none transition-all"
             />
@@ -77,8 +110,10 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
             <input 
-              required
-              type="email" 
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="john@example.com"
               className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-pnf-red-500 focus:border-transparent outline-none transition-all"
             />
@@ -87,7 +122,12 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Service Needed</label>
-          <select className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all appearance-none bg-white">
+          <select 
+            name="service"
+            value={formData.service}
+            onChange={handleChange}
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-pnf-red-500 focus:border-transparent outline-none transition-all appearance-none bg-white"
+          >
             <option>Water Softener Installation</option>
             <option>Water Heater Replacement</option>
             <option>Water Filtration System</option>
@@ -99,9 +139,12 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
           <textarea 
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
             rows={compact ? 2 : 4}
             placeholder="Tell us about your project..."
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-pnf-red-500 focus:border-transparent outline-none transition-all resize-none"
           ></textarea>
         </div>
 
