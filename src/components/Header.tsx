@@ -1,22 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Phone, Menu, X, Droplets } from 'lucide-react';
+import { Phone, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { COMPANY_NAME, PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
+import { COMPANY_NAME, PHONE_NUMBER, PHONE_NUMBER_RAW, LOGO_URL } from '../constants';
 import { cn } from '../lib/utils';
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -35,22 +26,15 @@ const Header = () => {
 
   return (
     <header
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
-      )}
+      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-3"
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <div className="bg-blue-600 p-2 rounded-lg">
-            <Droplets className="text-white w-6 h-6" />
-          </div>
-          <span className={cn(
-            "font-bold text-xl tracking-tight hidden sm:block",
-            isScrolled ? "text-blue-900" : "text-white"
-          )}>
-            {COMPANY_NAME}
-          </span>
+          <img 
+            src={LOGO_URL} 
+            alt={COMPANY_NAME}
+            className="h-12 w-auto rounded-lg"
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -60,9 +44,8 @@ const Header = () => {
               key={link.path}
               to={link.path}
               className={({ isActive }) => cn(
-                "text-sm font-medium transition-colors hover:text-blue-500",
-                isScrolled ? "text-gray-700" : "text-white",
-                isActive && "text-blue-500 border-b-2 border-blue-500"
+                "text-sm font-medium transition-colors hover:text-pnf-red-600 text-navy-800",
+                isActive && "text-pnf-red-600 border-b-2 border-pnf-red-600"
               )}
             >
               {link.name}
@@ -73,7 +56,7 @@ const Header = () => {
         <div className="flex items-center gap-4">
           <a
             href={`tel:${PHONE_NUMBER_RAW}`}
-            className="hidden md:flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-bold transition-transform hover:scale-105"
+            className="hidden md:flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-4 py-2 rounded-full font-bold transition-transform hover:scale-105"
           >
             <Phone size={18} />
             <span>{PHONE_NUMBER}</span>
@@ -84,9 +67,9 @@ const Header = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className={isScrolled ? "text-gray-900" : "text-white"} />
+              <X className="text-navy-800" />
             ) : (
-              <Menu className={isScrolled ? "text-gray-900" : "text-white"} />
+              <Menu className="text-navy-800" />
             )}
           </button>
         </div>
@@ -108,7 +91,7 @@ const Header = () => {
                   to={link.path}
                   className={({ isActive }) => cn(
                     "text-lg font-semibold py-2 border-b border-gray-100",
-                    isActive ? "text-blue-600" : "text-gray-800"
+                    isActive ? "text-pnf-red-600" : "text-navy-800"
                   )}
                 >
                   {link.name}
@@ -116,7 +99,7 @@ const Header = () => {
               ))}
               <a
                 href={`tel:${PHONE_NUMBER_RAW}`}
-                className="flex items-center justify-center gap-2 bg-blue-600 text-white py-4 rounded-xl font-bold mt-4"
+                className="flex items-center justify-center gap-2 bg-pnf-red-600 text-white py-4 rounded-xl font-bold mt-4"
               >
                 <Phone size={20} />
                 <span>Call Now: {PHONE_NUMBER}</span>

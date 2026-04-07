@@ -1,7 +1,8 @@
-export const COMPANY_NAME = "San Antonio Water Solutions";
-export const PHONE_NUMBER = "(210) 555-0123";
-export const PHONE_NUMBER_RAW = "2105550123";
-export const EMAIL = "service@sawatersolutions.com";
+export const COMPANY_NAME = "PNF Water Heaters & Softeners";
+export const PHONE_NUMBER = "(210) 769-5161";
+export const PHONE_NUMBER_RAW = "2107695161";
+export const EMAIL = "service@pnfwaterheaters.com";
+export const LOGO_URL = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000004386.jpg-QH60MYNMQSUbQELnvoiIdLPz4IRnw0.jpeg";
 
 export const SERVICE_AREAS = [
   "San Antonio",
