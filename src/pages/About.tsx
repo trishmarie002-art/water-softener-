@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { ShieldCheck, Users, Heart, MapPin, Phone, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { COMPANY_NAME, PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
 
@@ -134,9 +135,9 @@ const About = () => {
               <Phone size={28} />
               {PHONE_NUMBER}
             </a>
-            <button className="bg-navy-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-navy-700 transition-all">
+            <Link to="/contact" className="bg-navy-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-navy-700 transition-all">
               Get a Free Estimate
-            </button>
+            </Link>
           </div>
         </div>
       </section>
