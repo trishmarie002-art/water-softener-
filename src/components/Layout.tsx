@@ -1,9 +1,8 @@
 import React from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
-import { Phone } from 'lucide-react';
 import Header from './Header';
 import Footer from './Footer';
-import { PHONE_NUMBER_RAW } from '../constants';
+import FloatingContact from './FloatingContact';
 import { motion, AnimatePresence } from 'motion/react';
 
 const Layout = () => {
@@ -29,13 +28,8 @@ const Layout = () => {
 
       <Footer />
 
-      {/* Floating Mobile Call Button */}
-      <a
-        href={`tel:${PHONE_NUMBER_RAW}`}
-        className="fixed bottom-6 right-6 z-40 md:hidden bg-pnf-red-600 text-white p-4 rounded-full shadow-2xl animate-bounce hover:animate-none transition-all active:scale-90"
-      >
-        <Phone size={28} />
-      </a>
+      {/* Floating Contact Button */}
+      <FloatingContact />
     </div>
   );
 };
