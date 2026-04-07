@@ -6,17 +6,8 @@ import { COMPANY_NAME, PHONE_NUMBER, PHONE_NUMBER_RAW, LOGO_URL } from '../const
 import { cn } from '../lib/utils';
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -35,10 +26,7 @@ const Header = () => {
 
   return (
     <header
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
-      )}
+      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-3"
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
@@ -56,8 +44,7 @@ const Header = () => {
               key={link.path}
               to={link.path}
               className={({ isActive }) => cn(
-                "text-sm font-medium transition-colors hover:text-pnf-red-600",
-                isScrolled ? "text-navy-800" : "text-white",
+                "text-sm font-medium transition-colors hover:text-pnf-red-600 text-navy-800",
                 isActive && "text-pnf-red-600 border-b-2 border-pnf-red-600"
               )}
             >
@@ -80,9 +67,9 @@ const Header = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className={isScrolled ? "text-gray-900" : "text-white"} />
+              <X className="text-navy-800" />
             ) : (
-              <Menu className={isScrolled ? "text-gray-900" : "text-white"} />
+              <Menu className="text-navy-800" />
             )}
           </button>
         </div>
