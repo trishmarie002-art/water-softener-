@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 import { cn } from '../lib/utils';
+import { supabase } from '../lib/supabase';
+import { EMAIL } from '../constants';
 
 interface LeadFormProps {
   title?: string;
@@ -10,18 +12,88 @@ interface LeadFormProps {
   compact?: boolean;
 }
 
+interface FormData {
+  name: string;
+  phone: string;
+  email: string;
+  service: string;
+  message: string;
+}
+
 const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    phone: '',
+    email: '',
+    service: 'Water Softener Installation',
+    message: ''
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsLoading(false);
+    setError(null);
+
+    try {
+      // Save to Supabase database
+      const { error: dbError } = await supabase
+        .from('leads')
+        .insert([
+          {
+            name: formData.name,
+            phone: formData.phone,
+            email: compact ? null : formData.email,
+            service: formData.service,
+            message: formData.message || null
+          }
+        ]);
+
+      if (dbError) {
+        throw new Error(dbError.message);
+      }
+
+      // Send email notification via Edge Function
+      try {
+        const { error: emailError } = await supabase.functions.invoke('send-lead-notification', {
+          body: {
+            name: formData.name,
+            phone: formData.phone,
+            email: formData.email || 'Not provided',
+            service: formData.service,
+            message: formData.message || 'No message provided',
+            toEmail: EMAIL
+          }
+        });
+
+        if (emailError) {
+          console.warn('Email notification failed, but lead was saved:', emailError);
+        }
+      } catch {
+        // Email failed but lead was saved - don't fail the submission
+        console.warn('Email notification failed, but lead was saved');
+      }
+
       setIsSubmitted(true);
-    }, 1500);
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        service: 'Water Softener Installation',
+        message: ''
+      });
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isSubmitted) {
@@ -51,13 +123,23 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
       {title && <h3 className={cn("font-bold text-gray-900 mb-1", compact ? "text-xl" : "text-2xl")}>{title}</h3>}
       {subtitle && <p className="text-gray-600 mb-6">{subtitle}</p>}
       
+      {error && (
+        <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2 text-red-700">
+          <AlertCircle size={20} />
+          <span>{error}</span>
+        </div>
+      )}
+      
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className={cn("grid gap-4", !compact && "md:grid-cols-2")}>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
             <input 
               required
-              type="text" 
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
               placeholder="John Doe"
               className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-pnf-red-500 focus:border-transparent outline-none transition-all"
             />
@@ -66,7 +148,10 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
             <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
             <input 
               required
-              type="tel" 
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
               placeholder="(210) 555-0123"
               className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-pnf-red-500 focus:border-transparent outline-none transition-all"
             />
@@ -78,7 +163,10 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
             <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
             <input 
               required
-              type="email" 
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="john@example.com"
               className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-pnf-red-500 focus:border-transparent outline-none transition-all"
             />
@@ -87,7 +175,12 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Service Needed</label>
-          <select className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all appearance-none bg-white">
+          <select 
+            name="service"
+            value={formData.service}
+            onChange={handleChange}
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all appearance-none bg-white"
+          >
             <option>Water Softener Installation</option>
             <option>Water Heater Replacement</option>
             <option>Water Filtration System</option>
@@ -98,7 +191,10 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
-          <textarea 
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
             rows={compact ? 2 : 4}
             placeholder="Tell us about your project..."
             className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
