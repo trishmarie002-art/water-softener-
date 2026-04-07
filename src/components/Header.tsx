@@ -15,12 +15,11 @@ const Header = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Water Softeners', path: '/services/water-softeners' },
-    { name: 'Water Heaters', path: '/services/water-heaters' },
-    { name: 'Filtration', path: '/services/water-filtration' },
+    { name: 'Services', path: '/services' },
     { name: 'Service Areas', path: '/service-areas' },
+    { name: 'Gallery', path: '/gallery' },
     { name: 'Reviews', path: '/reviews' },
+    { name: 'FAQ', path: '/faq' },
     { name: 'Contact', path: '/contact' },
   ];
 
