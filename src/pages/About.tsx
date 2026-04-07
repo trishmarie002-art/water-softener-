@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ShieldCheck, Users, Heart, MapPin, Phone, ArrowRight, CheckCircle2 } from 'lucide-react';
-import { COMPANY_NAME, PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
+import { COMPANY_NAME, PHONE_NUMBER, PHONE_NUMBER_RAW, OWNER_NAME, EXPERIENCE_SINCE, MASTER_PLUMBER_YEARS } from '../constants';
 
 const About = () => {
   return (
@@ -49,12 +50,12 @@ const About = () => {
             </div>
             <div className="lg:w-1/2">
               <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Our Story</h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Serving San Antonio Homeowners Since 2010</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Led by {OWNER_NAME}, Master Plumber</h3>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Founded with a simple mission to provide San Antonio residents with better water, {COMPANY_NAME} has grown from a small local operation into the city's premier water system service provider.
+                {COMPANY_NAME} is led by {OWNER_NAME}, a seasoned professional with plumbing experience since {EXPERIENCE_SINCE} and a Master Plumber for over {MASTER_PLUMBER_YEARS} years. With nearly three decades in the trade, {OWNER_NAME} has built a reputation for quality workmanship and honest service throughout San Antonio.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                We understand the unique challenges of San Antonio's hard water. Our team lives and works right here in the community, and we treat every home as if it were our own. We don't just install systems; we build lasting relationships based on trust and exceptional service.
+                We understand the unique challenges of San Antonio&apos;s hard water. Our team lives and works right here in the community, and we treat every home as if it were our own. We don&apos;t just install systems; we build lasting relationships based on trust and exceptional service.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-center gap-3">
@@ -134,9 +135,9 @@ const About = () => {
               <Phone size={28} />
               {PHONE_NUMBER}
             </a>
-            <button className="bg-navy-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-navy-700 transition-all">
+            <Link to="/contact" className="bg-navy-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-navy-700 transition-all">
               Get a Free Estimate
-            </button>
+            </Link>
           </div>
         </div>
       </section>

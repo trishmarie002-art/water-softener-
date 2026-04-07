@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Phone, ArrowRight, ShieldCheck, Clock, MapPin, Star, Droplets } from 'lucide-react';
 import { PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
@@ -86,13 +87,13 @@ const Hero = () => {
               <Phone size={24} />
               <span>Call Now</span>
             </a>
-            <a
-              href="#estimate"
+            <Link
+              to="/contact"
               className="flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-navy-900 px-8 py-4 rounded-xl text-lg font-bold transition-all transform hover:scale-105"
             >
               <span>Get a Free Estimate</span>
               <ArrowRight size={20} />
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div
