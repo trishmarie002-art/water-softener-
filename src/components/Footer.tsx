@@ -95,7 +95,10 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} {COMPANY_NAME}. All rights reserved.</p>
+          <div className="text-center md:text-left">
+            <p>© {new Date().getFullYear()} {COMPANY_NAME}. All rights reserved.</p>
+            <p className="mt-1">Website created by <a href="https://jayswebdesignservices.com/" target="_blank" rel="noopener noreferrer" className="text-pnf-red-600 hover:text-pnf-red-700 transition-colors font-medium">Jay&apos;s Web Design Services</a></p>
+          </div>
           <div className="flex gap-6">
             <a href="#" className="hover:text-pnf-red-600 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-pnf-red-600 transition-colors">Terms of Service</a>
