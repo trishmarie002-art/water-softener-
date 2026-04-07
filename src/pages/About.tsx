@@ -41,18 +41,23 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
-              <img 
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%281%29-IuygaLd5EPfrCEPoqTS9z6mkARM4ST.webp" 
-                alt="PNF plumbing installation work" 
-                className="rounded-2xl shadow-2xl"
-                referrerPolicy="no-referrer"
-              />
+              <div className="relative">
+                <img 
+                  src="/images/jacinto-lefebre.jpg" 
+                  alt="Jacinto Lefebre, Owner and Master Plumber" 
+                  className="rounded-2xl shadow-2xl w-full object-cover"
+                />
+                <div className="absolute -bottom-4 -right-4 bg-pnf-red-600 text-white px-6 py-4 rounded-xl shadow-lg">
+                  <p className="text-2xl font-bold">28+</p>
+                  <p className="text-sm uppercase tracking-wider">Years Experience</p>
+                </div>
+              </div>
             </div>
             <div className="lg:w-1/2">
-              <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Our Story</h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">28+ Years of Plumbing Excellence</h3>
+              <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Meet the Owner</h2>
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Jacinto Lefebre, Master Plumber</h3>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Led by owner Jacinto Lefebre, a master plumber with over 10 years of master certification and 28+ years of hands-on experience, {COMPANY_NAME} has grown into San Antonio&apos;s premier water system service provider.
+                With over 28 years of hands-on plumbing experience and more than a decade as a certified master plumber, Jacinto Lefebre has built {COMPANY_NAME} into San Antonio&apos;s premier water system service provider.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Jacinto understands the unique challenges of San Antonio&apos;s hard water. His dedication to quality craftsmanship and honest service has built a reputation that speaks for itself. We don&apos;t just install systems; we build lasting relationships based on trust and exceptional service.
