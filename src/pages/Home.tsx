@@ -69,10 +69,56 @@ const Home = () => {
                 />
               </motion.div>
               <div className="absolute -bottom-6 -left-6 bg-pnf-red-600 text-white p-8 rounded-2xl shadow-xl hidden md:block">
-                <p className="text-4xl font-bold mb-1">15+</p>
+                <p className="text-4xl font-bold mb-1">28+</p>
                 <p className="text-sm font-medium uppercase tracking-widest">Years of Excellence</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Meet the Owner */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:w-1/4"
+            >
+              <div className="relative max-w-[280px] mx-auto">
+                <img 
+                  src="/images/jacinto-lefebre.jpg" 
+                  alt="Jacinto Lefebre, Owner of PNF Water Heaters & Softeners" 
+                  className="rounded-2xl shadow-2xl w-full object-cover"
+                />
+                <div className="absolute -bottom-4 -right-4 bg-navy-900 text-white px-6 py-3 rounded-xl shadow-lg">
+                  <p className="font-bold">Master Plumber</p>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:w-3/4"
+            >
+              <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Meet the Owner</h2>
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Jacinto Lefebre</h3>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                With 28+ years of hands-on plumbing experience and over a decade as a certified master plumber, Jacinto Lefebre brings unmatched expertise to every job. His commitment to quality workmanship and honest service has made PNF Water Heaters & Softeners the trusted choice for San Antonio homeowners.
+              </p>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                When you work with PNF, you&apos;re not just getting a service provider—you&apos;re getting a dedicated professional who treats your home like his own.
+              </p>
+              <Link 
+                to="/about" 
+                className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-bold transition-all"
+              >
+                Learn More About Us <ArrowRight size={20} />
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
