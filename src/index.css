@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* PNF Water Heaters & Softeners - Custom Theme */
 @theme inline {
   /* PNF Brand Colors - Navy Blue, Red, White */
   --color-navy-50: #f0f4f8;
