@@ -89,9 +89,10 @@ const Home = () => {
             >
               <div className="relative max-w-[280px] mx-auto">
                 <img 
-                  src="/images/jacinto-lefebre.jpg" 
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%284%29-RvHGOWWeQJaPYX7Q2X9brTxLWMrd3n.webp" 
                   alt="Jacinto Lefebre, Owner of PNF Water Heaters & Softeners" 
-                  className="rounded-2xl shadow-2xl w-full object-cover"
+                  className="rounded-2xl shadow-2xl w-full aspect-[3/4] object-cover"
+                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute -bottom-4 -right-4 bg-navy-900 text-white px-6 py-3 rounded-xl shadow-lg">
                   <p className="font-bold">Master Plumber</p>

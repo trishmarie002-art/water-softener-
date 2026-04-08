@@ -43,9 +43,10 @@ const About = () => {
             <div className="lg:w-1/2">
               <div className="relative">
                 <img 
-                  src="/images/jacinto-lefebre.jpg" 
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%284%29-RvHGOWWeQJaPYX7Q2X9brTxLWMrd3n.webp" 
                   alt="Jacinto Lefebre, Owner and Master Plumber" 
-                  className="rounded-2xl shadow-2xl w-full object-cover"
+                  className="rounded-2xl shadow-2xl w-full aspect-[3/4] object-cover"
+                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute -bottom-4 -right-4 bg-pnf-red-600 text-white px-6 py-4 rounded-xl shadow-lg">
                   <p className="text-2xl font-bold">28+</p>
