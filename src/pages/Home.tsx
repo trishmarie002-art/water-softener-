@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Droplets, Thermometer, Filter, ShieldCheck, Clock, Award, CheckCircle2, ArrowRight, Phone } from 'lucide-react';
+import { Droplets, Thermometer, Filter, ShieldCheck, Clock, CheckCircle2, ArrowRight, Phone, Wrench, Zap, MapPin, MessageSquare, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import LeadForm from '../components/LeadForm';
@@ -122,49 +122,105 @@ const Home = () => {
       {/* Why Choose Us */}
       <section className="py-20 bg-navy-900 text-white">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2">
-              <h2 className="text-pnf-red-400 font-bold uppercase tracking-wider mb-4">Why Choose Us</h2>
-              <h3 className="text-3xl md:text-4xl font-bold mb-10 leading-tight">
-                San Antonio's Most Trusted Water System Specialists
-              </h3>
-              <div className="space-y-8">
-                <div className="flex gap-4">
-                  <div className="bg-navy-800 p-3 rounded-lg shrink-0">
-                    <ShieldCheck className="text-pnf-red-400" size={28} />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2">Licensed & Certified</h4>
-                    <p className="text-navy-200">Our technicians are fully licensed and undergo regular training to stay ahead of industry standards.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="bg-navy-800 p-3 rounded-lg shrink-0">
-                    <Clock className="text-pnf-red-400" size={28} />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2">Punctual & Professional</h4>
-                    <p className="text-navy-200">We respect your time. We arrive on schedule and treat your home with the utmost care and cleanliness.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="bg-navy-800 p-3 rounded-lg shrink-0">
-                    <Award className="text-pnf-red-400" size={28} />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2">Premium Equipment</h4>
-                    <p className="text-navy-200">We only install top-tier, high-efficiency systems from brands we trust and stand behind.</p>
-                  </div>
-                </div>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-pnf-red-400 font-bold uppercase tracking-wider mb-4">Why Choose Us</h2>
+            <h3 className="text-3xl md:text-4xl font-bold leading-tight">
+              San Antonio&apos;s Most Trusted Water System Specialists
+            </h3>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0 }}
+              className="bg-navy-800 p-8 rounded-2xl"
+            >
+              <div className="bg-pnf-red-600 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                <Droplets className="text-white" size={28} />
               </div>
-            </div>
-            <div className="lg:w-1/2 w-full">
-              <LeadForm 
-                title="Get Your Free Estimate" 
-                subtitle="Fill out the form below and we'll contact you within 24 hours."
-                className="text-gray-900"
-              />
-            </div>
+              <h4 className="text-xl font-bold mb-3">Honest Water Testing</h4>
+              <p className="text-navy-200">We test your water and show you exactly what&apos;s in it - no gimmicks, no pushy sales tactics.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-navy-800 p-8 rounded-2xl"
+            >
+              <div className="bg-pnf-red-600 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                <Wrench className="text-white" size={28} />
+              </div>
+              <h4 className="text-xl font-bold mb-3">Custom Solutions (Not One-Size-Fits-All)</h4>
+              <p className="text-navy-200">Every home is different. We recommend systems based on YOUR water, not what makes us the most money.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-navy-800 p-8 rounded-2xl"
+            >
+              <div className="bg-pnf-red-600 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                <Zap className="text-white" size={28} />
+              </div>
+              <h4 className="text-xl font-bold mb-3">Fast & Professional Installation</h4>
+              <p className="text-navy-200">Get clean, soft water quickly with expert installation done right the first time.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-navy-800 p-8 rounded-2xl"
+            >
+              <div className="bg-pnf-red-600 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                <MapPin className="text-white" size={28} />
+              </div>
+              <h4 className="text-xl font-bold mb-3">Local & Trusted</h4>
+              <p className="text-navy-200">We proudly serve homeowners in San Antonio and surrounding areas with reliable, honest service.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="bg-navy-800 p-8 rounded-2xl"
+            >
+              <div className="bg-pnf-red-600 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                <MessageSquare className="text-white" size={28} />
+              </div>
+              <h4 className="text-xl font-bold mb-3">Real Customer Satisfaction</h4>
+              <p className="text-navy-200">Our customers love the difference - from better-tasting water to longer-lasting appliances.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="bg-navy-800 p-8 rounded-2xl"
+            >
+              <div className="bg-pnf-red-600 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                <DollarSign className="text-white" size={28} />
+              </div>
+              <h4 className="text-xl font-bold mb-3">Transparent Pricing</h4>
+              <p className="text-navy-200">No hidden fees. No surprises. Just straightforward pricing you can trust.</p>
+            </motion.div>
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <LeadForm 
+              title="Get Your Free Estimate" 
+              subtitle="Fill out the form below and we'll contact you within 24 hours."
+              className="text-gray-900"
+            />
           </div>
         </div>
       </section>
