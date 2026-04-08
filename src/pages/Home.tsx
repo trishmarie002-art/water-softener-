@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Droplets, Thermometer, Filter, ShieldCheck, Clock, Award, CheckCircle2, ArrowRight, Phone } from 'lucide-react';
+import { Droplets, Thermometer, Filter, ShieldCheck, Clock, Award, CheckCircle2, ArrowRight, Phone, ChevronDown } from 'lucide-react';
+import { cn } from '../lib/utils';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import LeadForm from '../components/LeadForm';
@@ -248,6 +249,9 @@ const Home = () => {
         </div>
       </section>
 
+      {/* FAQ Preview */}
+      <FAQSection />
+
       {/* Final CTA */}
       <section className="py-20 text-white relative overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -286,6 +290,82 @@ const Home = () => {
         </div>
       </section>
     </div>
+  );
+};
+
+// FAQ Section Component
+const FAQSection = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const faqs = [
+    {
+      q: "What is a water softener and why do I need one?",
+      a: "A water softener removes calcium, magnesium, and other minerals from your water. San Antonio has some of the hardest water in Texas, which can cause scale buildup in pipes, damage appliances, and leave spots on dishes. A water softener protects your home and improves water quality."
+    },
+    {
+      q: "Should I get a tank or tankless water heater?",
+      a: "It depends on your needs. Tank water heaters have lower upfront costs. Tankless water heaters cost more initially but provide endless hot water, last longer (20+ years vs 10-12 years), and save on energy bills. We can assess your home to recommend the best option."
+    },
+    {
+      q: "Do you offer free estimates?",
+      a: "Yes! We provide free on-site estimates for all water softener, water heater, and filtration installations. Our technician will assess your needs, answer your questions, and provide a detailed quote with no obligation."
+    },
+    {
+      q: "What areas do you serve?",
+      a: "We serve San Antonio and all surrounding communities including Boerne, New Braunfels, Helotes, Stone Oak, Alamo Heights, Schertz, Cibolo, Universal City, Converse, and more. If you're unsure if we service your area, give us a call!"
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Common Questions</h2>
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-900">Frequently Asked Questions</h3>
+        </div>
+        <div className="max-w-3xl mx-auto space-y-4 mb-10">
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-white rounded-xl border border-gray-100 overflow-hidden shadow-sm"
+            >
+              <button
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
+              >
+                <span className="font-semibold text-navy-800">{faq.q}</span>
+                <ChevronDown 
+                  className={cn(
+                    "shrink-0 text-pnf-red-600 transition-transform",
+                    openIndex === index && "rotate-180"
+                  )} 
+                  size={24} 
+                />
+              </button>
+              <div 
+                className={cn(
+                  "overflow-hidden transition-all duration-300",
+                  openIndex === index ? "max-h-96" : "max-h-0"
+                )}
+              >
+                <p className="px-6 pb-5 text-gray-600 leading-relaxed">
+                  {faq.a}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+        <div className="text-center">
+          <Link to="/faq" className="inline-flex items-center gap-2 text-pnf-red-600 font-bold hover:gap-3 transition-all">
+            View All FAQs <ArrowRight size={20} />
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 };
 
