@@ -87,14 +87,14 @@ const Home = () => {
               viewport={{ once: true }}
               className="lg:w-1/4"
             >
-              <div className="relative max-w-[280px] mx-auto">
+              <div className="relative max-w-[180px] mx-auto">
                 <img 
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000004496.jpg-zk2JdT3h7UvxFobdVosOceSAKvdEqf.jpeg" 
                   alt="Jacinto Lefebre, Owner of PNF Water Heaters & Softeners" 
-                  className="rounded-2xl shadow-2xl w-full aspect-[3/4] object-cover object-top"
+                  className="rounded-2xl shadow-2xl w-full aspect-square object-cover object-top"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-navy-900 text-white px-6 py-3 rounded-xl shadow-lg">
-                  <p className="font-bold">Master Plumber</p>
+                <div className="absolute -bottom-3 -right-3 bg-navy-900 text-white px-4 py-2 rounded-lg shadow-lg">
+                  <p className="font-bold text-sm">Master Plumber</p>
                 </div>
               </div>
             </motion.div>
