@@ -37,15 +37,15 @@ const About = () => {
       </section>
 
       {/* Our Story */}
-      <section className="py-20 bg-white">
+      <section className="pt-8 pb-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/3">
-              <div className="relative max-w-[220px] mx-auto">
+          <div className="flex flex-col lg:flex-row items-start gap-12">
+            <div className="lg:w-1/3 -mt-32 relative z-20">
+              <div className="relative max-w-[260px] mx-auto">
                 <img 
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000004496.jpg-zk2JdT3h7UvxFobdVosOceSAKvdEqf.jpeg" 
                   alt="Jacinto Lefebre, Owner and Master Plumber" 
-                  className="rounded-2xl shadow-2xl w-full aspect-square object-cover object-top"
+                  className="rounded-2xl shadow-2xl w-full aspect-[3/4] object-cover object-top border-4 border-white"
                 />
                 <div className="absolute -bottom-3 -right-3 bg-pnf-red-600 text-white px-4 py-3 rounded-lg shadow-lg">
                   <p className="text-xl font-bold">28+</p>
@@ -53,7 +53,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="lg:w-2/3">
+            <div className="lg:w-2/3 lg:pt-8">
               <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Meet the Owner</h2>
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Jacinto Lefebre, Master Plumber</h3>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
