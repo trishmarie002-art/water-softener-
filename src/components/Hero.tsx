@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Link } from 'react-router-dom';
-import { Phone, ArrowRight, ShieldCheck, Clock, MapPin, Star, Droplets } from 'lucide-react';
-import { PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
+
+import { Phone, MessageSquare, ShieldCheck, Clock, MapPin, Star, Droplets } from 'lucide-react';
+import { PHONE_NUMBER_RAW } from '../constants';
 
 const images = [
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%284%29-RvHGOWWeQJaPYX7Q2X9brTxLWMrd3n.webp",
@@ -85,15 +85,15 @@ const Hero = () => {
               className="flex items-center justify-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl text-lg font-bold transition-all transform hover:scale-105 shadow-lg shadow-pnf-red-600/30"
             >
               <Phone size={24} />
-              <span>Call Now</span>
+              <span>Get My FREE Quote Now</span>
             </a>
-            <Link
-              to="/contact"
+            <a
+              href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like a free quote for my water system.")}`}
               className="flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-navy-900 px-8 py-4 rounded-xl text-lg font-bold transition-all transform hover:scale-105"
             >
-              <span>Get a Free Estimate</span>
-              <ArrowRight size={20} />
-            </Link>
+              <MessageSquare size={20} />
+              <span>Text Us Now</span>
+            </a>
           </motion.div>
 
           <motion.div

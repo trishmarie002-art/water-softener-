@@ -164,7 +164,7 @@ const FAQ = () => {
             className="inline-flex items-center gap-3 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl text-xl font-bold transition-all"
           >
             <Phone size={24} />
-            {PHONE_NUMBER}
+            Get My FREE Quote Now
           </a>
         </div>
       </section>

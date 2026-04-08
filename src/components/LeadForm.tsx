@@ -64,22 +64,24 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
         throw new Error('Failed to send email notification');
       }
 
-      // Also save to Supabase database as backup
-      try {
-        await supabase
-          .from('leads')
-          .insert([
-            {
-              full_name: formData.name,
-              phone: formData.phone,
-              email: compact ? null : formData.email,
-              service: formData.service,
-              message: formData.message || null
-            }
-          ]);
-      } catch {
-        // Database save failed but email was sent - don't fail the submission
-        console.warn('Database save failed, but email was sent');
+      // Also save to Supabase database as backup (if configured)
+      if (supabase) {
+        try {
+          await supabase
+            .from('leads')
+            .insert([
+              {
+                full_name: formData.name,
+                phone: formData.phone,
+                email: compact ? null : formData.email,
+                service: formData.service,
+                message: formData.message || null
+              }
+            ]);
+        } catch {
+          // Database save failed but email was sent - don't fail the submission
+          console.warn('Database save failed, but email was sent');
+        }
       }
 
       setIsSubmitted(true);

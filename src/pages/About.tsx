@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Link } from 'react-router-dom';
-import { ShieldCheck, Users, Heart, MapPin, Phone, ArrowRight, CheckCircle2 } from 'lucide-react';
+
+import { ShieldCheck, Users, Heart, Phone, MessageSquare, CheckCircle2 } from 'lucide-react';
 import { COMPANY_NAME, PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
 
 const About = () => {
@@ -37,23 +37,23 @@ const About = () => {
       </section>
 
       {/* Our Story */}
-      <section className="py-20 bg-white">
+      <section className="pt-8 pb-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2">
-              <div className="relative">
+          <div className="flex flex-col lg:flex-row items-start gap-12">
+            <div className="lg:w-1/3 -mt-32 relative z-20">
+              <div className="relative max-w-[260px] mx-auto">
                 <img 
-                  src="/images/jacinto-lefebre.jpg" 
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000004496.jpg-zk2JdT3h7UvxFobdVosOceSAKvdEqf.jpeg" 
                   alt="Jacinto Lefebre, Owner and Master Plumber" 
-                  className="rounded-2xl shadow-2xl w-full object-cover"
+                  className="rounded-2xl shadow-2xl w-full aspect-[3/4] object-cover object-top border-4 border-white"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-pnf-red-600 text-white px-6 py-4 rounded-xl shadow-lg">
-                  <p className="text-2xl font-bold">28+</p>
-                  <p className="text-sm uppercase tracking-wider">Years Experience</p>
+                <div className="absolute -bottom-3 -right-3 bg-pnf-red-600 text-white px-4 py-3 rounded-lg shadow-lg">
+                  <p className="text-xl font-bold">28+</p>
+                  <p className="text-xs uppercase tracking-wider">Years Experience</p>
                 </div>
               </div>
             </div>
-            <div className="lg:w-1/2">
+            <div className="lg:w-2/3 lg:pt-8">
               <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Meet the Owner</h2>
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Jacinto Lefebre, Master Plumber</h3>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
@@ -138,11 +138,15 @@ const About = () => {
               className="bg-white text-pnf-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition-all flex items-center justify-center gap-3"
             >
               <Phone size={28} />
-              {PHONE_NUMBER}
+              Get My FREE Quote Now
             </a>
-            <Link to="/contact" className="bg-navy-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-navy-700 transition-all">
-              Get a Free Estimate
-            </Link>
+            <a 
+              href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like a free quote for my water system.")}`}
+              className="bg-navy-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-navy-700 transition-all flex items-center justify-center gap-3"
+            >
+              <MessageSquare size={24} />
+              Text Us - Let&apos;s Chat!
+            </a>
           </div>
         </div>
       </section>

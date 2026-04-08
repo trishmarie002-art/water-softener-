@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Droplets, Thermometer, Filter, CheckCircle2, ArrowRight, Phone } from 'lucide-react';
+import { Droplets, Thermometer, Filter, CheckCircle2, ArrowRight, Phone, MessageSquare } from 'lucide-react';
 import { PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
 
 const Services = () => {
@@ -154,15 +154,15 @@ const Services = () => {
               className="inline-flex items-center justify-center gap-3 bg-white text-pnf-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition-all shadow-2xl"
             >
               <Phone size={28} />
-              {PHONE_NUMBER}
+              Get My FREE Quote Now
             </a>
-            <Link 
-              to="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-navy-800 hover:bg-navy-700 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all"
+            <a 
+              href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like a free quote for my water system.")}`}
+              className="inline-flex items-center justify-center gap-3 bg-navy-800 hover:bg-navy-700 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all"
             >
-              Request a Quote
-              <ArrowRight size={24} />
-            </Link>
+              <MessageSquare size={24} />
+              Text Us - Let&apos;s Chat!
+            </a>
           </div>
         </div>
       </section>

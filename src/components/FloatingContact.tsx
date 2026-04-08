@@ -26,7 +26,7 @@ const FloatingContact = () => {
               className="flex items-center gap-3 bg-white shadow-lg rounded-full pl-4 pr-2 py-2 hover:shadow-xl transition-all group"
             >
               <span className="text-navy-800 font-semibold whitespace-nowrap">
-                Call {PHONE_NUMBER}
+                Get My FREE Quote Now
               </span>
               <div className="bg-green-500 text-white p-3 rounded-full group-hover:bg-green-600 transition-colors">
                 <Phone size={20} />
@@ -39,7 +39,7 @@ const FloatingContact = () => {
               className="flex items-center gap-3 bg-white shadow-lg rounded-full pl-4 pr-2 py-2 hover:shadow-xl transition-all group"
             >
               <span className="text-navy-800 font-semibold whitespace-nowrap">
-                Send SMS
+                Text Us - Let&apos;s Chat!
               </span>
               <div className="bg-pnf-red-600 text-white p-3 rounded-full group-hover:bg-pnf-red-700 transition-colors">
                 <MessageSquare size={20} />
