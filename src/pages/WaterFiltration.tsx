@@ -20,7 +20,7 @@ const WaterFiltration = () => {
                 </p>
                 <div className="flex flex-wrap gap-4 mb-10">
                   <a href={`tel:${PHONE_NUMBER_RAW}`} className="bg-pnf-red-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-pnf-red-700 transition-all shadow-lg shadow-pnf-red-600/20">
-                    Call for Consultation
+                    Get My FREE Quote Now
                   </a>
                 </div>
               </motion.div>
@@ -111,7 +111,7 @@ const WaterFiltration = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-8">Ready for Cleaner Water?</h2>
           <a href={`tel:${PHONE_NUMBER_RAW}`} className="inline-flex items-center gap-3 bg-white text-pnf-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition-all shadow-2xl">
             <Phone size={28} />
-            {PHONE_NUMBER}
+            Get My FREE Quote Now
           </a>
         </div>
       </section>

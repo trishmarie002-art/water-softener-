@@ -59,7 +59,7 @@ const Header = () => {
             className="hidden md:flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-4 py-2 rounded-full font-bold transition-transform hover:scale-105"
           >
             <Phone size={18} />
-            <span>{PHONE_NUMBER}</span>
+            <span>Get My FREE Quote Now</span>
           </a>
           
           <button
@@ -102,7 +102,7 @@ const Header = () => {
                 className="flex items-center justify-center gap-2 bg-pnf-red-600 text-white py-4 rounded-xl font-bold mt-4"
               >
                 <Phone size={20} />
-                <span>Call Now: {PHONE_NUMBER}</span>
+                <span>Get My FREE Quote Now</span>
               </a>
             </div>
           </motion.div>

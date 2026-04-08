@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Link } from 'react-router-dom';
-import { ShieldCheck, Users, Heart, MapPin, Phone, ArrowRight, CheckCircle2 } from 'lucide-react';
+
+import { ShieldCheck, Users, Heart, Phone, MessageSquare, CheckCircle2 } from 'lucide-react';
 import { COMPANY_NAME, PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
 
 const About = () => {
@@ -138,11 +138,15 @@ const About = () => {
               className="bg-white text-pnf-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition-all flex items-center justify-center gap-3"
             >
               <Phone size={28} />
-              {PHONE_NUMBER}
+              Get My FREE Quote Now
             </a>
-            <Link to="/contact" className="bg-navy-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-navy-700 transition-all">
-              Get a Free Estimate
-            </Link>
+            <a 
+              href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like a free quote for my water system.")}`}
+              className="bg-navy-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-navy-700 transition-all flex items-center justify-center gap-3"
+            >
+              <MessageSquare size={24} />
+              Text Us - Let&apos;s Chat!
+            </a>
           </div>
         </div>
       </section>

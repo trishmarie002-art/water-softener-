@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Droplets, Thermometer, Filter, ShieldCheck, Clock, Award, CheckCircle2, ArrowRight, Phone, ChevronDown } from 'lucide-react';
+import { Droplets, Thermometer, Filter, ShieldCheck, Clock, Award, CheckCircle2, ArrowRight, Phone, ChevronDown, MessageSquare } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
@@ -278,14 +278,15 @@ const Home = () => {
               className="bg-white text-pnf-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition-all flex items-center justify-center gap-3 shadow-2xl"
             >
               <Phone size={28} />
-              {PHONE_NUMBER}
+              Get My FREE Quote Now
             </a>
-            <Link 
-              to="/contact" 
-              className="bg-navy-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-navy-700 transition-all flex items-center justify-center"
+            <a 
+              href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like a free quote for my water system.")}`}
+              className="bg-navy-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-navy-700 transition-all flex items-center justify-center gap-3"
             >
-              Contact Us Online
-            </Link>
+              <MessageSquare size={24} />
+              Text Us - Let&apos;s Chat!
+            </a>
           </div>
         </div>
       </section>
