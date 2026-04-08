@@ -30,16 +30,28 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
     setIsLoading(true);
     
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          subject: `New Lead: ${formData.service} - ${formData.name}`,
+          from_name: 'PNF Water Heaters & Softeners Website',
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email || 'Not provided',
+          service: formData.service,
+          message: formData.message || 'No message provided',
+        }),
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to submit form');
+      const result = await response.json();
+      
+      if (!result.success) {
+        throw new Error(result.message || 'Failed to submit form');
       }
 
       setIsLoading(false);
