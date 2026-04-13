@@ -28,9 +28,9 @@ const ServiceAreas = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-8">San Antonio Water Softener Installation</h2>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
@@ -71,7 +71,7 @@ const ServiceAreas = () => {
       </section>
 
       {/* Local SEO Blurbs */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-4">Why San Antonio Homeowners Choose Us</h2>
           <p className="text-lg text-gray-600 text-center mb-16 max-w-2xl mx-auto">We understand the unique water challenges in every neighborhood we serve.</p>

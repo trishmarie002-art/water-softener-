@@ -29,9 +29,9 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-16">
+          <div className="flex flex-col lg:flex-row gap-12">
             <div className="lg:w-1/2">
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Get In Touch</h2>
               <p className="text-lg text-gray-600 mb-12 leading-relaxed">

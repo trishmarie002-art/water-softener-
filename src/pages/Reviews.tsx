@@ -37,9 +37,9 @@ const Reviews = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {reviews.map((review, i) => (
               <div key={i} className="bg-gray-50 p-8 rounded-2xl border border-gray-100 relative shadow-sm hover:shadow-md transition-all">
                 <Quote className="text-blue-100 absolute top-4 right-4" size={48} />
@@ -63,7 +63,7 @@ const Reviews = () => {
         </div>
       </section>
 
-      <section className="py-20 text-white text-center relative overflow-hidden">
+      <section className="py-16 text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%282%29-XSqDPqrNjs3jJof5tMG0gyMnleXSJm.webp" 

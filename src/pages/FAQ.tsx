@@ -102,7 +102,7 @@ const FAQ = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
           {faqs.map((category, catIndex) => (
             <div key={catIndex} className="mb-12">

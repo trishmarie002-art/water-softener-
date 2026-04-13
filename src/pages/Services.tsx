@@ -74,9 +74,9 @@ const Services = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="space-y-20">
+          <div className="space-y-16">
             {services.map((service, index) => (
               <div 
                 key={service.id}
@@ -143,7 +143,7 @@ const Services = () => {
         </div>
       </section>
 
-      <section className="py-20 text-white text-center relative overflow-hidden">
+      <section className="py-16 text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%282%29-XSqDPqrNjs3jJof5tMG0gyMnleXSJm.webp" 
