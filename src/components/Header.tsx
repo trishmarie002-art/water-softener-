@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-2"
+      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm py-1.5"
     >
       <div className="container mx-auto px-4 flex items-center justify-between gap-4">
         {/* Logo */}
@@ -35,7 +35,7 @@ const Header = () => {
           <img 
             src={LOGO_URL} 
             alt={COMPANY_NAME}
-            className="h-10 w-auto rounded-lg"
+            className="h-9 w-auto rounded"
           />
         </Link>
 
@@ -59,21 +59,21 @@ const Header = () => {
         <div className="flex items-center gap-3 shrink-0">
           <a
             href={`tel:${PHONE_NUMBER_RAW}`}
-            className="hidden lg:flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-4 py-2 rounded-full text-sm font-bold transition-transform hover:scale-105 whitespace-nowrap"
+            className="hidden lg:flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-3 py-1.5 rounded-full text-xs font-bold transition-transform hover:scale-105 whitespace-nowrap"
           >
-            <Phone size={16} />
+            <Phone size={14} />
             <span className="hidden xl:inline">Get FREE Quote</span>
             <span className="xl:hidden">{PHONE_NUMBER}</span>
           </a>
           
           <button
-            className="xl:hidden p-2 rounded-md"
+            className="xl:hidden p-1.5 rounded-md"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className="text-navy-800" />
+              <X className="text-navy-800" size={22} />
             ) : (
-              <Menu className="text-navy-800" />
+              <Menu className="text-navy-800" size={22} />
             )}
           </button>
         </div>
