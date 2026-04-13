@@ -21,15 +21,31 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden bg-navy-950 py-10 md:py-20 px-4 md:px-8">
-      {/* Background Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800 z-0" />
+    <section className="relative min-h-screen flex items-center overflow-hidden py-24 md:py-20">
+      {/* Background Slideshow */}
+      <div className="absolute inset-0 z-0">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="absolute inset-0"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-900/70 to-transparent z-10" />
+            <img
+              src={images[currentIndex]}
+              alt="PNF Water Heaters & Softeners"
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </motion.div>
+        </AnimatePresence>
+      </div>
 
-      {/* Main Container - Mobile: stacked, Desktop: side-by-side */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
-        
-        {/* Left Column - Text Content */}
-        <div className="flex flex-col items-center text-center lg:items-start lg:text-left lg:w-1/2">
+      <div className="container mx-auto px-4 relative z-20 pt-16 md:pt-8">
+        <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -44,7 +60,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-tight mb-4 md:mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4 md:mb-6"
           >
             Hard Water Is <span className="text-pnf-red-400">Destroying</span> Your San Antonio Home Right Now
           </motion.h1>
@@ -53,17 +69,16 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="text-base md:text-lg lg:text-xl text-blue-50 mb-6 md:mb-8 max-w-xl leading-relaxed"
+            className="text-base md:text-xl text-blue-50 mb-6 md:mb-8 max-w-2xl leading-relaxed"
           >
             <strong>San Antonio has some of the HARDEST water in Texas.</strong> Every day without a water softener costs you money in damaged appliances, higher energy bills, and plumbing repairs. Get your FREE water test today.
           </motion.p>
 
-          {/* CTAs - Stack on mobile, row on larger screens */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 md:mb-10 max-w-md lg:max-w-none"
+            className="flex flex-col sm:flex-row gap-3 mb-8 md:mb-10"
           >
             <a
               href={`tel:${PHONE_NUMBER_RAW}`}
@@ -81,49 +96,29 @@ const Hero = () => {
             </a>
           </motion.div>
 
-          {/* Trust Badges */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
-            className="grid grid-cols-2 gap-3 md:gap-4 w-full max-w-md lg:max-w-none"
+            className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6"
           >
-            <div className="flex items-center justify-center lg:justify-start gap-2 text-white">
+            <div className="flex items-center gap-2 text-white">
               <Clock className="text-pnf-red-400 shrink-0" size={18} />
               <span className="text-xs md:text-sm font-medium">Same-Day Service</span>
             </div>
-            <div className="flex items-center justify-center lg:justify-start gap-2 text-white">
+            <div className="flex items-center gap-2 text-white">
               <MapPin className="text-pnf-red-400 shrink-0" size={18} />
               <span className="text-xs md:text-sm font-medium">100% Local San Antonio</span>
             </div>
-            <div className="flex items-center justify-center lg:justify-start gap-2 text-white">
+            <div className="flex items-center gap-2 text-white">
               <ShieldCheck className="text-pnf-red-400 shrink-0" size={18} />
               <span className="text-xs md:text-sm font-medium">28+ Years Experience</span>
             </div>
-            <div className="flex items-center justify-center lg:justify-start gap-2 text-white">
+            <div className="flex items-center gap-2 text-white">
               <Droplets className="text-pnf-red-400 shrink-0" size={18} />
               <span className="text-xs md:text-sm font-medium">FREE Water Testing</span>
             </div>
           </motion.div>
-        </div>
-
-        {/* Right Column - Image Slideshow */}
-        <div className="w-full lg:w-1/2 flex items-center justify-center">
-          <div className="relative w-full max-h-[300px] lg:max-h-[600px] rounded-2xl overflow-hidden shadow-2xl">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={currentIndex}
-                src={images[currentIndex]}
-                alt="PNF Water Heaters & Softeners"
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-                className="w-full h-full max-h-[300px] lg:max-h-[600px] object-contain"
-                referrerPolicy="no-referrer"
-              />
-            </AnimatePresence>
-          </div>
         </div>
       </div>
 
@@ -131,7 +126,7 @@ const Hero = () => {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 text-white/50 hidden lg:block"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-white/50 hidden md:block"
       >
         <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
           <div className="w-1 h-2 bg-white rounded-full" />
