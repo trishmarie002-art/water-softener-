@@ -189,48 +189,58 @@ const Home = () => {
       <section className="py-16 bg-navy-900 text-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="lg:w-1/2"
+            >
               <h2 className="text-pnf-red-400 font-bold uppercase tracking-wider mb-4">Why San Antonio Homeowners Choose Us</h2>
               <h3 className="text-3xl md:text-4xl font-bold mb-10 leading-tight">
                 Over 500+ San Antonio Families Trust Us With Their Water
               </h3>
               <div className="space-y-8">
-                <div className="flex gap-4">
-                  <div className="bg-navy-800 p-3 rounded-lg shrink-0">
-                    <ShieldCheck className="text-pnf-red-400" size={28} />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2">Licensed & Certified</h4>
-                    <p className="text-navy-200">Our technicians are fully licensed and undergo regular training to stay ahead of industry standards.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="bg-navy-800 p-3 rounded-lg shrink-0">
-                    <Clock className="text-pnf-red-400" size={28} />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2">Punctual & Professional</h4>
-                    <p className="text-navy-200">We respect your time. We arrive on schedule and treat your home with the utmost care and cleanliness.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="bg-navy-800 p-3 rounded-lg shrink-0">
-                    <Award className="text-pnf-red-400" size={28} />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2">Premium Equipment</h4>
-                    <p className="text-navy-200">We only install top-tier, high-efficiency systems from brands we trust and stand behind.</p>
-                  </div>
-                </div>
+                {[
+                  { icon: ShieldCheck, title: "Licensed & Certified", description: "Our technicians are fully licensed and undergo regular training to stay ahead of industry standards." },
+                  { icon: Clock, title: "Punctual & Professional", description: "We respect your time. We arrive on schedule and treat your home with the utmost care and cleanliness." },
+                  { icon: Award, title: "Premium Equipment", description: "We only install top-tier, high-efficiency systems from brands we trust and stand behind." }
+                ].map((item, index) => (
+                  <motion.div 
+                    key={index}
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.15 }}
+                    className="flex gap-4"
+                  >
+                    <motion.div 
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      className="bg-navy-800 p-3 rounded-lg shrink-0"
+                    >
+                      <item.icon className="text-pnf-red-400" size={28} />
+                    </motion.div>
+                    <div>
+                      <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+                      <p className="text-navy-200">{item.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-            </div>
-            <div className="lg:w-1/2 w-full">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="lg:w-1/2 w-full"
+            >
               <LeadForm 
                 title="Get Your FREE Water Test Today" 
                 subtitle="Find out exactly what's in YOUR water. No cost, no obligation - we'll test your water and show you the results."
                 className="text-gray-900"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -238,34 +248,52 @@ const Home = () => {
       {/* Testimonials Preview */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
             <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Real San Antonio Homeowners</h2>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900">See Why Your Neighbors Chose Us</h3>
             <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Don&apos;t take our word for it - hear from San Antonio families who solved their hard water problems.</p>
-          </div>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {[
               { name: "Sarah J.", location: "Stone Oak", text: "The water softener installation was quick and professional. No more hard water spots on my dishes!" },
               { name: "Michael R.", location: "Alamo Heights", text: "Switched to a tankless water heater and couldn't be happier. Endless hot water and lower bills." },
               { name: "David L.", location: "Helotes", text: "Great service from start to finish. They explained everything clearly and the price was fair." }
             ].map((review, i) => (
-              <div key={i} className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
+                className="bg-gray-50 p-8 rounded-2xl border border-gray-100"
+              >
                 <div className="flex text-yellow-400 mb-4">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={18} fill="currentColor" />)}
+                  {[...Array(5)].map((_, j) => <Star key={j} size={18} fill="currentColor" />)}
                 </div>
                 <p className="text-gray-700 italic mb-6">"{review.text}"</p>
                 <div>
                   <p className="font-bold text-gray-900">{review.name}</p>
                   <p className="text-sm text-gray-500">{review.location}, TX</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-          <div className="text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
             <Link to="/reviews" className="bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-bold transition-all inline-block">
               Read More Reviews
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -288,29 +316,58 @@ const Home = () => {
           <Droplets className="absolute bottom-0 right-0 w-64 h-64 translate-x-1/2 translate-y-1/2" />
         </div>
         <div className="container mx-auto px-4 text-center relative z-20">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Stop Paying for Hard Water Damage</h2>
-          <p className="text-xl text-navy-100 mb-4 max-w-2xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-5xl font-bold mb-6"
+          >
+            Stop Paying for Hard Water Damage
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-xl text-navy-100 mb-4 max-w-2xl mx-auto"
+          >
             Every day you wait costs you money. Get your <strong>FREE water test</strong> and see exactly what&apos;s in your San Antonio water.
-          </p>
-          <p className="text-lg text-yellow-400 font-bold mb-10">
+          </motion.p>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-yellow-400 font-bold mb-10"
+          >
             Call now - Same day appointments available!
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a 
+          </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="flex flex-col sm:flex-row justify-center gap-4"
+          >
+            <motion.a 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
               href={`tel:${PHONE_NUMBER_RAW}`} 
               className="bg-white text-pnf-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition-all flex items-center justify-center gap-3 shadow-2xl"
             >
               <Phone size={28} />
               Get My FREE Quote Now
-            </a>
-            <a 
+            </motion.a>
+            <motion.a 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
               href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like a free quote for my water system.")}`}
               className="bg-navy-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-navy-700 transition-all flex items-center justify-center gap-3"
             >
               <MessageSquare size={24} />
               Text Us - Let&apos;s Chat!
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
         </div>
       </section>
     </div>

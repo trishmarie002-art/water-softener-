@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import { ChevronDown, Phone } from 'lucide-react';
 import { PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
 import { cn } from '../lib/utils';
@@ -87,10 +88,22 @@ const FAQ = () => {
     <div className="pt-24">
       <section className="bg-navy-900 py-20 text-white text-center relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Frequently Asked Questions</h1>
-          <p className="text-xl text-navy-200 max-w-2xl mx-auto">
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-6xl font-bold mb-6"
+          >
+            Frequently Asked Questions
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl text-navy-200 max-w-2xl mx-auto"
+          >
             Get answers to common questions about water softeners, water heaters, and filtration systems.
-          </p>
+          </motion.p>
         </div>
         <div className="absolute inset-0 opacity-20">
           <img 
@@ -105,7 +118,14 @@ const FAQ = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
           {faqs.map((category, catIndex) => (
-            <div key={catIndex} className="mb-12">
+            <motion.div 
+              key={catIndex} 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: catIndex * 0.1 }}
+              className="mb-12"
+            >
               <h2 className="text-2xl font-bold text-navy-800 mb-6 pb-2 border-b-2 border-pnf-red-600">
                 {category.category}
               </h2>
@@ -113,8 +133,12 @@ const FAQ = () => {
                 {category.questions.map((faq, faqIndex) => {
                   const currentIndex = questionIndex++;
                   return (
-                    <div 
-                      key={faqIndex} 
+                    <motion.div 
+                      key={faqIndex}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: faqIndex * 0.1 }}
                       className="bg-gray-50 rounded-xl border border-gray-100 overflow-hidden"
                     >
                       <button
@@ -140,11 +164,11 @@ const FAQ = () => {
                           {faq.a}
                         </p>
                       </div>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>

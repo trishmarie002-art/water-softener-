@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { Star, Quote, CheckCircle2, Phone } from 'lucide-react';
 import { PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
 
@@ -16,16 +17,42 @@ const Reviews = () => {
     <div className="pt-24">
       <section className="bg-navy-900 py-20 text-center text-white relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Customer Reviews</h1>
-          <div className="flex justify-center items-center gap-2 mb-6">
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-6xl font-bold mb-6"
+          >
+            Customer Reviews
+          </motion.h1>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex justify-center items-center gap-2 mb-6"
+          >
             <div className="flex text-yellow-400">
-              {[...Array(5)].map((_, i) => <Star key={i} size={24} fill="currentColor" />)}
+              {[...Array(5)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, rotate: -180 }}
+                  animate={{ opacity: 1, rotate: 0 }}
+                  transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
+                >
+                  <Star size={24} fill="currentColor" />
+                </motion.div>
+              ))}
             </div>
             <span className="text-xl font-bold">5 Star Rating</span>
-          </div>
-          <p className="text-xl text-navy-200 max-w-2xl mx-auto">
+          </motion.div>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-xl text-navy-200 max-w-2xl mx-auto"
+          >
             See why hundreds of San Antonio homeowners trust us with their water systems.
-          </p>
+          </motion.p>
         </div>
         <div className="absolute inset-0 opacity-20">
           <img 
@@ -41,10 +68,18 @@ const Reviews = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {reviews.map((review, i) => (
-              <div key={i} className="bg-gray-50 p-8 rounded-2xl border border-gray-100 relative shadow-sm hover:shadow-md transition-all">
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
+                className="bg-gray-50 p-8 rounded-2xl border border-gray-100 relative shadow-sm transition-all"
+              >
                 <Quote className="text-blue-100 absolute top-4 right-4" size={48} />
                 <div className="flex text-yellow-400 mb-4 relative z-10">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={18} fill="currentColor" />)}
+                  {[...Array(5)].map((_, j) => <Star key={j} size={18} fill="currentColor" />)}
                 </div>
                 <p className="text-gray-700 italic mb-6 relative z-10 leading-relaxed">"{review.text}"</p>
                 <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-200">
@@ -57,7 +92,7 @@ const Reviews = () => {
                     <p className="text-xs text-gray-400">{review.date}</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
