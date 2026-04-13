@@ -53,7 +53,7 @@ const Hero = () => {
             className="inline-flex items-center gap-2 bg-pnf-red-600/20 backdrop-blur-md border border-pnf-red-400/30 text-white px-4 py-2 rounded-full mb-6"
           >
             <Star className="text-yellow-400 fill-yellow-400 w-4 h-4" />
-            <span className="text-sm font-bold uppercase tracking-wider">Your Local Plumbing Company</span>
+            <span className="text-sm font-bold uppercase tracking-wider">San Antonio&apos;s Trusted Water Experts</span>
           </motion.div>
 
           <motion.h1
@@ -62,7 +62,7 @@ const Hero = () => {
             transition={{ delay: 0.4 }}
             className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6"
           >
-            Clean, Reliable <span className="text-pnf-red-400">Water Solutions</span> for San Antonio Homes
+            Hard Water Is <span className="text-pnf-red-400">Destroying</span> Your San Antonio Home Right Now
           </motion.h1>
 
           <motion.p
@@ -71,7 +71,7 @@ const Hero = () => {
             transition={{ delay: 0.6 }}
             className="text-xl text-blue-50 mb-10 max-w-2xl leading-relaxed"
           >
-            Professional Water Softener & Water Heater Installation Done Right the First Time. Serving San Antonio and surrounding areas with 5-star quality.
+            <strong>San Antonio has some of the HARDEST water in Texas.</strong> Every day without a water softener costs you money in damaged appliances, higher energy bills, and plumbing repairs. Get your FREE water test today.
           </motion.p>
 
           <motion.div
@@ -82,17 +82,17 @@ const Hero = () => {
           >
             <a
               href={`tel:${PHONE_NUMBER_RAW}`}
-              className="flex items-center justify-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl text-lg font-bold transition-all transform hover:scale-105 shadow-lg shadow-pnf-red-600/30"
+              className="flex items-center justify-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-5 rounded-xl text-xl font-black transition-all transform hover:scale-105 shadow-lg shadow-pnf-red-600/30 animate-pulse hover:animate-none"
             >
               <Phone size={24} />
-              <span>Get My FREE Quote Now</span>
+              <span>CALL NOW - FREE Quote</span>
             </a>
             <a
-              href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like a free quote for my water system.")}`}
-              className="flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-navy-900 px-8 py-4 rounded-xl text-lg font-bold transition-all transform hover:scale-105"
+              href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I need help with my hard water problem in San Antonio.")}`}
+              className="flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-navy-900 px-8 py-5 rounded-xl text-lg font-bold transition-all transform hover:scale-105"
             >
               <MessageSquare size={20} />
-              <span>Text Us Now</span>
+              <span>Text Us - Fast Response</span>
             </a>
           </motion.div>
 
@@ -104,19 +104,19 @@ const Hero = () => {
           >
             <div className="flex items-center gap-3 text-white">
               <Clock className="text-pnf-red-400 shrink-0" size={24} />
-              <span className="text-sm font-medium">Fast Response Times</span>
+              <span className="text-sm font-medium">Same-Day Service</span>
             </div>
             <div className="flex items-center gap-3 text-white">
               <MapPin className="text-pnf-red-400 shrink-0" size={24} />
-              <span className="text-sm font-medium">Local SA Experts</span>
+              <span className="text-sm font-medium">100% Local San Antonio</span>
             </div>
             <div className="flex items-center gap-3 text-white">
               <ShieldCheck className="text-pnf-red-400 shrink-0" size={24} />
-              <span className="text-sm font-medium">Quality Guaranteed</span>
+              <span className="text-sm font-medium">28+ Years Experience</span>
             </div>
             <div className="flex items-center gap-3 text-white">
               <Droplets className="text-pnf-red-400 shrink-0" size={24} />
-              <span className="text-sm font-medium">Residential Pros</span>
+              <span className="text-sm font-medium">FREE Water Testing</span>
             </div>
           </motion.div>
         </div>

@@ -21,10 +21,19 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-navy-200 text-center max-w-3xl mx-auto"
+            className="text-xl text-navy-200 text-center max-w-3xl mx-auto mb-8"
           >
-            Your local plumbing company. Family-owned water system specialists dedicated to quality, integrity, and your home's comfort.
+            Family-owned water softener experts serving San Antonio for 28+ years. We&apos;ve helped over 500 local families solve their hard water problems.
           </motion.p>
+          <motion.a
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            href={`tel:${PHONE_NUMBER_RAW}`}
+            className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-black text-lg transition-all"
+          >
+            <Phone size={20} /> Get Your FREE Water Test
+          </motion.a>
         </div>
         <div className="absolute inset-0 opacity-20">
           <img 
@@ -128,9 +137,12 @@ const About = () => {
           <div className="absolute inset-0 bg-navy-900/60 backdrop-blur-[1px]" />
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8">Experience the Difference</h2>
-          <p className="text-xl text-navy-200 mb-10 max-w-2xl mx-auto">
-            Ready to work with a team that actually cares about your home? Give us a call today.
+          <h2 className="text-3xl md:text-5xl font-bold mb-8">Your San Antonio Neighbors Trust Us - You Can Too</h2>
+          <p className="text-xl text-navy-200 mb-4 max-w-2xl mx-auto">
+            Stop letting hard water damage your home. Get your FREE water test today and see exactly what&apos;s in your water.
+          </p>
+          <p className="text-lg text-yellow-400 font-bold mb-10">
+            No cost, no obligation - Same day appointments available!
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <a 

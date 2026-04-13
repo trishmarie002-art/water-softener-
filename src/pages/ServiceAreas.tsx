@@ -7,10 +7,16 @@ const ServiceAreas = () => {
     <div className="pt-24">
       <section className="bg-navy-900 py-20 text-white text-center relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Service Areas</h1>
-          <p className="text-xl text-navy-200 max-w-2xl mx-auto">
-            Providing expert water system services to San Antonio and all surrounding communities.
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">Water Softener Installation Near You</h1>
+          <p className="text-xl text-navy-200 max-w-2xl mx-auto mb-8">
+            Serving San Antonio, Boerne, New Braunfels, Helotes, Stone Oak, and all surrounding areas. <strong>Same-day service available.</strong>
           </p>
+          <a 
+            href={`tel:${PHONE_NUMBER_RAW}`}
+            className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-black text-lg transition-all"
+          >
+            <Phone size={20} /> Call Now - FREE Water Test
+          </a>
         </div>
         <div className="absolute inset-0 opacity-20">
           <img 
@@ -26,10 +32,16 @@ const ServiceAreas = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Where We Work</h2>
-              <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-                We are proud to serve the greater San Antonio metropolitan area. Our team of expert technicians is always nearby, ready to provide fast and reliable water softener and water heater services.
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">San Antonio Water Softener Installation</h2>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                <strong>San Antonio has some of the hardest water in Texas</strong> - averaging 15-20 grains of hardness. That means every home in our service area is at risk for:
               </p>
+              <ul className="text-lg text-gray-600 mb-10 space-y-2">
+                <li className="flex items-start gap-2"><CheckCircle2 className="text-pnf-red-600 shrink-0 mt-1" size={18} /> Scale buildup destroying appliances</li>
+                <li className="flex items-start gap-2"><CheckCircle2 className="text-pnf-red-600 shrink-0 mt-1" size={18} /> Clogged pipes and reduced water pressure</li>
+                <li className="flex items-start gap-2"><CheckCircle2 className="text-pnf-red-600 shrink-0 mt-1" size={18} /> Dry skin, dull hair, and spotted dishes</li>
+                <li className="flex items-start gap-2"><CheckCircle2 className="text-pnf-red-600 shrink-0 mt-1" size={18} /> Higher energy bills from inefficient water heaters</li>
+              </ul>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {SERVICE_AREAS.map(area => (
                   <div key={area} className="flex items-center gap-3 bg-gray-50 p-4 rounded-xl border border-gray-100">
@@ -61,21 +73,41 @@ const ServiceAreas = () => {
       {/* Local SEO Blurbs */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-16">Trusted Local Service</h2>
+          <h2 className="text-3xl font-bold text-center mb-4">Why San Antonio Homeowners Choose Us</h2>
+          <p className="text-lg text-gray-600 text-center mb-16 max-w-2xl mx-auto">We understand the unique water challenges in every neighborhood we serve.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h4 className="text-xl font-bold mb-4">San Antonio Water Experts</h4>
-              <p className="text-gray-600">From Stone Oak to Southtown, we know San Antonio water. Our systems are specifically calibrated for the local hardness levels found in the Edwards Aquifer.</p>
+            <div className="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-pnf-red-600">
+              <h4 className="text-xl font-bold mb-4">Water Softener San Antonio</h4>
+              <p className="text-gray-600 mb-4">From Stone Oak to Southtown, we know San Antonio water. Our systems are specifically calibrated for the extreme hardness levels (15-20 grains) found in the Edwards Aquifer region.</p>
+              <p className="text-pnf-red-600 font-bold">FREE water test for all San Antonio homes</p>
             </div>
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h4 className="text-xl font-bold mb-4">New Braunfels & Schertz</h4>
-              <p className="text-gray-600">Fast response times for our neighbors to the northeast. We provide same-day water heater replacement for homes in New Braunfels and Schertz.</p>
+            <div className="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-pnf-red-600">
+              <h4 className="text-xl font-bold mb-4">Water Softener New Braunfels & Schertz</h4>
+              <p className="text-gray-600 mb-4">Fast response times for our neighbors to the northeast. We provide same-day water softener and water heater installation for homes in New Braunfels, Schertz, and Cibolo.</p>
+              <p className="text-pnf-red-600 font-bold">Same-day installation available</p>
             </div>
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h4 className="text-xl font-bold mb-4">Boerne & Helotes</h4>
-              <p className="text-gray-600">Serving the hill country with premium water filtration and softening solutions. We understand the unique well water challenges in these areas.</p>
+            <div className="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-pnf-red-600">
+              <h4 className="text-xl font-bold mb-4">Water Softener Boerne & Helotes</h4>
+              <p className="text-gray-600 mb-4">Serving the Texas Hill Country with premium water softeners and filtration systems. We understand the unique well water challenges in these areas and have solutions for every home.</p>
+              <p className="text-pnf-red-600 font-bold">Well water specialists</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-16 bg-pnf-red-600">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Stop Hard Water Damage?</h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Get your FREE water test today and see exactly what&apos;s in your water. No cost, no obligation.
+          </p>
+          <a 
+            href={`tel:${PHONE_NUMBER_RAW}`}
+            className="inline-flex items-center gap-2 bg-white text-pnf-red-600 px-8 py-4 rounded-xl font-black text-lg hover:bg-gray-100 transition-all"
+          >
+            <Phone size={20} /> Call Now - Same Day Service
+          </a>
         </div>
       </section>
     </div>
