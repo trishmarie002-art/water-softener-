@@ -49,7 +49,7 @@ const About = () => {
       <section className="pt-8 pb-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-start gap-10">
-            <div className="lg:w-1/3 -mt-32 relative z-20">
+            <div className="lg:w-1/3 relative">
               <div className="relative max-w-[260px] mx-auto">
                 <img 
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000004496.jpg-zk2JdT3h7UvxFobdVosOceSAKvdEqf.jpeg" 
