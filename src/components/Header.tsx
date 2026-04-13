@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Phone, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { COMPANY_NAME, PHONE_NUMBER, PHONE_NUMBER_RAW, LOGO_URL } from '../constants';
+import { PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
 import { cn } from '../lib/utils';
 
 const Header = () => {
@@ -30,13 +30,9 @@ const Header = () => {
       className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm py-1.5"
     >
       <div className="container mx-auto px-4 flex items-center justify-between gap-4">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 shrink-0">
-          <img 
-            src={LOGO_URL} 
-            alt={COMPANY_NAME}
-            className="h-5 w-auto rounded"
-          />
+        {/* Company Name */}
+        <Link to="/" className="flex items-center shrink-0">
+          <span className="text-navy-900 font-bold text-sm">PNF Water</span>
         </Link>
 
         {/* Desktop Nav */}
