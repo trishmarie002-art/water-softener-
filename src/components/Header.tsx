@@ -35,7 +35,7 @@ const Header = () => {
           <img 
             src={LOGO_URL} 
             alt={COMPANY_NAME}
-            className="h-7 w-auto rounded"
+            className="h-5 w-auto rounded"
           />
         </Link>
 
