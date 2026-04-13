@@ -30,15 +30,12 @@ const Header = () => {
       className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-3"
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 shrink-0">
+        <Link to="/" className="flex items-center gap-3 shrink-0">
           <img 
             src={LOGO_URL} 
             alt={COMPANY_NAME}
-            className="h-10 w-10 rounded-lg object-cover"
+            className="h-14 max-w-[180px] object-contain rounded-lg"
           />
-          <span className="hidden sm:block text-navy-900 font-bold text-sm leading-tight max-w-[140px]">
-            PNF Water Heaters & Softeners
-          </span>
         </Link>
 
         {/* Desktop Nav */}
