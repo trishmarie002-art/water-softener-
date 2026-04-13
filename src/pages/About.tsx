@@ -25,15 +25,17 @@ const About = () => {
           >
             Family-owned water softener experts serving San Antonio for 28+ years. We&apos;ve helped over 500 local families solve their hard water problems.
           </motion.p>
-          <motion.a
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            href={`tel:${PHONE_NUMBER_RAW}`}
-            className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-black text-lg transition-all"
-          >
-            <Phone size={20} /> Get Your FREE Water Test
-          </motion.a>
+          <div className="flex justify-center">
+            <motion.a
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              href={`tel:${PHONE_NUMBER_RAW}`}
+              className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-black text-lg transition-all"
+            >
+              <Phone size={20} /> Get Your FREE Water Test
+            </motion.a>
+          </div>
         </div>
         <div className="absolute inset-0 opacity-20">
           <img 
