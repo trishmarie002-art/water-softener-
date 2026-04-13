@@ -205,30 +205,32 @@ const WaterQuiz = () => {
         >
           <div className={cn(
             "p-6 text-white text-center",
-            isHighRisk ? "bg-pnf-red-600" : "bg-green-600"
+            isHighRisk ? "bg-pnf-red-600" : "bg-amber-500"
           )}>
             {isHighRisk ? (
               <AlertTriangle className="w-12 h-12 mx-auto mb-3" />
             ) : (
-              <CheckCircle className="w-12 h-12 mx-auto mb-3" />
+              <Droplets className="w-12 h-12 mx-auto mb-3" />
             )}
             <h2 className="text-2xl font-bold">
-              {isHighRisk ? "High Risk for Hard Water Problems" : "Your Water Looks Good!"}
+              {isHighRisk ? "High Risk for Hard Water Problems" : "Confirm Your Water Quality"}
             </h2>
             <p className="text-white/90 mt-2">
               {isHighRisk 
                 ? `You answered "No" to ${noCount} questions - a water softener could help.`
-                : "But a free water test can confirm your water quality."}
+                : "A quick professional test reveals what this quiz can't detect."}
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="p-6 md:p-8 space-y-5">
             <div className="text-center mb-6">
-              <h3 className="text-xl font-bold text-navy-900">Get Your Free Water Test</h3>
+              <h3 className="text-xl font-bold text-navy-900">
+                {isHighRisk ? "Get Your Free Water Test" : "Claim Your Free Water Test"}
+              </h3>
               <p className="text-navy-600 mt-1">
                 {isHighRisk 
-                  ? "Enter your details for a free in-home water analysis and quote."
-                  : "Confirm your water quality with a professional test - it's free!"}
+                  ? "Enter your details for a free in-home water analysis and custom solution."
+                  : "Our technician will test for hardness, chlorine, iron, and other contaminants - all at no cost to you."}
               </p>
             </div>
 
@@ -305,20 +307,20 @@ const WaterQuiz = () => {
         >
           <div className={cn(
             "p-8 md:p-12 text-white text-center",
-            isHighRisk ? "bg-gradient-to-br from-pnf-red-600 to-pnf-red-700" : "bg-gradient-to-br from-green-500 to-green-600"
+            isHighRisk ? "bg-gradient-to-br from-pnf-red-600 to-pnf-red-700" : "bg-gradient-to-br from-amber-500 to-amber-600"
           )}>
             {isHighRisk ? (
               <AlertTriangle className="w-16 h-16 mx-auto mb-4" />
             ) : (
-              <CheckCircle className="w-16 h-16 mx-auto mb-4" />
+              <Droplets className="w-16 h-16 mx-auto mb-4" />
             )}
             <h2 className="text-3xl md:text-4xl font-bold mb-3">
-              {isHighRisk ? "High Risk" : "Low Risk"}
+              {isHighRisk ? "High Risk" : "Results In"}
             </h2>
             <p className="text-xl text-white/90">
               {isHighRisk
                 ? "Your home shows signs of hard water problems"
-                : "Your water quality appears to be good"}
+                : "Only a professional test can confirm your water quality"}
             </p>
           </div>
 
@@ -328,28 +330,73 @@ const WaterQuiz = () => {
                 <span className="text-navy-700 font-medium">Your Score</span>
                 <span className={cn(
                   "font-bold text-lg",
-                  isHighRisk ? "text-pnf-red-600" : "text-green-600"
+                  isHighRisk ? "text-pnf-red-600" : "text-amber-600"
                 )}>
-                  {noCount} / {totalQuestions} issues detected
+                  {noCount} / {totalQuestions} potential issues
                 </span>
               </div>
               <div className="h-3 bg-navy-200 rounded-full overflow-hidden">
                 <div
                   className={cn(
                     "h-full rounded-full transition-all",
-                    isHighRisk ? "bg-pnf-red-500" : "bg-green-500"
+                    isHighRisk ? "bg-pnf-red-500" : "bg-amber-500"
                   )}
-                  style={{ width: `${(noCount / totalQuestions) * 100}%` }}
+                  style={{ width: `${Math.max((noCount / totalQuestions) * 100, 15)}%` }}
                 />
               </div>
               <p className="text-sm text-navy-600 mt-2">
                 {isHighRisk
                   ? "3 or more \"No\" answers indicates hard water problems that a water softener can solve."
-                  : "Your answers suggest your water may already be treated or naturally soft."}
+                  : "Even with good answers, hidden minerals and contaminants can only be detected with professional testing equipment."}
               </p>
             </div>
 
+            {/* Persuasion box - always shown */}
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
+              <h3 className="font-bold text-navy-900 mb-2">
+                {isHighRisk ? "Don't Wait - Hard Water Damage Adds Up" : "Why Get a Free Water Test Anyway?"}
+              </h3>
+              <ul className="text-sm text-navy-700 space-y-2">
+                {isHighRisk ? (
+                  <>
+                    <li className="flex items-start gap-2">
+                      <span className="text-pnf-red-500 font-bold">•</span>
+                      Hard water costs homeowners $800+ per year in extra soap, damaged appliances, and energy bills
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-pnf-red-500 font-bold">•</span>
+                      Scale buildup reduces water heater efficiency by up to 30%
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-pnf-red-500 font-bold">•</span>
+                      A free test confirms exact hardness levels and the best solution for your home
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 font-bold">•</span>
+                      This quiz only measures symptoms - a water test measures actual mineral content
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 font-bold">•</span>
+                      San Antonio water averages 15-20 grains of hardness - well above recommended levels
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 font-bold">•</span>
+                      Many homeowners don&apos;t notice hard water issues until damage is already done
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 font-bold">•</span>
+                      A 5-minute test gives you peace of mind - completely free, no obligation
+                    </li>
+                  </>
+                )}
+              </ul>
+            </div>
+
             <div className="space-y-3 mb-6">
+              <p className="text-sm font-medium text-navy-700 mb-2">Your Answers:</p>
               {questions.map((q) => (
                 <div
                   key={q.id}
@@ -374,8 +421,11 @@ const WaterQuiz = () => {
               className="w-full bg-pnf-red-600 hover:bg-pnf-red-700 text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02] active:scale-[0.98]"
             >
               <Droplets className="w-5 h-5" />
-              <span>Get Your Free Water Test</span>
+              <span>Claim Your Free Water Test</span>
             </button>
+            <p className="text-xs text-center text-navy-500 mt-2">
+              100% Free - No purchase required - Takes only 5 minutes
+            </p>
 
             <button
               onClick={resetQuiz}
