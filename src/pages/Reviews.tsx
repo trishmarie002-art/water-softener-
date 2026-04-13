@@ -21,7 +21,7 @@ const Reviews = () => {
             <div className="flex text-yellow-400">
               {[...Array(5)].map((_, i) => <Star key={i} size={24} fill="currentColor" />)}
             </div>
-            <span className="text-xl font-bold">4.9 / 5.0 Rating</span>
+            <span className="text-xl font-bold">5 Star Rating</span>
           </div>
           <p className="text-xl text-navy-200 max-w-2xl mx-auto">
             See why hundreds of San Antonio homeowners trust us with their water systems.
