@@ -35,7 +35,7 @@ const Header = () => {
           <img 
             src={LOGO_URL} 
             alt="PNF Water Heaters & Softeners"
-            className="h-6 w-auto"
+            className="h-[10px] w-auto"
           />
         </Link>
 
