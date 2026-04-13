@@ -30,7 +30,7 @@ const Header = () => {
       className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-3"
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link to="/" className="h-20 max-w-[200px] flex items-center">
+        <Link to="/" className="h-12 max-w-[140px] flex items-center">
           <img 
             src={LOGO_URL} 
             alt={COMPANY_NAME}
