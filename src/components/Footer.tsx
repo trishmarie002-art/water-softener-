@@ -41,11 +41,11 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="mb-6">
+            <div className="h-12 max-w-[140px] mb-6">
               <img 
                 src={LOGO_URL} 
                 alt={COMPANY_NAME}
-                className="h-16 w-auto rounded-lg"
+                className="h-auto max-h-full object-contain rounded-lg"
               />
             </div>
             <p className="text-gray-600 mb-6 leading-relaxed">
