@@ -27,25 +27,26 @@ const Header = () => {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-3"
+      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-2"
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
+      <div className="container mx-auto px-4 flex items-center justify-between gap-4">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2 shrink-0">
           <img 
             src={LOGO_URL} 
             alt={COMPANY_NAME}
-            className="h-12 w-auto rounded-lg"
+            className="h-10 w-auto rounded-lg"
           />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav className="hidden xl:flex items-center gap-1">
           {navLinks.map((link) => (
             <NavLink
               key={link.path}
               to={link.path}
               className={({ isActive }) => cn(
-                "text-sm font-medium transition-colors hover:text-pnf-red-600 text-navy-800",
+                "text-xs font-semibold transition-colors hover:text-pnf-red-600 text-navy-800 px-2 py-1 whitespace-nowrap",
                 isActive && "text-pnf-red-600 border-b-2 border-pnf-red-600"
               )}
             >
@@ -54,17 +55,19 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
+        {/* CTA + Mobile Toggle */}
+        <div className="flex items-center gap-3 shrink-0">
           <a
             href={`tel:${PHONE_NUMBER_RAW}`}
-            className="hidden md:flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-4 py-2 rounded-full font-bold transition-transform hover:scale-105"
+            className="hidden lg:flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-4 py-2 rounded-full text-sm font-bold transition-transform hover:scale-105 whitespace-nowrap"
           >
-            <Phone size={18} />
-            <span>Get My FREE Quote Now</span>
+            <Phone size={16} />
+            <span className="hidden xl:inline">Get FREE Quote</span>
+            <span className="xl:hidden">{PHONE_NUMBER}</span>
           </a>
           
           <button
-            className="lg:hidden p-2 rounded-md"
+            className="xl:hidden p-2 rounded-md"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
@@ -83,7 +86,7 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t overflow-hidden"
+            className="xl:hidden bg-white border-t overflow-hidden"
           >
             <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
