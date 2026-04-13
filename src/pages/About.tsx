@@ -49,20 +49,38 @@ const About = () => {
       <section className="pt-8 pb-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-start gap-10">
-            <div className="lg:w-1/3 relative">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="lg:w-1/3 relative"
+            >
               <div className="relative max-w-[260px] mx-auto">
                 <img 
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000004496.jpg-zk2JdT3h7UvxFobdVosOceSAKvdEqf.jpeg" 
                   alt="Jacinto Lefebre, Owner and Master Plumber" 
                   className="rounded-2xl shadow-2xl w-full aspect-[3/4] object-cover object-top border-4 border-white"
                 />
-                <div className="absolute -bottom-3 -right-3 bg-pnf-red-600 text-white px-4 py-3 rounded-lg shadow-lg">
+                <motion.div 
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.3 }}
+                  className="absolute -bottom-3 -right-3 bg-pnf-red-600 text-white px-4 py-3 rounded-lg shadow-lg"
+                >
                   <p className="text-xl font-bold">28+</p>
                   <p className="text-xs uppercase tracking-wider">Years Experience</p>
-                </div>
+                </motion.div>
               </div>
-            </div>
-            <div className="lg:w-2/3 lg:pt-8">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="lg:w-2/3 lg:pt-8"
+            >
               <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Meet the Owner</h2>
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Jacinto Lefebre, Master Plumber</h3>
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
@@ -84,12 +102,18 @@ const About = () => {
                   <CheckCircle2 className="text-pnf-red-600" />
                   <span className="font-bold">Expert Technicians</span>
                 </div>
-                <div className="flex items-center gap-3">
+                <motion.div 
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.6 }}
+                  className="flex items-center gap-3"
+                >
                   <CheckCircle2 className="text-pnf-red-600" />
                   <span className="font-bold">Quality Guaranteed</span>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -97,30 +121,51 @@ const About = () => {
       {/* Values */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Our Values</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-16">The Principles That Drive Us</h3>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4"
+          >
+            Our Values
+          </motion.h2>
+          <motion.h3 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl md:text-4xl font-bold text-gray-900 mb-16"
+          >
+            The Principles That Drive Us
+          </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="bg-white p-10 rounded-2xl shadow-lg">
-              <div className="bg-navy-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <ShieldCheck className="text-pnf-red-600" size={32} />
-              </div>
-              <h4 className="text-2xl font-bold mb-4">Unmatched Integrity</h4>
-              <p className="text-gray-600">We believe in honest pricing and transparent communication. No hidden fees, no unnecessary upsells—just what your home needs.</p>
-            </div>
-            <div className="bg-white p-10 rounded-2xl shadow-lg">
-              <div className="bg-navy-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="text-pnf-red-600" size={32} />
-              </div>
-              <h4 className="text-2xl font-bold mb-4">Customer First</h4>
-              <p className="text-gray-600">Your satisfaction is our top priority. We go above and beyond to ensure every customer is happy with their new water system.</p>
-            </div>
-            <div className="bg-white p-10 rounded-2xl shadow-lg">
-              <div className="bg-navy-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Heart className="text-pnf-red-600" size={32} />
-              </div>
-              <h4 className="text-2xl font-bold mb-4">Local Commitment</h4>
-              <p className="text-gray-600">We&apos;re proud to be a part of the San Antonio community. We support local initiatives and strive to make our city a better place.</p>
-            </div>
+            {[
+              { icon: ShieldCheck, title: "Unmatched Integrity", description: "We believe in honest pricing and transparent communication. No hidden fees, no unnecessary upsells—just what your home needs." },
+              { icon: Users, title: "Customer First", description: "Your satisfaction is our top priority. We go above and beyond to ensure every customer is happy with their new water system." },
+              { icon: Heart, title: "Local Commitment", description: "We're proud to be a part of the San Antonio community. We support local initiatives and strive to make our city a better place." }
+            ].map((value, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                whileHover={{ y: -10, boxShadow: "0 25px 50px rgba(0,0,0,0.15)" }}
+                className="bg-white p-10 rounded-2xl shadow-lg"
+              >
+                <motion.div 
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.15 + 0.2 }}
+                  className="bg-navy-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+                >
+                  <value.icon className="text-pnf-red-600" size={32} />
+                </motion.div>
+                <h4 className="text-2xl font-bold mb-4">{value.title}</h4>
+                <p className="text-gray-600">{value.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

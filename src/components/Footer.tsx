@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
 import { COMPANY_NAME, PHONE_NUMBER, PHONE_NUMBER_RAW, EMAIL, SERVICE_AREAS, LOGO_URL } from '../constants';
@@ -9,22 +10,37 @@ const Footer = () => {
       {/* Urgent CTA Banner */}
       <div className="bg-pnf-red-600 py-6">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-white text-lg md:text-xl font-bold mb-3">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-white text-lg md:text-xl font-bold mb-3"
+          >
             San Antonio&apos;s Hard Water Is Costing You Money Every Day You Wait
-          </p>
-          <a 
+          </motion.p>
+          <motion.a 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
             href={`tel:${PHONE_NUMBER_RAW}`}
             className="inline-flex items-center gap-2 bg-white text-pnf-red-600 px-6 py-3 rounded-xl font-black text-lg hover:bg-gray-100 transition-all"
           >
             <Phone size={20} /> Call Now - FREE Water Test
-          </a>
+          </motion.a>
         </div>
       </div>
       
       <div className="container mx-auto px-4 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="mb-6">
               <img 
                 src={LOGO_URL} 
@@ -36,20 +52,26 @@ const Footer = () => {
               San Antonio&apos;s trusted water softener and water heater installation experts. Stop hard water damage today with a FREE water test. Serving San Antonio, Boerne, New Braunfels, and surrounding areas for 28+ years.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="bg-navy-100 hover:bg-pnf-red-600 hover:text-white text-navy-700 p-2 rounded-full transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="bg-navy-100 hover:bg-pnf-red-600 hover:text-white text-navy-700 p-2 rounded-full transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="bg-navy-100 hover:bg-pnf-red-600 hover:text-white text-navy-700 p-2 rounded-full transition-colors">
-                <Twitter size={20} />
-              </a>
+              {[Facebook, Instagram, Twitter].map((Icon, index) => (
+                <motion.a 
+                  key={index}
+                  href="#" 
+                  whileHover={{ scale: 1.2, rotate: 5 }}
+                  className="bg-navy-100 hover:bg-pnf-red-600 hover:text-white text-navy-700 p-2 rounded-full transition-colors"
+                >
+                  <Icon size={20} />
+                </motion.a>
+              ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Quick Links */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             <h3 className="text-lg font-bold text-navy-800 mb-6 border-b border-gray-200 pb-2">Quick Links</h3>
             <ul className="space-y-3">
               <li><Link to="/" className="text-gray-600 hover:text-pnf-red-600 transition-colors">Home</Link></li>
@@ -60,10 +82,15 @@ const Footer = () => {
               <li><Link to="/faq" className="text-gray-600 hover:text-pnf-red-600 transition-colors">FAQ</Link></li>
               <li><Link to="/contact" className="text-gray-600 hover:text-pnf-red-600 transition-colors">Contact</Link></li>
             </ul>
-          </div>
+          </motion.div>
 
           {/* Service Areas */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <h3 className="text-lg font-bold text-navy-800 mb-6 border-b border-gray-200 pb-2">Service Areas</h3>
             <ul className="grid grid-cols-2 gap-2">
               {SERVICE_AREAS.map(area => (
@@ -74,10 +101,15 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Contact Info */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             <h3 className="text-lg font-bold text-navy-800 mb-6 border-b border-gray-200 pb-2">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
@@ -106,7 +138,7 @@ const Footer = () => {
                 </div>
               </li>
             </ul>
-          </div>
+          </motion.div>
         </div>
 
         <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">

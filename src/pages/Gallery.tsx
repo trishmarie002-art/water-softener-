@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { X, Phone } from 'lucide-react';
 import { PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
 
@@ -37,10 +38,22 @@ const Gallery = () => {
     <div className="pt-24">
       <section className="bg-navy-900 py-20 text-white text-center relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Work Gallery</h1>
-          <p className="text-xl text-navy-200 max-w-2xl mx-auto">
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-6xl font-bold mb-6"
+          >
+            Our Work Gallery
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl text-navy-200 max-w-2xl mx-auto"
+          >
             See examples of our professional water heater, water softener, and filtration installations throughout San Antonio.
-          </p>
+          </motion.p>
         </div>
         <div className="absolute inset-0 opacity-20">
           <img 
@@ -56,24 +69,33 @@ const Gallery = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryImages.map((image, index) => (
-              <div 
+              <motion.div 
                 key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
                 className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all"
                 onClick={() => setSelectedImage(image.src)}
               >
                 <img 
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  className="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-transparent to-transparent"
+                >
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <span className="text-pnf-red-400 text-sm font-bold uppercase tracking-wider">{image.category}</span>
                     <p className="text-white font-semibold mt-1">{image.alt}</p>
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             ))}
           </div>
 
@@ -102,26 +124,38 @@ const Gallery = () => {
       </section>
 
       {/* Lightbox Modal */}
-      {selectedImage && (
-        <div 
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-          onClick={() => setSelectedImage(null)}
-        >
-          <button 
-            className="absolute top-4 right-4 text-white hover:text-pnf-red-400 transition-colors"
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
             onClick={() => setSelectedImage(null)}
           >
-            <X size={32} />
-          </button>
-          <img 
-            src={selectedImage}
-            alt="Gallery image enlarged"
-            className="max-w-full max-h-[90vh] object-contain rounded-lg"
-            referrerPolicy="no-referrer"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
+            <motion.button 
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="absolute top-4 right-4 text-white hover:text-pnf-red-400 transition-colors"
+              onClick={() => setSelectedImage(null)}
+            >
+              <X size={32} />
+            </motion.button>
+            <motion.img 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.3 }}
+              src={selectedImage}
+              alt="Gallery image enlarged"
+              className="max-w-full max-h-[90vh] object-contain rounded-lg"
+              referrerPolicy="no-referrer"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
