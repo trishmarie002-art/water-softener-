@@ -30,9 +30,9 @@ const Home = () => {
       </Link>
 
       {/* Intro Section */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -98,9 +98,9 @@ const Home = () => {
       </section>
 
       {/* Meet the Owner */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 bg-white border-t border-gray-100">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="flex flex-col lg:flex-row items-center gap-10">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -144,7 +144,7 @@ const Home = () => {
       </section>
 
       {/* Services Highlights */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Water Softener Installation San Antonio TX</h2>
@@ -186,9 +186,9 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-navy-900 text-white">
+      <section className="py-16 bg-navy-900 text-white">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
               <h2 className="text-pnf-red-400 font-bold uppercase tracking-wider mb-4">Why San Antonio Homeowners Choose Us</h2>
               <h3 className="text-3xl md:text-4xl font-bold mb-10 leading-tight">
@@ -236,7 +236,7 @@ const Home = () => {
       </section>
 
       {/* Testimonials Preview */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Real San Antonio Homeowners</h2>
@@ -273,7 +273,7 @@ const Home = () => {
       <FAQSection />
 
       {/* Final CTA */}
-      <section className="py-20 text-white relative overflow-hidden">
+      <section className="py-16 text-white relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%282%29-XSqDPqrNjs3jJof5tMG0gyMnleXSJm.webp" 
@@ -341,7 +341,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Common Questions</h2>

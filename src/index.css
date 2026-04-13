@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 @theme inline {
   /* PNF Brand Colors - Navy Blue, Red, White */
   --color-navy-50: #f0f4f8;

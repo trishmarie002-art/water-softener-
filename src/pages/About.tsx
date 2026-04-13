@@ -46,9 +46,9 @@ const About = () => {
       </section>
 
       {/* Our Story */}
-      <section className="pt-8 pb-20 bg-white">
+      <section className="pt-8 pb-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-start gap-12">
+          <div className="flex flex-col lg:flex-row items-start gap-10">
             <div className="lg:w-1/3 -mt-32 relative z-20">
               <div className="relative max-w-[260px] mx-auto">
                 <img 
@@ -95,7 +95,7 @@ const About = () => {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Our Values</h2>
           <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-16">The Principles That Drive Us</h3>
@@ -126,7 +126,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 text-white relative overflow-hidden">
+      <section className="py-16 text-white relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%282%29-XSqDPqrNjs3jJof5tMG0gyMnleXSJm.webp" 

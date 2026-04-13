@@ -44,7 +44,7 @@ const Hero = () => {
         </AnimatePresence>
       </div>
 
-      <div className="container mx-auto px-4 relative z-20 pt-40 md:pt-20">
+      <div className="container mx-auto px-4 relative z-20 pt-32 md:pt-24">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

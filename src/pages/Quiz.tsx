@@ -5,9 +5,9 @@ import WaterQuiz from '../components/WaterQuiz';
 
 const Quiz = () => {
   return (
-    <div className="bg-gradient-to-b from-navy-50 to-white min-h-screen">
+    <div className="bg-gradient-to-b from-navy-50 to-white min-h-screen pt-24">
       {/* Hero Section */}
-      <section className="py-12 md:py-20 px-4">
+      <section className="py-12 md:py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
