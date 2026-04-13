@@ -8,10 +8,16 @@ const Contact = () => {
     <div className="pt-24">
       <section className="bg-navy-900 py-20 text-white text-center relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl text-navy-200 max-w-2xl mx-auto">
-            Need better water at home? We&apos;re here to help. Reach out today for a free consultation.
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">Get Your FREE Water Test Today</h1>
+          <p className="text-xl text-navy-200 max-w-2xl mx-auto mb-8">
+            Stop letting San Antonio&apos;s hard water damage your home. Call now for your <strong>FREE water test</strong> and same-day appointment.
           </p>
+          <a 
+            href={`tel:${PHONE_NUMBER_RAW}`}
+            className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-10 py-5 rounded-xl font-black text-xl transition-all animate-pulse hover:animate-none"
+          >
+            <Phone size={24} /> CALL NOW - {PHONE_NUMBER}
+          </a>
         </div>
         <div className="absolute inset-0 opacity-20">
           <img 
@@ -85,8 +91,8 @@ const Contact = () => {
             <div className="lg:w-1/2">
               <div className="sticky top-32">
                 <LeadForm 
-                  title="Send Us a Message" 
-                  subtitle="Fill out the form below and we'll get back to you shortly."
+                  title="Schedule Your FREE Water Test" 
+                  subtitle="Find out exactly what's in your San Antonio water. No cost, no obligation - we'll show you the results on the spot."
                 />
               </div>
             </div>

@@ -5,8 +5,23 @@ import { COMPANY_NAME, PHONE_NUMBER, PHONE_NUMBER_RAW, EMAIL, SERVICE_AREAS, LOG
 
 const Footer = () => {
   return (
-    <footer className="bg-white border-t border-gray-200 pt-16 pb-8">
-      <div className="container mx-auto px-4">
+    <footer className="bg-white border-t border-gray-200">
+      {/* Urgent CTA Banner */}
+      <div className="bg-pnf-red-600 py-6">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-white text-lg md:text-xl font-bold mb-3">
+            San Antonio&apos;s Hard Water Is Costing You Money Every Day You Wait
+          </p>
+          <a 
+            href={`tel:${PHONE_NUMBER_RAW}`}
+            className="inline-flex items-center gap-2 bg-white text-pnf-red-600 px-6 py-3 rounded-xl font-black text-lg hover:bg-gray-100 transition-all"
+          >
+            <Phone size={20} /> Call Now - FREE Water Test
+          </a>
+        </div>
+      </div>
+      
+      <div className="container mx-auto px-4 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div>
@@ -18,7 +33,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Your local plumbing company. Trusted experts for water softeners, water heaters, and whole-home filtration. Quality service done right the first time.
+              San Antonio&apos;s trusted water softener and water heater installation experts. Stop hard water damage today with a FREE water test. Serving San Antonio, Boerne, New Braunfels, and surrounding areas for 28+ years.
             </p>
             <div className="flex gap-4">
               <a href="#" className="bg-navy-100 hover:bg-pnf-red-600 hover:text-white text-navy-700 p-2 rounded-full transition-colors">

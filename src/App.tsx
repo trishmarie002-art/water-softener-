@@ -18,6 +18,7 @@ import Reviews from './pages/Reviews';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import Gallery from './pages/Gallery';
+import Quiz from './pages/Quiz';
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
           <Route path="gallery" element={<Gallery />} />
           <Route path="faq" element={<FAQ />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="quiz" element={<Quiz />} />
         </Route>
       </Routes>
     </Router>

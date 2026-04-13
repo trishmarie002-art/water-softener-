@@ -7,43 +7,43 @@ const Services = () => {
   const services = [
     {
       id: 'water-softeners',
-      title: 'Water Softeners',
+      title: 'Water Softener Installation San Antonio',
       icon: Droplets,
-      description: 'Say goodbye to hard water problems. Our water softener systems remove calcium and magnesium, protecting your appliances and giving you softer skin and hair.',
+      description: 'San Antonio has some of the HARDEST water in Texas (15-20 grains). Without a water softener, hard water destroys your appliances, clogs your pipes, and costs you hundreds in extra soap and energy bills every year.',
       features: [
-        'Removes hard water minerals',
-        'Extends appliance lifespan',
-        'Softer skin and hair',
-        'Eliminates water spots',
-        'Reduces soap usage'
+        'Stops scale buildup that destroys appliances',
+        'Extends water heater life by 5+ years',
+        'Softer skin, shinier hair, cleaner dishes',
+        'Save up to $800/year on soap & energy',
+        'FREE water hardness test included'
       ],
       image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%283%29-eVGKCjJfKNFf225V5TmycvQFh6jkWZ.webp'
     },
     {
       id: 'water-heaters',
-      title: 'Water Heaters',
+      title: 'Tankless Water Heater Installation San Antonio',
       icon: Thermometer,
-      description: 'From traditional tank heaters to modern tankless systems, we install and service all types of water heaters. Enjoy reliable hot water whenever you need it.',
+      description: 'Tired of running out of hot water? Tankless water heaters provide UNLIMITED hot water on demand while cutting your energy bills by up to 30%. We offer same-day installation.',
       features: [
-        'Tank & tankless options',
-        'Energy-efficient models',
-        'Same-day installation',
-        'Emergency repairs',
-        'Extended warranties'
+        'Unlimited hot water - never run out again',
+        'Save up to 30% on energy bills',
+        'Lasts 20+ years (vs 10 for tank heaters)',
+        'Same-day installation available',
+        'FREE estimate - no obligation'
       ],
       image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%284%29-RvHGOWWeQJaPYX7Q2X9brTxLWMrd3n.webp'
     },
     {
       id: 'water-filtration',
-      title: 'Water Filtration',
+      title: 'Whole Home Water Filtration San Antonio',
       icon: Filter,
-      description: 'Get clean, pure water from every tap in your home. Our whole-home filtration systems remove contaminants, chlorine, and sediment for healthier water.',
+      description: 'San Antonio tap water contains chlorine, sediment, and contaminants you can taste and smell. Our whole-home filtration systems give you pure, clean water from EVERY tap - for drinking, cooking, and bathing.',
       features: [
-        'Whole-home systems',
-        'Reverse osmosis options',
-        'Removes chlorine & sediment',
-        'Better tasting water',
-        'Healthier for your family'
+        'Removes chlorine, sediment & contaminants',
+        'Better tasting water from every faucet',
+        'Protects your family from harmful chemicals',
+        'No more buying bottled water',
+        'Professional installation included'
       ],
       image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%282%29-XSqDPqrNjs3jJof5tMG0gyMnleXSJm.webp'
     }
@@ -53,10 +53,16 @@ const Services = () => {
     <div className="pt-24">
       <section className="bg-navy-900 py-20 text-white text-center relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Services</h1>
-          <p className="text-xl text-navy-200 max-w-2xl mx-auto">
-            Professional water softener, water heater, and filtration services for San Antonio homes. Quality installations backed by expert service.
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">Water Softener & Water Heater Services in San Antonio</h1>
+          <p className="text-xl text-navy-200 max-w-2xl mx-auto mb-8">
+            Professional installation, repair, and maintenance for water softeners, tankless water heaters, and whole-home filtration systems. <strong>Same-day service available.</strong>
           </p>
+          <a 
+            href={`tel:${PHONE_NUMBER_RAW}`}
+            className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-black text-lg transition-all"
+          >
+            <Phone size={20} /> Call Now For FREE Quote
+          </a>
         </div>
         <div className="absolute inset-0 opacity-20">
           <img 
@@ -116,18 +122,22 @@ const Services = () => {
 
       <section className="py-16 bg-navy-900 text-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
               <p className="text-5xl font-black text-pnf-red-400 mb-2">500+</p>
-              <p className="text-navy-200">Installations Completed</p>
+              <p className="text-navy-200">San Antonio Installations</p>
             </div>
             <div>
               <p className="text-5xl font-black text-pnf-red-400 mb-2">28+</p>
               <p className="text-navy-200">Years Experience</p>
             </div>
             <div>
-              <p className="text-5xl font-black text-pnf-red-400 mb-2">4.9</p>
+              <p className="text-5xl font-black text-pnf-red-400 mb-2">5</p>
               <p className="text-navy-200">Star Rating</p>
+            </div>
+            <div>
+              <p className="text-5xl font-black text-pnf-red-400 mb-2">$800+</p>
+              <p className="text-navy-200">Avg. Annual Savings</p>
             </div>
           </div>
         </div>
@@ -144,9 +154,12 @@ const Services = () => {
           <div className="absolute inset-0 bg-navy-900/70 backdrop-blur-[1px]" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl text-navy-200 mb-10 max-w-2xl mx-auto">
-            Contact us today for a free estimate on any of our services. Our friendly team is ready to help.
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Don&apos;t Let Hard Water Cost You Another Day</h2>
+          <p className="text-xl text-navy-200 mb-4 max-w-2xl mx-auto">
+            Get your FREE water test and see exactly what&apos;s damaging your San Antonio home. No cost, no obligation.
+          </p>
+          <p className="text-lg text-yellow-400 font-bold mb-10">
+            Same-day appointments available - Call now!
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a 

@@ -12,6 +12,23 @@ const Home = () => {
     <div className="overflow-hidden">
       <Hero />
 
+      {/* Urgent Quiz Strip */}
+      <Link to="/quiz" className="block">
+        <div className="bg-gradient-to-r from-pnf-red-700 via-pnf-red-600 to-pnf-red-700 py-4 px-4 relative overflow-hidden group cursor-pointer border-y-2 border-yellow-400">
+          <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="container mx-auto flex items-center justify-center gap-3 text-white relative z-10">
+            <span className="bg-yellow-400 text-black text-xs font-black uppercase tracking-wider px-3 py-1 rounded animate-pulse">
+              WARNING
+            </span>
+            <p className="text-sm md:text-base font-bold text-center">
+              <span className="hidden sm:inline">San Antonio&apos;s Hard Water Is Damaging Your Home RIGHT NOW - </span>
+              Take Our FREE 60-Second Risk Assessment
+            </p>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+          </div>
+        </div>
+      </Link>
+
       {/* Intro Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -22,13 +39,19 @@ const Home = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Welcome to PNF Water Heaters & Softeners</h2>
+                <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Stop Hard Water Damage Today</h2>
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                  Your Local Experts for Premium Water Systems in San Antonio
+                  San Antonio&apos;s Hard Water Is Costing You $800+ Per Year
                 </h3>
-                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  Don't let hard water damage your appliances or affect your family's health. We specialize in high-performance water softeners, efficient water heaters, and advanced filtration systems designed specifically for the unique water conditions in San Antonio and surrounding areas.
+                <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+                  <strong>Here&apos;s the truth:</strong> San Antonio water averages 15-20 grains of hardness - that&apos;s 3x the recommended level. Every day without a water softener, you&apos;re paying more for:
                 </p>
+                <ul className="text-lg text-gray-600 mb-6 space-y-2">
+                  <li className="flex items-start gap-2"><span className="text-pnf-red-600 font-bold">-</span> Appliances that break down 30% faster</li>
+                  <li className="flex items-start gap-2"><span className="text-pnf-red-600 font-bold">-</span> Energy bills up to 25% higher from scale buildup</li>
+                  <li className="flex items-start gap-2"><span className="text-pnf-red-600 font-bold">-</span> Plumbing repairs from clogged pipes</li>
+                  <li className="flex items-start gap-2"><span className="text-pnf-red-600 font-bold">-</span> Extra soap, shampoo, and cleaning products</li>
+                </ul>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                   <div className="flex items-center gap-3">
                     <CheckCircle2 className="text-pnf-red-600" size={24} />
@@ -42,17 +65,13 @@ const Home = () => {
                     <CheckCircle2 className="text-pnf-red-600" size={24} />
                     <span className="font-semibold text-navy-800">Free On-Site Estimates</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 className="text-pnf-red-600" size={24} />
-                    <span className="font-semibold text-navy-800">Financing Options</span>
-                  </div>
                 </div>
-                <Link 
-                  to="/about" 
-                  className="inline-flex items-center gap-2 text-pnf-red-600 font-bold hover:gap-3 transition-all"
+                <a 
+                  href={`tel:${PHONE_NUMBER_RAW}`}
+                  className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-black text-lg transition-all"
                 >
-                  Learn More About Us <ArrowRight size={20} />
-                </Link>
+                  <Phone size={20} /> Get My FREE Water Test Now
+                </a>
               </motion.div>
             </div>
             <div className="lg:w-1/2 relative">
@@ -128,10 +147,10 @@ const Home = () => {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Our Core Services</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Complete Water Solutions for Your Home</h3>
+            <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Water Softener Installation San Antonio TX</h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Protect Your Home. Protect Your Family. Save Money.</h3>
             <p className="text-lg text-gray-600">
-              From installation to maintenance, we provide comprehensive services to ensure your home has the best water quality possible.
+              We install premium water softeners, tankless water heaters, and whole-home filtration systems. <strong>Same-day installation available.</strong>
             </p>
           </div>
 
@@ -171,9 +190,9 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
-              <h2 className="text-pnf-red-400 font-bold uppercase tracking-wider mb-4">Why Choose Us</h2>
+              <h2 className="text-pnf-red-400 font-bold uppercase tracking-wider mb-4">Why San Antonio Homeowners Choose Us</h2>
               <h3 className="text-3xl md:text-4xl font-bold mb-10 leading-tight">
-                San Antonio's Most Trusted Water System Specialists
+                Over 500+ San Antonio Families Trust Us With Their Water
               </h3>
               <div className="space-y-8">
                 <div className="flex gap-4">
@@ -207,8 +226,8 @@ const Home = () => {
             </div>
             <div className="lg:w-1/2 w-full">
               <LeadForm 
-                title="Get Your Free Estimate" 
-                subtitle="Fill out the form below and we'll contact you within 24 hours."
+                title="Get Your FREE Water Test Today" 
+                subtitle="Find out exactly what's in YOUR water. No cost, no obligation - we'll test your water and show you the results."
                 className="text-gray-900"
               />
             </div>
@@ -220,8 +239,9 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Customer Success</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900">What Your Neighbors Are Saying</h3>
+            <h2 className="text-pnf-red-600 font-bold uppercase tracking-wider mb-4">Real San Antonio Homeowners</h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900">See Why Your Neighbors Chose Us</h3>
+            <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">Don&apos;t take our word for it - hear from San Antonio families who solved their hard water problems.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {[
@@ -268,9 +288,12 @@ const Home = () => {
           <Droplets className="absolute bottom-0 right-0 w-64 h-64 translate-x-1/2 translate-y-1/2" />
         </div>
         <div className="container mx-auto px-4 text-center relative z-20">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready for Better Water?</h2>
-          <p className="text-xl text-navy-100 mb-10 max-w-2xl mx-auto">
-            Join thousands of satisfied San Antonio homeowners. Call us today for a free consultation and estimate.
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Stop Paying for Hard Water Damage</h2>
+          <p className="text-xl text-navy-100 mb-4 max-w-2xl mx-auto">
+            Every day you wait costs you money. Get your <strong>FREE water test</strong> and see exactly what&apos;s in your San Antonio water.
+          </p>
+          <p className="text-lg text-yellow-400 font-bold mb-10">
+            Call now - Same day appointments available!
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a 
