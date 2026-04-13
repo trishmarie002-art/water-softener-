@@ -70,10 +70,6 @@ const FAQ = () => {
           a: "We serve San Antonio and all surrounding communities including Boerne, New Braunfels, Helotes, Stone Oak, Alamo Heights, Schertz, Cibolo, Universal City, Converse, and more. If you're unsure if we service your area, give us a call!"
         },
         {
-          q: "Do you offer financing options?",
-          a: "Yes, we offer flexible financing options to make your water system investment more affordable. We work with several financing partners to find options that fit your budget. Ask us about current promotions and payment plans."
-        },
-        {
           q: "Do you offer emergency services?",
           a: "Yes! We offer 24/7 emergency service for urgent water heater issues like leaks or no hot water. Call us anytime and we'll dispatch a technician as quickly as possible to get your hot water restored."
         }

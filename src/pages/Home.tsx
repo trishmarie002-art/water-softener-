@@ -59,10 +59,6 @@ const Home = () => {
                     <CheckCircle2 className="text-pnf-red-600" size={24} />
                     <span className="font-semibold text-navy-800">Free On-Site Estimates</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 className="text-pnf-red-600" size={24} />
-                    <span className="font-semibold text-navy-800">Financing Options</span>
-                  </div>
                 </div>
                 <Link 
                   to="/about" 
