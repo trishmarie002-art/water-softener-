@@ -12,6 +12,23 @@ const Home = () => {
     <div className="overflow-hidden">
       <Hero />
 
+      {/* Urgent Quiz Strip */}
+      <Link to="/quiz" className="block">
+        <div className="bg-gradient-to-r from-pnf-red-600 via-pnf-red-700 to-pnf-red-600 py-3 px-4 relative overflow-hidden group cursor-pointer">
+          <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="container mx-auto flex items-center justify-center gap-3 text-white relative z-10">
+            <span className="bg-white/20 text-xs font-bold uppercase tracking-wider px-2 py-1 rounded animate-pulse">
+              Free Test
+            </span>
+            <p className="text-sm md:text-base font-semibold text-center">
+              <span className="hidden sm:inline">Is Hard Water Damaging Your Home? </span>
+              Take Our 60-Second Water Quality Quiz
+            </p>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </div>
+        </div>
+      </Link>
+
       {/* Intro Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
