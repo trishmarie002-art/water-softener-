@@ -96,7 +96,7 @@ const ServiceAreas = () => {
       </section>
 
       {/* Local SEO Blurbs */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-navy-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-4">Why San Antonio Homeowners Choose Us</h2>
           <p className="text-lg text-gray-600 text-center mb-16 max-w-2xl mx-auto">We understand the unique water challenges in every neighborhood we serve.</p>
