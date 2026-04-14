@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronRight, ChevronLeft, AlertTriangle, CheckCircle, Droplets, Send } from 'lucide-react';
 import { cn } from '../lib/utils';
@@ -67,6 +67,14 @@ const WaterQuiz = () => {
     phone: '',
     email: ''
   });
+  const formRef = useRef<HTMLDivElement>(null);
+
+  // Scroll to form when it appears
+  useEffect(() => {
+    if (showForm && formRef.current) {
+      formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [showForm]);
 
   const totalQuestions = questions.length;
   const progress = ((currentStep) / totalQuestions) * 100;
@@ -197,7 +205,7 @@ const WaterQuiz = () => {
   // Lead capture form after results
   if (showForm) {
     return (
-      <div className="max-w-2xl mx-auto">
+      <div ref={formRef} className="max-w-2xl mx-auto scroll-mt-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
