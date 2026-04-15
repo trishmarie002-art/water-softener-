@@ -37,9 +37,8 @@ const Hero = () => {
             <img
               src={images[currentIndex]}
               alt="PNF Water Heaters & Softeners"
-              className="w-full h-full object-cover object-center"
+              className="absolute inset-0 w-full h-full object-cover object-center"
               referrerPolicy="no-referrer"
-              style={{ minHeight: '100vh', minWidth: '100vw' }}
             />
           </motion.div>
         </AnimatePresence>
