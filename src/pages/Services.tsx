@@ -75,9 +75,9 @@ const Services = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             href={`tel:${PHONE_NUMBER_RAW}`}
-            className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-black text-lg transition-all"
+            className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-5 py-3 rounded-lg font-bold text-sm transition-all"
           >
-            <Phone size={20} /> Call Now For FREE Quote
+            <Phone size={16} /> Call Now For FREE Quote
           </motion.a>
         </div>
         <div className="absolute inset-0 opacity-20">
@@ -153,10 +153,10 @@ const Services = () => {
                   </ul>
                   <Link 
                     to={`/services/${service.id}`}
-                    className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-6 py-3 rounded-xl font-bold transition-all hover:gap-3"
+                    className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-4 py-2.5 rounded-lg font-semibold text-sm transition-all hover:gap-3"
                   >
                     Learn More
-                    <ArrowRight size={20} />
+                    <ArrowRight size={16} />
                   </Link>
                 </div>
               </motion.div>
@@ -218,16 +218,16 @@ const Services = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a 
               href={`tel:${PHONE_NUMBER_RAW}`} 
-              className="inline-flex items-center justify-center gap-3 bg-white text-pnf-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition-all shadow-2xl"
+              className="inline-flex items-center justify-center gap-2 bg-white text-pnf-red-600 px-6 py-3 rounded-xl text-base font-bold hover:bg-gray-100 transition-all shadow-xl"
             >
-              <Phone size={28} />
+              <Phone size={18} />
               Get My FREE Quote Now
             </a>
             <a 
               href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like a free quote for my water system.")}`}
-              className="inline-flex items-center justify-center gap-3 bg-navy-800 hover:bg-navy-700 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-navy-800 hover:bg-navy-700 text-white px-6 py-3 rounded-xl text-sm font-semibold transition-all"
             >
-              <MessageSquare size={24} />
+              <MessageSquare size={16} />
               Text Us - Let&apos;s Chat!
             </a>
           </div>

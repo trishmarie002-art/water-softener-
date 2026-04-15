@@ -68,9 +68,9 @@ const Home = () => {
                 </div>
                 <a 
                   href={`tel:${PHONE_NUMBER_RAW}`}
-                  className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-black text-lg transition-all"
+                  className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-5 py-3 rounded-lg font-bold text-sm transition-all"
                 >
-                  <Phone size={20} /> Get My FREE Water Test Now
+                  <Phone size={16} /> Get My FREE Water Test Now
                 </a>
               </motion.div>
             </div>
@@ -134,9 +134,9 @@ const Home = () => {
               </p>
               <Link 
                 to="/about" 
-                className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-bold transition-all"
+                className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-5 py-3 rounded-lg font-semibold text-sm transition-all"
               >
-                Learn More About Us <ArrowRight size={20} />
+                Learn More About Us <ArrowRight size={16} />
               </Link>
             </motion.div>
           </div>
@@ -290,7 +290,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center"
           >
-            <Link to="/reviews" className="bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-bold transition-all inline-block">
+            <Link to="/reviews" className="bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-5 py-3 rounded-lg font-semibold text-sm transition-all inline-block">
               Read More Reviews
             </Link>
           </motion.div>
@@ -353,18 +353,18 @@ const Home = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               href={`tel:${PHONE_NUMBER_RAW}`} 
-              className="bg-white text-pnf-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition-all flex items-center justify-center gap-3 shadow-2xl"
+              className="bg-white text-pnf-red-600 px-6 py-3 rounded-xl text-base font-bold hover:bg-gray-100 transition-all flex items-center justify-center gap-2 shadow-xl"
             >
-              <Phone size={28} />
+              <Phone size={18} />
               Get My FREE Quote Now
             </motion.a>
             <motion.a 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like a free quote for my water system.")}`}
-              className="bg-navy-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-navy-700 transition-all flex items-center justify-center gap-3"
+              className="bg-navy-800 text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-navy-700 transition-all flex items-center justify-center gap-2"
             >
-              <MessageSquare size={24} />
+              <MessageSquare size={16} />
               Text Us - Let&apos;s Chat!
             </motion.a>
           </motion.div>
