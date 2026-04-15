@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-
 import { Phone, MessageSquare, ShieldCheck, Clock, MapPin, Star, Droplets } from 'lucide-react';
 import { PHONE_NUMBER_RAW } from '../constants';
 
@@ -21,7 +20,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden py-24 md:py-20">
+    <section className="relative min-h-[100svh] flex items-center overflow-hidden py-20 md:py-20">
       {/* Background Slideshow */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
@@ -39,6 +38,9 @@ const Hero = () => {
               alt="PNF Water Heaters & Softeners"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
+              loading={currentIndex === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+              fetchPriority={currentIndex === 0 ? 'high' : 'auto'}
             />
           </motion.div>
         </AnimatePresence>
@@ -82,16 +84,16 @@ const Hero = () => {
           >
             <a
               href={`tel:${PHONE_NUMBER_RAW}`}
-              className="flex items-center justify-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-6 py-4 rounded-xl text-base md:text-lg font-black transition-all transform hover:scale-105 shadow-lg shadow-pnf-red-600/30 animate-pulse hover:animate-none"
+              className="flex items-center justify-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-6 py-4 sm:py-5 rounded-xl text-base md:text-lg font-black transition-all transform hover:scale-105 shadow-lg shadow-pnf-red-600/30 min-h-[56px] touch-manipulation"
             >
-              <Phone size={20} />
+              <Phone size={22} className="shrink-0" />
               <span>CALL NOW - FREE Quote</span>
             </a>
             <a
               href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I need help with my hard water problem in San Antonio.")}`}
-              className="flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-navy-900 px-6 py-4 rounded-xl text-base md:text-lg font-bold transition-all transform hover:scale-105"
+              className="flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-navy-900 px-6 py-4 sm:py-5 rounded-xl text-base md:text-lg font-bold transition-all transform hover:scale-105 min-h-[56px] touch-manipulation"
             >
-              <MessageSquare size={18} />
+              <MessageSquare size={20} className="shrink-0" />
               <span>Text Us - Fast Response</span>
             </a>
           </motion.div>
