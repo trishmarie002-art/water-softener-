@@ -61,8 +61,6 @@ const Gallery = () => {
             alt="Water heater installation" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
-            loading="lazy"
-            decoding="async"
           />
         </div>
       </section>
@@ -86,8 +84,6 @@ const Gallery = () => {
                   alt={image.alt}
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
-                  loading="lazy"
-                  decoding="async"
                 />
                 <motion.div 
                   initial={{ opacity: 0 }}
@@ -119,9 +115,9 @@ const Gallery = () => {
           </p>
           <a 
             href={`tel:${PHONE_NUMBER_RAW}`} 
-            className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-6 sm:px-8 py-4 rounded-xl text-lg sm:text-xl font-bold transition-all min-h-[56px] touch-manipulation w-full sm:w-auto max-w-sm mx-auto sm:mx-0"
+            className="inline-flex items-center gap-3 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl text-xl font-bold transition-all"
           >
-            <Phone size={22} className="shrink-0" />
+            <Phone size={24} />
             Get My FREE Quote Now
           </a>
         </div>

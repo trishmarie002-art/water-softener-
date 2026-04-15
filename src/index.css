@@ -3,66 +3,15 @@
 /* Base styles */
 html {
   scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
 }
 
 * {
   box-sizing: border-box;
 }
 
-/* Performance optimizations */
 img {
   max-width: 100%;
   height: auto;
-  content-visibility: auto;
-}
-
-/* Touch-friendly interactive elements */
-.touch-manipulation {
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* Prevent layout shift from lazy-loaded images */
-img[loading="lazy"] {
-  background-color: #f0f4f8;
-}
-
-/* Smooth scrolling on iOS */
-@supports (-webkit-overflow-scrolling: touch) {
-  html {
-    -webkit-overflow-scrolling: touch;
-  }
-}
-
-/* Mobile viewport height fix for address bar */
-@supports (height: 100svh) {
-  .min-h-screen {
-    min-height: 100svh;
-  }
-}
-
-/* Reduce motion for users who prefer it */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-/* Improve text rendering */
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
 }
 
 @theme inline {

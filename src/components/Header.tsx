@@ -64,14 +64,13 @@ const Header = () => {
           </a>
           
           <button
-            className="lg:hidden p-3 rounded-md min-w-[48px] min-h-[48px] flex items-center justify-center touch-manipulation"
+            className="lg:hidden p-2 rounded-md"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
             {isMobileMenuOpen ? (
-              <X className="text-navy-800 w-6 h-6" />
+              <X className="text-navy-800" />
             ) : (
-              <Menu className="text-navy-800 w-6 h-6" />
+              <Menu className="text-navy-800" />
             )}
           </button>
         </div>
@@ -86,14 +85,14 @@ const Header = () => {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-white border-t overflow-hidden"
           >
-            <div className="container mx-auto px-4 py-4 flex flex-col gap-1">
+            <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.path}
                   to={link.path}
                   className={({ isActive }) => cn(
-                    "text-lg font-semibold py-3 px-2 border-b border-gray-100 min-h-[48px] flex items-center touch-manipulation",
-                    isActive ? "text-pnf-red-600 bg-red-50" : "text-navy-800 active:bg-gray-50"
+                    "text-lg font-semibold py-2 border-b border-gray-100",
+                    isActive ? "text-pnf-red-600" : "text-navy-800"
                   )}
                 >
                   {link.name}
@@ -101,9 +100,9 @@ const Header = () => {
               ))}
               <a
                 href={`tel:${PHONE_NUMBER_RAW}`}
-                className="flex items-center justify-center gap-2 bg-pnf-red-600 text-white py-4 rounded-xl font-bold mt-4 min-h-[56px] touch-manipulation"
+                className="flex items-center justify-center gap-2 bg-pnf-red-600 text-white py-4 rounded-xl font-bold mt-4"
               >
-                <Phone size={22} className="shrink-0" />
+                <Phone size={20} />
                 <span>Get My FREE Quote Now</span>
               </a>
             </div>

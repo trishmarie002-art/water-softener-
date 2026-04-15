@@ -68,9 +68,9 @@ const Home = () => {
                 </div>
                 <a 
                   href={`tel:${PHONE_NUMBER_RAW}`}
-                  className="inline-flex items-center justify-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-6 sm:px-8 py-4 rounded-xl font-black text-base sm:text-lg transition-all min-h-[56px] touch-manipulation w-full sm:w-auto"
+                  className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-black text-lg transition-all"
                 >
-                  <Phone size={22} className="shrink-0" /> Get My FREE Water Test
+                  <Phone size={20} /> Get My FREE Water Test Now
                 </a>
               </motion.div>
             </div>
@@ -86,8 +86,6 @@ const Home = () => {
                   alt="PNF Plumbing installation work" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
-                  loading="lazy"
-                  decoding="async"
                 />
               </motion.div>
               <div className="absolute -bottom-6 -left-6 bg-pnf-red-600 text-white p-8 rounded-2xl shadow-xl hidden md:block">
@@ -114,8 +112,6 @@ const Home = () => {
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000004496.jpg-zk2JdT3h7UvxFobdVosOceSAKvdEqf.jpeg" 
                   alt="Jacinto Lefebre, Owner of PNF Water Heaters & Softeners" 
                   className="rounded-2xl shadow-2xl w-full aspect-[3/4] object-cover object-top border-4 border-white"
-                  loading="lazy"
-                  decoding="async"
                 />
                 <div className="absolute -bottom-3 -right-3 bg-navy-900 text-white px-4 py-3 rounded-lg shadow-lg">
                   <p className="font-bold text-sm">Master Plumber</p>
@@ -312,8 +308,6 @@ const Home = () => {
             alt="Pressure gauge plumbing work" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
-            loading="lazy"
-            decoding="async"
           />
           <div className="absolute inset-0 bg-navy-900/60 backdrop-blur-[1px]" />
         </div>
@@ -359,19 +353,19 @@ const Home = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               href={`tel:${PHONE_NUMBER_RAW}`} 
-              className="bg-white text-pnf-red-600 px-6 sm:px-10 py-4 sm:py-5 rounded-2xl text-lg sm:text-2xl font-black hover:bg-gray-100 transition-all flex items-center justify-center gap-2 sm:gap-3 shadow-2xl min-h-[56px] touch-manipulation w-full sm:w-auto"
+              className="bg-white text-pnf-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition-all flex items-center justify-center gap-3 shadow-2xl"
             >
-              <Phone size={24} className="shrink-0 sm:w-7 sm:h-7" />
-              FREE Quote Now
+              <Phone size={28} />
+              Get My FREE Quote Now
             </motion.a>
             <motion.a 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like a free quote for my water system.")}`}
-              className="bg-navy-800 text-white px-6 sm:px-10 py-4 sm:py-5 rounded-2xl text-base sm:text-xl font-bold hover:bg-navy-700 transition-all flex items-center justify-center gap-2 sm:gap-3 min-h-[56px] touch-manipulation w-full sm:w-auto"
+              className="bg-navy-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-navy-700 transition-all flex items-center justify-center gap-3"
             >
-              <MessageSquare size={22} className="shrink-0 sm:w-6 sm:h-6" />
-              Text Us
+              <MessageSquare size={24} />
+              Text Us - Let&apos;s Chat!
             </motion.a>
           </motion.div>
         </div>
