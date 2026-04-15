@@ -21,7 +21,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden py-24 md:py-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Slideshow */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
@@ -44,7 +44,7 @@ const Hero = () => {
         </AnimatePresence>
       </div>
 
-      <div className="container mx-auto px-4 relative z-20 pt-16 md:pt-8">
+      <div className="container mx-auto px-4 relative z-20 pt-24 md:pt-32 pb-16 md:pb-20">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
