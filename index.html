@@ -52,11 +52,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
+      "@id": "https://pnfwaterheaters.com/#business",
       "name": "PNF Water Heaters & Softeners",
       "description": "Professional water softener and water heater installation in San Antonio, TX. Trusted local experts with 28+ years experience.",
       "url": "https://pnfwaterheaters.com",
-      "telephone": "+1-210-899-6782",
-      "email": "pnfwaterheaters@gmail.com",
+      "telephone": "+1-210-769-5161",
+      "email": "pnfwaterheatersandsofteners@gmail.com",
+      "image": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000004386.jpg-QH60MYNMQSUbQELnvoiIdLPz4IRnw0.jpeg",
+      "logo": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000004386.jpg-QH60MYNMQSUbQELnvoiIdLPz4IRnw0.jpeg",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "San Antonio",
@@ -68,7 +71,55 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "latitude": 29.4241,
         "longitude": -98.4936
       },
-      "areaServed": ["San Antonio", "Boerne", "New Braunfels", "Helotes", "Stone Oak", "Alamo Heights", "Schertz", "Cibolo", "Universal City", "Converse", "Leon Valley", "Live Oak"],
+      "areaServed": [
+        {"@type": "City", "name": "San Antonio", "addressRegion": "TX"},
+        {"@type": "City", "name": "New Braunfels", "addressRegion": "TX"},
+        {"@type": "City", "name": "Schertz", "addressRegion": "TX"},
+        {"@type": "City", "name": "Cibolo", "addressRegion": "TX"},
+        {"@type": "City", "name": "Converse", "addressRegion": "TX"},
+        {"@type": "City", "name": "Universal City", "addressRegion": "TX"},
+        {"@type": "City", "name": "Boerne", "addressRegion": "TX"},
+        {"@type": "City", "name": "Helotes", "addressRegion": "TX"},
+        {"@type": "City", "name": "Seguin", "addressRegion": "TX"}
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Water Treatment Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Water Softener Installation",
+              "description": "Professional installation of high-efficiency water softening systems to combat San Antonio's hard water."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Water Heater Installation & Replacement",
+              "description": "Expert installation and replacement of traditional tank and modern tankless water heaters."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Water Filtration Systems",
+              "description": "Whole-home filtration systems for cleaner, better-tasting water for your entire family."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Free Water Testing",
+              "description": "Complimentary water hardness testing to determine the best solution for your home."
+            }
+          }
+        ]
+      },
       "priceRange": "$$",
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
