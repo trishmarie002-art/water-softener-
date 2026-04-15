@@ -21,7 +21,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden py-24 md:py-20">
       {/* Background Slideshow */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
@@ -37,14 +37,14 @@ const Hero = () => {
             <img
               src={images[currentIndex]}
               alt="PNF Water Heaters & Softeners"
-              className="absolute inset-0 w-full h-full object-cover object-center"
+              className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
           </motion.div>
         </AnimatePresence>
       </div>
 
-      <div className="container mx-auto px-4 relative z-20 pt-24 md:pt-32 pb-16 md:pb-20">
+      <div className="container mx-auto px-4 relative z-20 pt-16 md:pt-8">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -82,16 +82,16 @@ const Hero = () => {
           >
             <a
               href={`tel:${PHONE_NUMBER_RAW}`}
-              className="flex items-center justify-center gap-3 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-5 rounded-xl text-lg md:text-xl font-black transition-all transform hover:scale-105 shadow-lg shadow-pnf-red-600/30 animate-pulse hover:animate-none"
+              className="flex items-center justify-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-6 py-4 rounded-xl text-base md:text-lg font-black transition-all transform hover:scale-105 shadow-lg shadow-pnf-red-600/30 animate-pulse hover:animate-none"
             >
-              <Phone size={24} />
+              <Phone size={20} />
               <span>CALL NOW - FREE Quote</span>
             </a>
             <a
               href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I need help with my hard water problem in San Antonio.")}`}
-              className="flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-navy-900 px-8 py-5 rounded-xl text-lg md:text-xl font-bold transition-all transform hover:scale-105"
+              className="flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-navy-900 px-6 py-4 rounded-xl text-base md:text-lg font-bold transition-all transform hover:scale-105"
             >
-              <MessageSquare size={24} />
+              <MessageSquare size={18} />
               <span>Text Us - Fast Response</span>
             </a>
           </motion.div>

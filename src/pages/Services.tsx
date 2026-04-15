@@ -75,9 +75,9 @@ const Services = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             href={`tel:${PHONE_NUMBER_RAW}`}
-            className="inline-flex items-center justify-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-6 sm:px-8 py-4 rounded-xl font-black text-base sm:text-lg transition-all min-h-[56px] touch-manipulation w-full sm:w-auto max-w-sm mx-auto"
+            className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-black text-lg transition-all"
           >
-            <Phone size={22} className="shrink-0" /> Call Now For FREE Quote
+            <Phone size={20} /> Call Now For FREE Quote
           </motion.a>
         </div>
         <div className="absolute inset-0 opacity-20">
@@ -86,8 +86,6 @@ const Services = () => {
             alt="Plumbing installation" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
-            loading="lazy"
-            decoding="async"
           />
         </div>
       </section>
@@ -115,8 +113,6 @@ const Services = () => {
                       alt={service.title}
                       className="rounded-2xl shadow-xl w-full aspect-[4/3] object-cover"
                       referrerPolicy="no-referrer"
-                      loading="lazy"
-                      decoding="async"
                     />
                     <motion.div 
                       initial={{ scale: 0 }}
@@ -208,8 +204,6 @@ const Services = () => {
             alt="Pressure gauge plumbing work" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
-            loading="lazy"
-            decoding="async"
           />
           <div className="absolute inset-0 bg-navy-900/70 backdrop-blur-[1px]" />
         </div>
@@ -224,17 +218,17 @@ const Services = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a 
               href={`tel:${PHONE_NUMBER_RAW}`} 
-              className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-white text-pnf-red-600 px-6 sm:px-10 py-4 sm:py-5 rounded-2xl text-lg sm:text-2xl font-black hover:bg-gray-100 transition-all shadow-2xl min-h-[56px] touch-manipulation w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-3 bg-white text-pnf-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition-all shadow-2xl"
             >
-              <Phone size={24} className="shrink-0 sm:w-7 sm:h-7" />
-              FREE Quote Now
+              <Phone size={28} />
+              Get My FREE Quote Now
             </a>
             <a 
               href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like a free quote for my water system.")}`}
-              className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-navy-800 hover:bg-navy-700 text-white px-6 sm:px-10 py-4 sm:py-5 rounded-2xl text-base sm:text-xl font-bold transition-all min-h-[56px] touch-manipulation w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-3 bg-navy-800 hover:bg-navy-700 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all"
             >
-              <MessageSquare size={22} className="shrink-0 sm:w-6 sm:h-6" />
-              Text Us
+              <MessageSquare size={24} />
+              Text Us - Let&apos;s Chat!
             </a>
           </div>
         </div>
