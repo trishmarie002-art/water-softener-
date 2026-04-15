@@ -1,0 +1,11 @@
+# Robots.txt for PNF Water Heaters & Softeners
+# https://pnfwaterheaters.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://pnfwaterheaters.com/sitemap.xml
+
+# Crawl-delay (optional, for polite crawling)
+Crawl-delay: 1
