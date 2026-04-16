@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pnfwaterheaters.com/sitemap.xml
+Sitemap: https://pnftexas.com/sitemap.xml
