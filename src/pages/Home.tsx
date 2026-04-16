@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Droplets, Thermometer, Filter, ShieldCheck, Clock, Award, CheckCircle2, ArrowRight, Phone, ChevronDown, MessageSquare } from 'lucide-react';
+import { Droplets, Thermometer, Filter, ShieldCheck, Clock, Award, CheckCircle2, ArrowRight, Phone, ChevronDown, MessageSquare, Star } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
@@ -68,9 +68,9 @@ const Home = () => {
                 </div>
                 <a 
                   href={`tel:${PHONE_NUMBER_RAW}`}
-                  className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-black text-lg transition-all"
+                  className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-5 py-3 rounded-lg font-bold text-sm transition-all"
                 >
-                  <Phone size={20} /> Get My FREE Water Test Now
+                  <Phone size={16} /> Get My FREE Water Test Now
                 </a>
               </motion.div>
             </div>
@@ -134,9 +134,9 @@ const Home = () => {
               </p>
               <Link 
                 to="/about" 
-                className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-bold transition-all"
+                className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-5 py-3 rounded-lg font-semibold text-sm transition-all"
               >
-                Learn More About Us <ArrowRight size={20} />
+                Learn More About Us <ArrowRight size={16} />
               </Link>
             </motion.div>
           </div>
@@ -290,7 +290,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center"
           >
-            <Link to="/reviews" className="bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-bold transition-all inline-block">
+            <Link to="/reviews" className="bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-5 py-3 rounded-lg font-semibold text-sm transition-all inline-block">
               Read More Reviews
             </Link>
           </motion.div>
@@ -301,12 +301,12 @@ const Home = () => {
       <FAQSection />
 
       {/* Final CTA */}
-      <section className="py-16 text-white relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      <section className="py-16 text-white relative overflow-hidden min-h-[400px]">
+        <div className="absolute inset-0 z-0 w-full h-full">
           <img 
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%282%29-XSqDPqrNjs3jJof5tMG0gyMnleXSJm.webp" 
             alt="Pressure gauge plumbing work" 
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-navy-900/60 backdrop-blur-[1px]" />
@@ -353,18 +353,18 @@ const Home = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               href={`tel:${PHONE_NUMBER_RAW}`} 
-              className="bg-white text-pnf-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition-all flex items-center justify-center gap-3 shadow-2xl"
+              className="bg-white text-pnf-red-600 px-6 py-3 rounded-xl text-base font-bold hover:bg-gray-100 transition-all flex items-center justify-center gap-2 shadow-xl"
             >
-              <Phone size={28} />
+              <Phone size={18} />
               Get My FREE Quote Now
             </motion.a>
             <motion.a 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like a free quote for my water system.")}`}
-              className="bg-navy-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-navy-700 transition-all flex items-center justify-center gap-3"
+              className="bg-navy-800 text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-navy-700 transition-all flex items-center justify-center gap-2"
             >
-              <MessageSquare size={24} />
+              <MessageSquare size={16} />
               Text Us - Let&apos;s Chat!
             </motion.a>
           </motion.div>
@@ -449,22 +449,5 @@ const FAQSection = () => {
     </section>
   );
 };
-
-// Helper Star component
-const Star = ({ size, fill, className }: { size: number, fill?: string, className?: string, key?: any }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill={fill || "none"} 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
-    className={className}
-  >
-    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-  </svg>
-);
 
 export default Home;

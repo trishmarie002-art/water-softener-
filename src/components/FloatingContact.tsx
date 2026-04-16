@@ -23,26 +23,26 @@ const FloatingContact = () => {
             {/* Call Button */}
             <a
               href={`tel:${PHONE_NUMBER_RAW}`}
-              className="flex items-center gap-3 bg-white shadow-lg rounded-full pl-4 pr-2 py-2 hover:shadow-xl transition-all group"
+              className="flex items-center gap-2 bg-white shadow-lg rounded-full pl-3 pr-1.5 py-1.5 hover:shadow-xl transition-all group text-sm"
             >
               <span className="text-navy-800 font-semibold whitespace-nowrap">
-                Get My FREE Quote Now
+                FREE Quote
               </span>
-              <div className="bg-green-500 text-white p-3 rounded-full group-hover:bg-green-600 transition-colors">
-                <Phone size={20} />
+              <div className="bg-green-500 text-white p-2 rounded-full group-hover:bg-green-600 transition-colors">
+                <Phone size={16} />
               </div>
             </a>
 
             {/* SMS Button */}
             <a
               href={smsLink}
-              className="flex items-center gap-3 bg-white shadow-lg rounded-full pl-4 pr-2 py-2 hover:shadow-xl transition-all group"
+              className="flex items-center gap-2 bg-white shadow-lg rounded-full pl-3 pr-1.5 py-1.5 hover:shadow-xl transition-all group text-sm"
             >
               <span className="text-navy-800 font-semibold whitespace-nowrap">
-                Text Us - Let&apos;s Chat!
+                Text Us
               </span>
-              <div className="bg-pnf-red-600 text-white p-3 rounded-full group-hover:bg-pnf-red-700 transition-colors">
-                <MessageSquare size={20} />
+              <div className="bg-pnf-red-600 text-white p-2 rounded-full group-hover:bg-pnf-red-700 transition-colors">
+                <MessageSquare size={16} />
               </div>
             </a>
           </motion.div>
@@ -52,7 +52,7 @@ const FloatingContact = () => {
       {/* Main Toggle Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className={`p-4 rounded-full shadow-2xl transition-all ${
+        className={`p-3 rounded-full shadow-2xl transition-all ${
           isOpen 
             ? 'bg-navy-800 text-white' 
             : 'bg-pnf-red-600 text-white animate-bounce hover:animate-none'
@@ -68,7 +68,7 @@ const FloatingContact = () => {
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.15 }}
             >
-              <X size={28} />
+              <X size={22} />
             </motion.div>
           ) : (
             <motion.div
@@ -78,7 +78,7 @@ const FloatingContact = () => {
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.15 }}
             >
-              <MessageCircle size={28} />
+              <MessageCircle size={22} />
             </motion.div>
           )}
         </AnimatePresence>

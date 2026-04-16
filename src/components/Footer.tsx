@@ -25,9 +25,9 @@ const Footer = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             href={`tel:${PHONE_NUMBER_RAW}`}
-            className="inline-flex items-center gap-2 bg-white text-pnf-red-600 px-6 py-3 rounded-xl font-black text-lg hover:bg-gray-100 transition-all"
+            className="inline-flex items-center gap-2 bg-white text-pnf-red-600 px-5 py-3 rounded-lg font-bold text-sm hover:bg-gray-100 transition-all"
           >
-            <Phone size={20} /> Call Now - FREE Water Test
+            <Phone size={16} /> Call Now - FREE Water Test
           </motion.a>
         </div>
       </div>

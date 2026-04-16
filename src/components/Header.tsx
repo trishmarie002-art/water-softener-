@@ -100,9 +100,9 @@ const Header = () => {
               ))}
               <a
                 href={`tel:${PHONE_NUMBER_RAW}`}
-                className="flex items-center justify-center gap-2 bg-pnf-red-600 text-white py-4 rounded-xl font-bold mt-4"
+                className="flex items-center justify-center gap-2 bg-pnf-red-600 text-white py-3 rounded-lg font-semibold text-sm mt-4"
               >
-                <Phone size={20} />
+                <Phone size={16} />
                 <span>Get My FREE Quote Now</span>
               </a>
             </div>
