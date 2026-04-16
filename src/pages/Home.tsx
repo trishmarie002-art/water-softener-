@@ -301,12 +301,12 @@ const Home = () => {
       <FAQSection />
 
       {/* Final CTA */}
-      <section className="py-16 text-white relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      <section className="py-16 text-white relative overflow-hidden min-h-[400px]">
+        <div className="absolute inset-0 z-0 w-full h-full">
           <img 
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%282%29-XSqDPqrNjs3jJof5tMG0gyMnleXSJm.webp" 
             alt="Pressure gauge plumbing work" 
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-navy-900/60 backdrop-blur-[1px]" />
