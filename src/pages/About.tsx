@@ -31,9 +31,9 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               href={`tel:${PHONE_NUMBER_RAW}`}
-              className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-black text-lg transition-all"
+              className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-5 py-3 rounded-lg font-bold text-sm transition-all"
             >
-              <Phone size={20} /> Get Your FREE Water Test
+              <Phone size={16} /> Get Your FREE Water Test
             </motion.a>
           </div>
         </div>
@@ -194,16 +194,16 @@ const About = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <a 
               href={`tel:${PHONE_NUMBER_RAW}`} 
-              className="bg-white text-pnf-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition-all flex items-center justify-center gap-3"
+              className="bg-white text-pnf-red-600 px-6 py-3 rounded-xl text-base font-bold hover:bg-gray-100 transition-all flex items-center justify-center gap-2 shadow-xl"
             >
-              <Phone size={28} />
+              <Phone size={18} />
               Get My FREE Quote Now
             </a>
             <a 
               href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like a free quote for my water system.")}`}
-              className="bg-navy-800 text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-navy-700 transition-all flex items-center justify-center gap-3"
+              className="bg-navy-800 text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-navy-700 transition-all flex items-center justify-center gap-2"
             >
-              <MessageSquare size={24} />
+              <MessageSquare size={16} />
               Text Us - Let&apos;s Chat!
             </a>
           </div>

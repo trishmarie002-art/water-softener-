@@ -181,9 +181,9 @@ const FAQ = () => {
           </p>
           <a 
             href={`tel:${PHONE_NUMBER_RAW}`} 
-            className="inline-flex items-center gap-3 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl text-xl font-bold transition-all"
+            className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-5 py-3 rounded-lg text-sm font-bold transition-all"
           >
-            <Phone size={24} />
+            <Phone size={16} />
             Get My FREE Quote Now
           </a>
         </div>

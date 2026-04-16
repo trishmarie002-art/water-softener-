@@ -19,8 +19,8 @@ const WaterHeaters = () => {
                   Don't get left in the cold. We provide fast, professional water heater replacement and installation for San Antonio homes.
                 </p>
                 <div className="flex flex-wrap gap-4 mb-10">
-                  <a href={`tel:${PHONE_NUMBER_RAW}`} className="bg-pnf-red-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-pnf-red-700 transition-all shadow-lg shadow-pnf-red-600/20">
-                    Get My FREE Quote Now
+                  <a href={`tel:${PHONE_NUMBER_RAW}`} className="inline-flex items-center gap-2 bg-pnf-red-600 text-white px-5 py-3 rounded-lg font-bold text-sm hover:bg-pnf-red-700 transition-all">
+                    <Phone size={16} /> Get My FREE Quote Now
                   </a>
                 </div>
               </motion.div>
@@ -117,8 +117,8 @@ const WaterHeaters = () => {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-3xl md:text-5xl font-bold mb-8">Need Hot Water Now?</h2>
-          <a href={`tel:${PHONE_NUMBER_RAW}`} className="inline-flex items-center gap-3 bg-white text-pnf-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition-all shadow-2xl">
-            <Phone size={28} />
+          <a href={`tel:${PHONE_NUMBER_RAW}`} className="inline-flex items-center gap-2 bg-white text-pnf-red-600 px-6 py-3 rounded-xl text-base font-bold hover:bg-gray-100 transition-all shadow-xl">
+            <Phone size={18} />
             Get My FREE Quote Now
           </a>
         </div>

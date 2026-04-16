@@ -30,9 +30,9 @@ const ServiceAreas = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             whileHover={{ scale: 1.05 }}
             href={`tel:${PHONE_NUMBER_RAW}`}
-            className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-8 py-4 rounded-xl font-black text-lg transition-all"
+            className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-5 py-3 rounded-lg font-bold text-sm transition-all"
           >
-            <Phone size={20} /> Call Now - FREE Water Test
+            <Phone size={16} /> Call Now - FREE Water Test
           </motion.a>
         </div>
         <div className="absolute inset-0 opacity-20">
@@ -78,8 +78,8 @@ const ServiceAreas = () => {
               <div className="mt-12 p-8 bg-navy-50 rounded-2xl border border-navy-100">
                 <h3 className="text-xl font-bold text-navy-900 mb-4">Don&apos;t see your city?</h3>
                 <p className="text-navy-700 mb-6">We often travel outside our standard service area for larger installations. Give us a call to see if we can help you!</p>
-                <a href={`tel:${PHONE_NUMBER_RAW}`} className="text-pnf-red-600 font-black text-2xl flex items-center gap-2">
-                  <Phone size={24} /> {PHONE_NUMBER}
+                <a href={`tel:${PHONE_NUMBER_RAW}`} className="text-pnf-red-600 font-bold text-lg flex items-center gap-2">
+                  <Phone size={18} /> {PHONE_NUMBER}
                 </a>
               </div>
             </div>
@@ -133,9 +133,9 @@ const ServiceAreas = () => {
           </p>
           <a 
             href={`tel:${PHONE_NUMBER_RAW}`}
-            className="inline-flex items-center gap-2 bg-white text-pnf-red-600 px-8 py-4 rounded-xl font-black text-lg hover:bg-gray-100 transition-all"
+            className="inline-flex items-center gap-2 bg-white text-pnf-red-600 px-5 py-3 rounded-lg font-bold text-sm hover:bg-gray-100 transition-all"
           >
-            <Phone size={20} /> Call Now - Same Day Service
+            <Phone size={16} /> Call Now - Same Day Service
           </a>
         </div>
       </section>

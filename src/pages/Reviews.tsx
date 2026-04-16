@@ -115,9 +115,9 @@ const Reviews = () => {
           </p>
           <a 
             href={`tel:${PHONE_NUMBER_RAW}`} 
-            className="inline-flex items-center gap-3 bg-white text-pnf-red-600 px-10 py-5 rounded-2xl text-2xl font-black hover:bg-gray-100 transition-all shadow-2xl"
+            className="inline-flex items-center gap-2 bg-white text-pnf-red-600 px-6 py-3 rounded-xl text-base font-bold hover:bg-gray-100 transition-all shadow-xl"
           >
-            <Phone size={28} />
+            <Phone size={18} />
             Get My FREE Quote Now
           </a>
         </div>

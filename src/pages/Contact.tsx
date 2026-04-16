@@ -31,9 +31,9 @@ const Contact = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             whileHover={{ scale: 1.05 }}
             href={`tel:${PHONE_NUMBER_RAW}`}
-            className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-10 py-5 rounded-xl font-black text-xl transition-all animate-pulse hover:animate-none"
+            className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-6 py-3 rounded-lg font-bold text-base transition-all"
           >
-            <Phone size={24} /> CALL NOW - {PHONE_NUMBER}
+            <Phone size={18} /> CALL NOW - {PHONE_NUMBER}
           </motion.a>
         </div>
         <div className="absolute inset-0 opacity-20">
