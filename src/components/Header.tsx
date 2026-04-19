@@ -39,13 +39,13 @@ const Header = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav className="hidden xl:flex items-center gap-3 2xl:gap-5">
           {navLinks.map((link) => (
             <NavLink
               key={link.path}
               to={link.path}
               className={({ isActive }) => cn(
-                "text-sm font-medium transition-colors hover:text-pnf-red-600 text-navy-800",
+                "text-xs 2xl:text-sm font-medium transition-colors hover:text-pnf-red-600 text-navy-800 whitespace-nowrap",
                 isActive && "text-pnf-red-600 border-b-2 border-pnf-red-600"
               )}
             >
@@ -54,17 +54,18 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 xl:gap-4">
           <a
             href={`tel:${PHONE_NUMBER_RAW}`}
-            className="hidden md:flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-4 py-2 rounded-full font-bold transition-transform hover:scale-105"
+            className="hidden md:flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-3 xl:px-4 py-2 rounded-full font-bold transition-transform hover:scale-105 text-sm xl:text-base whitespace-nowrap"
           >
-            <Phone size={18} />
-            <span>Get My FREE Quote Now</span>
+            <Phone size={18} className="shrink-0" />
+            <span className="hidden lg:inline">Get My FREE Quote Now</span>
+            <span className="lg:hidden">Free Quote</span>
           </a>
           
           <button
-            className="lg:hidden p-2 rounded-md"
+            className="xl:hidden p-2 rounded-md"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
@@ -83,7 +84,7 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t overflow-hidden"
+            className="xl:hidden bg-white border-t overflow-hidden"
           >
             <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
