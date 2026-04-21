@@ -20,7 +20,7 @@ const WaterSofteners = () => {
                 </p>
                 <div className="flex flex-wrap gap-4 mb-10">
                   <a href={`tel:${PHONE_NUMBER_RAW}`} className="inline-flex items-center gap-2 bg-pnf-red-600 text-white px-5 py-3 rounded-lg font-bold text-sm hover:bg-pnf-red-700 transition-all">
-                    <Phone size={16} /> Get My FREE Quote Now
+                    <Phone size={16} /> Call Us Today
                   </a>
                 </div>
               </motion.div>
@@ -89,7 +89,7 @@ const WaterSofteners = () => {
               </ul>
             </div>
             <div className="lg:w-1/2 w-full">
-              <LeadForm title="Free Water Test" subtitle="Get a custom quote for your home." className="text-gray-900" />
+              <LeadForm title="Request a Water Test" subtitle="Call us to schedule your water analysis." className="text-gray-900" />
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@ const WaterSofteners = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-8">Stop Battling Hard Water</h2>
           <a href={`tel:${PHONE_NUMBER_RAW}`} className="inline-flex items-center gap-2 bg-white text-pnf-red-600 px-6 py-3 rounded-xl text-base font-bold hover:bg-gray-100 transition-all shadow-xl">
             <Phone size={18} />
-            Get My FREE Quote Now
+            Call Us Today
           </a>
         </div>
       </section>

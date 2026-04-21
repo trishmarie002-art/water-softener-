@@ -27,7 +27,7 @@ const Footer = () => {
             href={`tel:${PHONE_NUMBER_RAW}`}
             className="inline-flex items-center gap-2 bg-white text-pnf-red-600 px-5 py-3 rounded-lg font-bold text-sm hover:bg-gray-100 transition-all"
           >
-            <Phone size={16} /> Call Now - FREE Water Test
+            <Phone size={16} /> Call Us Today
           </motion.a>
         </div>
       </div>
@@ -49,7 +49,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              San Antonio&apos;s trusted water softener and water heater installation experts. Stop hard water damage today with a FREE water test. Serving San Antonio, Boerne, New Braunfels, and surrounding areas for 28+ years.
+              San Antonio&apos;s trusted water softener and water heater installation experts. Serving San Antonio, Boerne, New Braunfels, and surrounding areas for 28+ years.
             </p>
             <div className="flex gap-4">
               {[Facebook, Instagram, Twitter].map((Icon, index) => (
@@ -150,6 +150,13 @@ const Footer = () => {
             <a href="#" className="hover:text-pnf-red-600 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-pnf-red-600 transition-colors">Terms of Service</a>
           </div>
+        </div>
+
+        {/* Regulatory Information */}
+        <div className="border-t border-gray-200 mt-8 pt-6 text-center text-xs text-gray-500 leading-relaxed">
+          <p className="font-semibold text-gray-600 mb-1">REGULATED BY: TEXAS BOARD OF PLUMBING EXAMINERS</p>
+          <p>7915 Cameron Road, Austin TX 78765 | EMAIL: <a href="mailto:INFO@TSBPE.STATE.TX.US" className="hover:text-pnf-red-600 transition-colors">INFO@TSBPE.STATE.TX.US</a> | <a href="tel:5129365349" className="hover:text-pnf-red-600 transition-colors">512-936-5349</a></p>
+          <p className="mt-2 font-medium text-gray-600">MASTER PLUMBER: JACINTO LEFEBRE | License # M-41594</p>
         </div>
       </div>
     </footer>

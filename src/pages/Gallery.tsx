@@ -111,14 +111,14 @@ const Gallery = () => {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-navy-800 mb-4">Ready to Start Your Project?</h2>
           <p className="text-gray-600 mb-8 max-w-xl mx-auto">
-            Let us bring this same quality workmanship to your home. Call us today for a free estimate.
+            Let us bring this same quality workmanship to your home. Call us today to get started.
           </p>
           <a 
             href={`tel:${PHONE_NUMBER_RAW}`} 
             className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-5 py-3 rounded-lg text-sm font-semibold transition-all"
           >
             <Phone size={16} />
-            Get My FREE Quote Now
+            Call Us Today
           </a>
         </div>
       </section>

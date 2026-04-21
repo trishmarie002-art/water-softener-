@@ -30,7 +30,7 @@ const Services = () => {
         'Save up to 30% on energy bills',
         'Lasts 20+ years (vs 10 for tank heaters)',
         'Same-day installation available',
-        'FREE estimate - no obligation'
+        'Same-day service available'
       ],
       image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%284%29-RvHGOWWeQJaPYX7Q2X9brTxLWMrd3n.webp'
     },
@@ -77,7 +77,7 @@ const Services = () => {
             href={`tel:${PHONE_NUMBER_RAW}`}
             className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-5 py-3 rounded-lg font-bold text-sm transition-all"
           >
-            <Phone size={16} /> Call Now For FREE Quote
+            <Phone size={16} /> Call Now
           </motion.a>
         </div>
         <div className="absolute inset-0 opacity-20">
@@ -221,10 +221,10 @@ const Services = () => {
               className="inline-flex items-center justify-center gap-2 bg-white text-pnf-red-600 px-6 py-3 rounded-xl text-base font-bold hover:bg-gray-100 transition-all shadow-xl"
             >
               <Phone size={18} />
-              Get My FREE Quote Now
+              Call Us Today
             </a>
             <a 
-              href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like a free quote for my water system.")}`}
+              href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like to learn more about your water system services.")}`}
               className="inline-flex items-center justify-center gap-2 bg-navy-800 hover:bg-navy-700 text-white px-6 py-3 rounded-xl text-sm font-semibold transition-all"
             >
               <MessageSquare size={16} />

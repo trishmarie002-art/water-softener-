@@ -86,7 +86,7 @@ const Hero = () => {
               className="flex items-center justify-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-5 py-3 rounded-lg text-sm md:text-base font-bold transition-all transform hover:scale-105 shadow-lg shadow-pnf-red-600/30"
             >
               <Phone size={18} />
-              <span>CALL NOW - FREE Quote</span>
+              <span>CALL NOW</span>
             </a>
             <a
               href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I need help with my hard water problem in San Antonio.")}`}

@@ -188,7 +188,7 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
             <option>Water Heater Replacement</option>
             <option>Water Filtration System</option>
             <option>Plumbing Repair</option>
-            <option>Other / Free Estimate</option>
+            <option>Other</option>
           </select>
         </div>
 
@@ -214,7 +214,7 @@ const LeadForm = ({ title, subtitle, className, compact = false }: LeadFormProps
           ) : (
             <>
               <Send size={20} />
-              <span>Get Free Estimate</span>
+              <span>Submit Request</span>
             </>
           )}
         </button>

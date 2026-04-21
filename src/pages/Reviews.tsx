@@ -111,14 +111,14 @@ const Reviews = () => {
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-3xl md:text-5xl font-bold mb-8">Ready for 5-Star Service?</h2>
           <p className="text-xl text-navy-200 mb-10 max-w-2xl mx-auto">
-            Join our list of happy customers. Call us today for your free estimate.
+            Join our list of happy customers. Call us today to get started.
           </p>
           <a 
             href={`tel:${PHONE_NUMBER_RAW}`} 
             className="inline-flex items-center gap-2 bg-white text-pnf-red-600 px-6 py-3 rounded-xl text-base font-bold hover:bg-gray-100 transition-all shadow-xl"
           >
             <Phone size={18} />
-            Get My FREE Quote Now
+            Call Us Today
           </a>
         </div>
       </section>

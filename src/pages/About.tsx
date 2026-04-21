@@ -197,10 +197,10 @@ const About = () => {
               className="bg-white text-pnf-red-600 px-6 py-3 rounded-xl text-base font-bold hover:bg-gray-100 transition-all flex items-center justify-center gap-2 shadow-xl"
             >
               <Phone size={18} />
-              Get My FREE Quote Now
+              Call Us Today
             </a>
             <a 
-              href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like a free quote for my water system.")}`}
+              href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like to learn more about your water system services.")}`}
               className="bg-navy-800 text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-navy-700 transition-all flex items-center justify-center gap-2"
             >
               <MessageSquare size={16} />
