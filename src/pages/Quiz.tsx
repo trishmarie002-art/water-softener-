@@ -43,7 +43,7 @@ const Quiz = () => {
             </div>
             <div className="flex items-center gap-2 text-navy-600">
               <Award className="w-5 h-5 text-pnf-red-500" />
-              <span className="text-sm font-medium">100% Free</span>
+              <span className="text-sm font-medium">No obligation</span>
             </div>
             <div className="flex items-center gap-2 text-navy-600">
               <ShieldCheck className="w-5 h-5 text-pnf-red-500" />

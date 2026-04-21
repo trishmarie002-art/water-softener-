@@ -233,11 +233,11 @@ const WaterQuiz = () => {
           <form onSubmit={handleSubmit} className="p-6 md:p-8 space-y-5">
             <div className="text-center mb-6">
               <h3 className="text-xl font-bold text-navy-900">
-                {isHighRisk ? "Get Your Free Water Test" : "Claim Your Free Water Test"}
+                {isHighRisk ? "Get Your Water Test" : "Claim Your Water Test"}
               </h3>
               <p className="text-navy-600 mt-1">
                 {isHighRisk 
-                  ? "Enter your details for a free in-home water analysis and custom solution."
+                  ? "Enter your details for an in-home water analysis and custom solution."
                   : "Our technician will test for hardness, chlorine, iron, and other contaminants - all at no cost to you."}
               </p>
             </div>
@@ -290,7 +290,7 @@ const WaterQuiz = () => {
               ) : (
                 <>
                   <Send className="w-5 h-5" />
-                  <span>Get My Free Water Test</span>
+                  <span>Get My Water Test</span>
                 </>
               )}
             </button>
@@ -362,7 +362,7 @@ const WaterQuiz = () => {
             {/* Persuasion box - always shown */}
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
               <h3 className="font-bold text-navy-900 mb-2">
-                {isHighRisk ? "Don't Wait - Hard Water Damage Adds Up" : "Why Get a Free Water Test Anyway?"}
+                {isHighRisk ? "Don't Wait - Hard Water Damage Adds Up" : "Why Get a Water Test?"}
               </h3>
               <ul className="text-sm text-navy-700 space-y-2">
                 {isHighRisk ? (
@@ -377,7 +377,7 @@ const WaterQuiz = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-pnf-red-500 font-bold">•</span>
-                      A free test confirms exact hardness levels and the best solution for your home
+                      A water test confirms exact hardness levels and the best solution for your home
                     </li>
                   </>
                 ) : (
@@ -396,7 +396,7 @@ const WaterQuiz = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-blue-500 font-bold">•</span>
-                      A 5-minute test gives you peace of mind - completely free, no obligation
+                      A 5-minute test gives you peace of mind - no obligation
                     </li>
                   </>
                 )}
@@ -429,10 +429,10 @@ const WaterQuiz = () => {
               className="w-full bg-pnf-red-600 hover:bg-pnf-red-700 text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02] active:scale-[0.98]"
             >
               <Droplets className="w-5 h-5" />
-              <span>Claim Your Free Water Test</span>
+              <span>Claim Your Water Test</span>
             </button>
             <p className="text-xs text-center text-navy-500 mt-2">
-              100% Free - No purchase required - Takes only 5 minutes
+              No purchase required - Takes only 5 minutes
             </p>
 
             <button

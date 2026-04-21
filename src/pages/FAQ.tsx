@@ -34,7 +34,7 @@ const FAQ = () => {
         },
         {
           q: "How do I know if my water heater needs replacing?",
-          a: "Signs include: age over 10 years, rusty or discolored hot water, strange noises (popping or rumbling), water pooling around the unit, inconsistent water temperature, or increasing energy bills. If you notice any of these, call us for a free inspection."
+          a: "Signs include: age over 10 years, rusty or discolored hot water, strange noises (popping or rumbling), water pooling around the unit, inconsistent water temperature, or increasing energy bills. If you notice any of these, give us a call."
         },
         {
           q: "How long does water heater installation take?",

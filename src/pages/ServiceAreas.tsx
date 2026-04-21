@@ -32,7 +32,7 @@ const ServiceAreas = () => {
             href={`tel:${PHONE_NUMBER_RAW}`}
             className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-5 py-3 rounded-lg font-bold text-sm transition-all"
           >
-            <Phone size={16} /> Call Now - FREE Water Test
+            <Phone size={16} /> Call Us Today
           </motion.a>
         </div>
         <div className="absolute inset-0 opacity-20">
@@ -102,7 +102,7 @@ const ServiceAreas = () => {
           <p className="text-lg text-gray-600 text-center mb-16 max-w-2xl mx-auto">We understand the unique water challenges in every neighborhood we serve.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Water Softener San Antonio", description: "From Stone Oak to Southtown, we know San Antonio water. Our systems are specifically calibrated for the extreme hardness levels (15-20 grains) found in the Edwards Aquifer region.", highlight: "FREE water test for all San Antonio homes" },
+              { title: "Water Softener San Antonio", description: "From Stone Oak to Southtown, we know San Antonio water. Our systems are specifically calibrated for the extreme hardness levels (15-20 grains) found in the Edwards Aquifer region.", highlight: "Call us for water testing" },
               { title: "Water Softener New Braunfels & Schertz", description: "Fast response times for our neighbors to the northeast. We provide same-day water softener and water heater installation for homes in New Braunfels, Schertz, and Cibolo.", highlight: "Same-day installation available" },
               { title: "Water Softener Boerne & Helotes", description: "Serving the Texas Hill Country with premium water softeners and filtration systems. We understand the unique well water challenges in these areas and have solutions for every home.", highlight: "Well water specialists" }
             ].map((item, index) => (
@@ -129,7 +129,7 @@ const ServiceAreas = () => {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Stop Hard Water Damage?</h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Get your FREE water test today and see exactly what&apos;s in your water. No cost, no obligation.
+            Call us today and see exactly what&apos;s in your water.
           </p>
           <a 
             href={`tel:${PHONE_NUMBER_RAW}`}

@@ -33,7 +33,7 @@ const About = () => {
               href={`tel:${PHONE_NUMBER_RAW}`}
               className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-5 py-3 rounded-lg font-bold text-sm transition-all"
             >
-              <Phone size={16} /> Get Your FREE Water Test
+              <Phone size={16} /> Call Us Today
             </motion.a>
           </div>
         </div>
@@ -186,7 +186,7 @@ const About = () => {
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl md:text-5xl font-bold mb-8">Your San Antonio Neighbors Trust Us - You Can Too</h2>
           <p className="text-xl text-navy-200 mb-4 max-w-2xl mx-auto">
-            Stop letting hard water damage your home. Get your FREE water test today and see exactly what&apos;s in your water.
+            Stop letting hard water damage your home. Call us today and see exactly what&apos;s in your water.
           </p>
           <p className="text-lg text-yellow-400 font-bold mb-10">
             No cost, no obligation - Same day appointments available!
