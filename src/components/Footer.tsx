@@ -155,8 +155,8 @@ const Footer = () => {
         {/* Regulatory Information */}
         <div className="border-t border-gray-200 mt-8 pt-6 text-center text-xs text-gray-500 leading-relaxed">
           <p className="font-semibold text-gray-600 mb-1">REGULATED BY: TEXAS BOARD OF PLUMBING EXAMINERS</p>
-          <p>7915 Cameron Road, Austin TX 78765 | EMAIL: <a href="mailto:INFO@TSBPE.STATE.TX.US" className="hover:text-pnf-red-600 transition-colors">INFO@TSBPE.STATE.TX.US</a> | <a href="tel:5129365349" className="hover:text-pnf-red-600 transition-colors">512-936-5349</a></p>
-          <p className="mt-2 font-medium text-gray-600">MASTER PLUMBER: JACINTO LEFEBRE | License # M-41594</p>
+          <p>7915 Cameron Road, Austin TX 78754 | EMAIL: <a href="mailto:INFO@TSBPE.STATE.TX.US" className="hover:text-pnf-red-600 transition-colors">INFO@TSBPE.STATE.TX.US</a> | <a href="tel:5129365200" className="hover:text-pnf-red-600 transition-colors">512-936-5200</a></p>
+          <p className="mt-2 font-medium text-gray-600">MASTER PLUMBER: JACINTO LEFEBRE | License # M-41596</p>
         </div>
       </div>
     </footer>
