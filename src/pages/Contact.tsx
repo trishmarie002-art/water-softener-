@@ -15,7 +15,7 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-6xl font-bold mb-6"
           >
-            Get Your FREE Water Test Today
+            Contact Us Today
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl text-navy-200 max-w-2xl mx-auto mb-8"
           >
-            Stop letting San Antonio&apos;s hard water damage your home. Call now for your <strong>FREE water test</strong> and same-day appointment.
+            Stop letting San Antonio&apos;s hard water damage your home. Call now for a same-day appointment.
           </motion.p>
           <motion.a 
             initial={{ opacity: 0, scale: 0.9 }}
@@ -58,7 +58,7 @@ const Contact = () => {
             >
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Get In Touch</h2>
               <p className="text-lg text-gray-600 mb-12 leading-relaxed">
-                Whether you have a question about water softeners, need an emergency water heater replacement, or want to schedule a free water test, our team is ready to assist you.
+                Whether you have a question about water softeners, need an emergency water heater replacement, or want to schedule a water test, our team is ready to assist you.
               </p>
               
               <div className="space-y-8">
@@ -119,8 +119,8 @@ const Contact = () => {
             >
               <div className="sticky top-32">
                 <LeadForm 
-                  title="Schedule Your FREE Water Test" 
-                  subtitle="Find out exactly what's in your San Antonio water. No cost, no obligation - we'll show you the results on the spot."
+                  title="Schedule Your Water Test" 
+                  subtitle="Find out exactly what's in your San Antonio water. We'll show you the results on the spot."
                 />
               </div>
             </motion.div>

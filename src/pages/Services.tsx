@@ -16,7 +16,7 @@ const Services = () => {
         'Extends water heater life by 5+ years',
         'Softer skin, shinier hair, cleaner dishes',
         'Save up to $800/year on soap & energy',
-        'FREE water hardness test included'
+        'Water hardness testing available'
       ],
       image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%283%29-eVGKCjJfKNFf225V5TmycvQFh6jkWZ.webp'
     },
@@ -210,7 +210,7 @@ const Services = () => {
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Don&apos;t Let Hard Water Cost You Another Day</h2>
           <p className="text-xl text-navy-200 mb-4 max-w-2xl mx-auto">
-            Get your FREE water test and see exactly what&apos;s damaging your San Antonio home. No cost, no obligation.
+            Call us today to see exactly what&apos;s damaging your San Antonio home.
           </p>
           <p className="text-lg text-yellow-400 font-bold mb-10">
             Same-day appointments available - Call now!

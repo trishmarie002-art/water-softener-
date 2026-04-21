@@ -72,7 +72,7 @@ const Hero = () => {
             transition={{ delay: 0.6 }}
             className="text-base md:text-xl text-blue-50 mb-6 md:mb-8 max-w-2xl leading-relaxed"
           >
-            <strong>San Antonio has some of the HARDEST water in Texas.</strong> Every day without a water softener costs you money in damaged appliances, higher energy bills, and plumbing repairs. Get your FREE water test today.
+            <strong>San Antonio has some of the HARDEST water in Texas.</strong> Every day without a water softener costs you money in damaged appliances, higher energy bills, and plumbing repairs. Call us today.
           </motion.p>
 
           <motion.div
@@ -117,7 +117,7 @@ const Hero = () => {
             </div>
             <div className="flex items-center gap-2 text-white">
               <Droplets className="text-pnf-red-400 shrink-0" size={18} />
-              <span className="text-xs md:text-sm font-medium">FREE Water Testing</span>
+              <span className="text-xs md:text-sm font-medium">Water Testing Available</span>
             </div>
           </motion.div>
         </div>

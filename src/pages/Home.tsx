@@ -22,7 +22,7 @@ const Home = () => {
             </span>
             <p className="text-sm md:text-base font-bold text-center">
               <span className="hidden sm:inline">San Antonio&apos;s Hard Water Is Damaging Your Home RIGHT NOW - </span>
-              Take Our FREE 60-Second Risk Assessment
+              Take Our 60-Second Risk Assessment
             </p>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
           </div>
@@ -70,7 +70,7 @@ const Home = () => {
                   href={`tel:${PHONE_NUMBER_RAW}`}
                   className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-5 py-3 rounded-lg font-bold text-sm transition-all"
                 >
-                  <Phone size={16} /> Get My FREE Water Test Now
+                  <Phone size={16} /> Call Us Today
                 </a>
               </motion.div>
             </div>
@@ -236,8 +236,8 @@ const Home = () => {
               className="lg:w-1/2 w-full"
             >
               <LeadForm 
-                title="Get Your FREE Water Test Today" 
-                subtitle="Find out exactly what's in YOUR water. No cost, no obligation - we'll test your water and show you the results."
+                title="Schedule Your Water Test Today" 
+                subtitle="Find out exactly what's in YOUR water. We'll test your water and show you the results."
                 className="text-gray-900"
               />
             </motion.div>
@@ -331,7 +331,7 @@ const Home = () => {
             transition={{ delay: 0.1 }}
             className="text-xl text-navy-100 mb-4 max-w-2xl mx-auto"
           >
-            Every day you wait costs you money. Get your <strong>FREE water test</strong> and see exactly what&apos;s in your San Antonio water.
+            Every day you wait costs you money. Call us today and see exactly what&apos;s in your San Antonio water.
           </motion.p>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
