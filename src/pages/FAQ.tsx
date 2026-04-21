@@ -63,8 +63,8 @@ const FAQ = () => {
       category: "Service & Pricing",
       questions: [
         {
-          q: "Do you offer free estimates?",
-          a: "Yes! We provide free on-site estimates for all water softener, water heater, and filtration installations. Our technician will assess your needs, answer your questions, and provide a detailed quote with no obligation."
+          q: "How do I get started?",
+          a: "Simply give us a call! Our technician will assess your needs, answer your questions, and discuss the best solution for your home."
         },
         {
           q: "What areas do you serve?",
@@ -184,7 +184,7 @@ const FAQ = () => {
             className="inline-flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-5 py-3 rounded-lg text-sm font-bold transition-all"
           >
             <Phone size={16} />
-            Get My FREE Quote Now
+            Call Us Today
           </a>
         </div>
       </section>

@@ -60,8 +60,8 @@ const Header = () => {
             className="hidden md:flex items-center gap-2 bg-pnf-red-600 hover:bg-pnf-red-700 text-white px-3 xl:px-4 py-2 rounded-full font-bold transition-transform hover:scale-105 text-sm xl:text-base whitespace-nowrap"
           >
             <Phone size={18} className="shrink-0" />
-            <span className="hidden lg:inline">Get My FREE Quote Now</span>
-            <span className="lg:hidden">Free Quote</span>
+            <span className="hidden lg:inline">Call Us Today</span>
+            <span className="lg:hidden">Call Now</span>
           </a>
           
           <button
@@ -104,7 +104,7 @@ const Header = () => {
                 className="flex items-center justify-center gap-2 bg-pnf-red-600 text-white py-3 rounded-lg font-semibold text-sm mt-4"
               >
                 <Phone size={16} />
-                <span>Get My FREE Quote Now</span>
+                <span>Call Us Today</span>
               </a>
             </div>
           </motion.div>

@@ -63,7 +63,7 @@ const Home = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle2 className="text-pnf-red-600" size={24} />
-                    <span className="font-semibold text-navy-800">Free On-Site Estimates</span>
+                    <span className="font-semibold text-navy-800">On-Site Consultations</span>
                   </div>
                 </div>
                 <a 
@@ -356,12 +356,12 @@ const Home = () => {
               className="bg-white text-pnf-red-600 px-6 py-3 rounded-xl text-base font-bold hover:bg-gray-100 transition-all flex items-center justify-center gap-2 shadow-xl"
             >
               <Phone size={18} />
-              Get My FREE Quote Now
+              Call Us Today
             </motion.a>
             <motion.a 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
-              href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like a free quote for my water system.")}`}
+              href={`sms:${PHONE_NUMBER_RAW}?body=${encodeURIComponent("Hi! I'd like to learn more about your water system services.")}`}
               className="bg-navy-800 text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-navy-700 transition-all flex items-center justify-center gap-2"
             >
               <MessageSquare size={16} />
@@ -388,8 +388,8 @@ const FAQSection = () => {
       a: "It depends on your needs. Tank water heaters have lower upfront costs. Tankless water heaters cost more initially but provide endless hot water, last longer (20+ years vs 10-12 years), and save on energy bills. We can assess your home to recommend the best option."
     },
     {
-      q: "Do you offer free estimates?",
-      a: "Yes! We provide free on-site estimates for all water softener, water heater, and filtration installations. Our technician will assess your needs, answer your questions, and provide a detailed quote with no obligation."
+      q: "How do I get started?",
+      a: "Simply give us a call! Our technician will assess your needs, answer your questions, and discuss the best solution for your home."
     },
     {
       q: "What areas do you serve?",

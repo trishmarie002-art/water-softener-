@@ -6,7 +6,7 @@ import { PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
 const FloatingContact = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const smsMessage = encodeURIComponent("Hi, Do you give FREE quotes?");
+  const smsMessage = encodeURIComponent("Hi, I'd like to learn more about your services.");
   const smsLink = `sms:${PHONE_NUMBER_RAW}?body=${smsMessage}`;
 
   return (
@@ -26,7 +26,7 @@ const FloatingContact = () => {
               className="flex items-center gap-2 bg-white shadow-lg rounded-full pl-3 pr-1.5 py-1.5 hover:shadow-xl transition-all group text-sm"
             >
               <span className="text-navy-800 font-semibold whitespace-nowrap">
-                FREE Quote
+                Call Us
               </span>
               <div className="bg-green-500 text-white p-2 rounded-full group-hover:bg-green-600 transition-colors">
                 <Phone size={16} />
