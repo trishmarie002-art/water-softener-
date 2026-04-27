@@ -33,11 +33,11 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
 
   const login = async (password: string): Promise<boolean> => {
     try {
-      // Fetch admin password from Supabase
+      // Fetch admin password hash from Supabase
       const { data, error } = await supabase
         .from('admin_settings')
-        .select('value')
-        .eq('key', 'admin_password')
+        .select('password_hash')
+        .eq('id', 1)
         .single();
 
       if (error) {
@@ -45,7 +45,7 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
         return false;
       }
 
-      if (data && data.value === password) {
+      if (data && data.password_hash === password) {
         const session = {
           expiry: Date.now() + SESSION_DURATION,
         };
