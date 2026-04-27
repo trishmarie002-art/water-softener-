@@ -1,7 +1,9 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { supabase } from '../lib/supabase';
 
 interface AdminAuthContextType {
   isAuthenticated: boolean;
+  isLoading: boolean;
   login: (password: string) => Promise<boolean>;
   logout: () => void;
 }
@@ -13,6 +15,7 @@ const SESSION_DURATION = 24 * 60 * 60 * 1000; // 24 hours
 
 export function AdminAuthProvider({ children }: { children: ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Check for existing session
@@ -25,17 +28,24 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
         localStorage.removeItem(ADMIN_SESSION_KEY);
       }
     }
+    setIsLoading(false);
   }, []);
 
   const login = async (password: string): Promise<boolean> => {
     try {
-      const response = await fetch('/api/admin/auth', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password }),
-      });
-      
-      if (response.ok) {
+      // Fetch admin password from Supabase
+      const { data, error } = await supabase
+        .from('admin_settings')
+        .select('value')
+        .eq('key', 'admin_password')
+        .single();
+
+      if (error) {
+        console.error('Error fetching admin settings:', error);
+        return false;
+      }
+
+      if (data && data.value === password) {
         const session = {
           expiry: Date.now() + SESSION_DURATION,
         };
@@ -55,7 +65,7 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <AdminAuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AdminAuthContext.Provider value={{ isAuthenticated, isLoading, login, logout }}>
       {children}
     </AdminAuthContext.Provider>
   );
