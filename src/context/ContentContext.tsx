@@ -8,6 +8,13 @@ interface SiteContentRow {
   content: Record<string, unknown>;
 }
 
+interface PageContentRow {
+  id: string;
+  page: string;
+  section: string;
+  content: Record<string, unknown>;
+}
+
 interface GalleryImage {
   id: string;
   src: string;
@@ -46,6 +53,7 @@ interface Review {
 
 interface ContentContextType {
   siteContent: Record<string, Record<string, unknown>>;
+  pageContent: Record<string, Record<string, unknown>>;
   galleryImages: GalleryImage[];
   services: Service[];
   faqItems: FAQItem[];
@@ -135,6 +143,7 @@ const ContentContext = createContext<ContentContextType | undefined>(undefined);
 
 export function ContentProvider({ children }: { children: ReactNode }) {
   const [siteContent, setSiteContent] = useState<Record<string, Record<string, unknown>>>(defaultSiteContent);
+  const [pageContent, setPageContent] = useState<Record<string, Record<string, unknown>>>({});
   const [galleryImages, setGalleryImages] = useState<GalleryImage[]>(defaultGalleryImages);
   const [services, setServices] = useState<Service[]>(defaultServices);
   const [faqItems, setFaqItems] = useState<FAQItem[]>(defaultFAQItems);
@@ -148,8 +157,9 @@ export function ContentProvider({ children }: { children: ReactNode }) {
     }
 
     try {
-      const [contentRes, galleryRes, servicesRes, faqRes, reviewsRes] = await Promise.all([
+      const [contentRes, pageContentRes, galleryRes, servicesRes, faqRes, reviewsRes] = await Promise.all([
         supabase.from('site_content').select('*'),
+        supabase.from('page_content').select('*'),
         supabase.from('gallery_images').select('*').order('sort_order'),
         supabase.from('services').select('*').order('sort_order'),
         supabase.from('faq_items').select('*').order('sort_order'),
@@ -162,6 +172,14 @@ export function ContentProvider({ children }: { children: ReactNode }) {
           contentMap[row.id] = row.content as Record<string, unknown>;
         });
         setSiteContent(contentMap);
+      }
+
+      if (pageContentRes.data && pageContentRes.data.length > 0) {
+        const pageContentMap: Record<string, Record<string, unknown>> = {};
+        pageContentRes.data.forEach((row: PageContentRow) => {
+          pageContentMap[row.id] = row.content as Record<string, unknown>;
+        });
+        setPageContent(pageContentMap);
       }
 
       if (galleryRes.data && galleryRes.data.length > 0) {
@@ -194,6 +212,7 @@ export function ContentProvider({ children }: { children: ReactNode }) {
   return (
     <ContentContext.Provider value={{
       siteContent,
+      pageContent,
       galleryImages,
       services,
       faqItems,
