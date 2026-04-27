@@ -1,17 +1,11 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Star, Quote, CheckCircle2, Phone } from 'lucide-react';
-import { PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
+import { Star, Quote, Phone } from 'lucide-react';
+import { PHONE_NUMBER_RAW } from '../constants';
+import { useContent } from '../context/ContentContext';
 
 const Reviews = () => {
-  const reviews = [
-    { name: "Sarah Jenkins", location: "Stone Oak", date: "2 weeks ago", text: "The water softener installation was quick and professional. No more hard water spots on my dishes! The technician was very polite and explained everything clearly.", service: "Water Softener Installation" },
-    { name: "Michael Rodriguez", location: "Alamo Heights", date: "1 month ago", text: "Switched to a tankless water heater and couldn't be happier. Endless hot water and lower bills. These guys are the real deal.", service: "Tankless Water Heater" },
-    { name: "David Lawson", location: "Helotes", date: "2 months ago", text: "Great service from start to finish. They explained everything clearly and the price was fair. Highly recommend for any water system needs.", service: "Water Filtration System" },
-    { name: "Amanda Chen", location: "New Braunfels", date: "3 months ago", text: "Our old water heater burst on a Sunday and they were out here within 2 hours to replace it. Lifesavers!", service: "Emergency Replacement" },
-    { name: "Robert Taylor", location: "Schertz", date: "4 months ago", text: "Professional, punctual, and clean. They treated my home with respect and the new softener works perfectly.", service: "Water Softener Service" },
-    { name: "Jessica Martinez", location: "Cibolo", date: "5 months ago", text: "Best plumbing experience I've had in San Antonio. Honest advice and quality work. Will definitely use them again.", service: "Whole Home Filtration" }
-  ];
+  const { reviews } = useContent();
 
   return (
     <div className="pt-24">
@@ -69,7 +63,7 @@ const Reviews = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {reviews.map((review, i) => (
               <motion.div 
-                key={i} 
+                key={review.id || i} 
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}

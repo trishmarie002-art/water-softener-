@@ -19,28 +19,38 @@ import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import Gallery from './pages/Gallery';
 import Quiz from './pages/Quiz';
+import Admin from './pages/Admin';
+import AdminLogin from './pages/AdminLogin';
+import { AdminAuthProvider } from './context/AdminAuthContext';
+import { ContentProvider } from './context/ContentContext';
 
 export default function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="services" element={<Services />} />
-          <Route path="services/water-softeners" element={<WaterSofteners />} />
-          <Route path="services/water-heaters" element={<WaterHeaters />} />
-          <Route path="services/water-filtration" element={<WaterFiltration />} />
-          <Route path="service-areas" element={<ServiceAreas />} />
-          <Route path="reviews" element={<Reviews />} />
-          <Route path="gallery" element={<Gallery />} />
-          <Route path="faq" element={<FAQ />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="quiz" element={<Quiz />} />
-        </Route>
-      </Routes>
-    </Router>
+    <ContentProvider>
+      <AdminAuthProvider>
+        <Router>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="services" element={<Services />} />
+            <Route path="services/water-softeners" element={<WaterSofteners />} />
+            <Route path="services/water-heaters" element={<WaterHeaters />} />
+            <Route path="services/water-filtration" element={<WaterFiltration />} />
+            <Route path="service-areas" element={<ServiceAreas />} />
+            <Route path="reviews" element={<Reviews />} />
+            <Route path="gallery" element={<Gallery />} />
+            <Route path="faq" element={<FAQ />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="quiz" element={<Quiz />} />
+          </Route>
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+        </Router>
+      </AdminAuthProvider>
+    </ContentProvider>
   );
 }
 
