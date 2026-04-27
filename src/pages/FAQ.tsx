@@ -1,82 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown, Phone } from 'lucide-react';
-import { PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
+import { PHONE_NUMBER_RAW } from '../constants';
 import { cn } from '../lib/utils';
+import { useContent } from '../context/ContentContext';
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { faqItems } = useContent();
 
-  const faqs = [
-    {
-      category: "Water Softeners",
-      questions: [
-        {
-          q: "What is a water softener and why do I need one?",
-          a: "A water softener removes calcium, magnesium, and other minerals from your water through a process called ion exchange. San Antonio has some of the hardest water in Texas, which can cause scale buildup in pipes, damage appliances, leave spots on dishes, and make skin and hair feel dry. A water softener protects your home and improves water quality."
-        },
-        {
-          q: "How often does a water softener need maintenance?",
-          a: "Water softeners require minimal maintenance. You'll need to add salt to the brine tank every 1-2 months depending on your water usage. We recommend an annual inspection to ensure everything is working properly and to clean the resin tank if needed."
-        },
-        {
-          q: "How long does a water softener last?",
-          a: "A quality water softener typically lasts 15-20 years with proper maintenance. The resin beads inside may need replacing after 10-15 years. We install premium systems designed for longevity and offer maintenance plans to maximize your investment."
-        }
-      ]
-    },
-    {
-      category: "Water Heaters",
-      questions: [
-        {
-          q: "Should I get a tank or tankless water heater?",
-          a: "It depends on your needs. Tank water heaters have lower upfront costs and work well for most homes. Tankless water heaters cost more initially but provide endless hot water, last longer (20+ years vs 10-12 years), and save on energy bills. We can assess your home and usage to recommend the best option."
-        },
-        {
-          q: "How do I know if my water heater needs replacing?",
-          a: "Signs include: age over 10 years, rusty or discolored hot water, strange noises (popping or rumbling), water pooling around the unit, inconsistent water temperature, or increasing energy bills. If you notice any of these, give us a call."
-        },
-        {
-          q: "How long does water heater installation take?",
-          a: "A standard tank water heater replacement takes 2-4 hours. Tankless water heater installation typically takes 4-8 hours as it may require electrical upgrades or gas line modifications. We always provide a time estimate before starting work."
-        }
-      ]
-    },
-    {
-      category: "Water Filtration",
-      questions: [
-        {
-          q: "What contaminants does a whole-home filtration system remove?",
-          a: "Our whole-home filtration systems remove chlorine, sediment, rust, and organic compounds. For more comprehensive filtration, we offer reverse osmosis systems that also remove fluoride, lead, arsenic, and other contaminants. We can test your water to recommend the right solution."
-        },
-        {
-          q: "Is filtered water really better than bottled water?",
-          a: "Yes! A whole-home filtration system provides cleaner water than most bottled water at a fraction of the cost. Plus, you'll reduce plastic waste and have filtered water from every tap in your home, not just for drinking but also for cooking, bathing, and laundry."
-        },
-        {
-          q: "How often do filters need to be changed?",
-          a: "Most whole-home filters need replacing every 6-12 months depending on your water quality and usage. Reverse osmosis membranes last 2-3 years. We offer maintenance plans that include filter replacements so you never have to worry about it."
-        }
-      ]
-    },
-    {
-      category: "Service & Pricing",
-      questions: [
-        {
-          q: "How do I get started?",
-          a: "Simply give us a call! Our technician will assess your needs, answer your questions, and discuss the best solution for your home."
-        },
-        {
-          q: "What areas do you serve?",
-          a: "We serve San Antonio and all surrounding communities including Boerne, New Braunfels, Helotes, Stone Oak, Alamo Heights, Schertz, Cibolo, Universal City, Converse, and more. If you're unsure if we service your area, give us a call!"
-        },
-        {
-          q: "Do you offer emergency services?",
-          a: "Yes! We offer 24/7 emergency service for urgent water heater issues like leaks or no hot water. Call us anytime and we'll dispatch a technician as quickly as possible to get your hot water restored."
-        }
-      ]
-    }
-  ];
+  // Group FAQ items by category
+  const faqs = useMemo(() => {
+    const grouped: Record<string, { q: string; a: string }[]> = {};
+    faqItems.forEach(item => {
+      if (!grouped[item.category]) {
+        grouped[item.category] = [];
+      }
+      grouped[item.category].push({ q: item.question, a: item.answer });
+    });
+    return Object.entries(grouped).map(([category, questions]) => ({
+      category,
+      questions
+    }));
+  }, [faqItems]);
 
   const toggleQuestion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);

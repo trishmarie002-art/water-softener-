@@ -1,38 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Phone } from 'lucide-react';
-import { PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
+import { PHONE_NUMBER_RAW } from '../constants';
+import { useContent } from '../context/ContentContext';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  const galleryImages = [
-    {
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%284%29-RvHGOWWeQJaPYX7Q2X9brTxLWMrd3n.webp",
-      alt: "Rheem Professional water heater installation",
-      category: "Water Heaters"
-    },
-    {
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%281%29-IuygaLd5EPfrCEPoqTS9z6mkARM4ST.webp",
-      alt: "Plumbing installation work",
-      category: "Plumbing"
-    },
-    {
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%282%29-XSqDPqrNjs3jJof5tMG0gyMnleXSJm.webp",
-      alt: "Pressure gauge testing",
-      category: "Service"
-    },
-    {
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%283%29-eVGKCjJfKNFf225V5TmycvQFh6jkWZ.webp",
-      alt: "Modern kitchen sink and faucet",
-      category: "Water Softeners"
-    },
-    {
-      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24-qXgwh1FXgUHroZUDBcq8eqniRQe4rI.webp",
-      alt: "PNF Water Heaters & Softeners service truck",
-      category: "Our Team"
-    }
-  ];
+  const { galleryImages } = useContent();
 
   return (
     <div className="pt-24">
@@ -70,7 +44,7 @@ const Gallery = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryImages.map((image, index) => (
               <motion.div 
-                key={index}
+                key={image.id || index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}

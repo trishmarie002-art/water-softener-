@@ -2,53 +2,23 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Droplets, Thermometer, Filter, CheckCircle2, ArrowRight, Phone, MessageSquare } from 'lucide-react';
-import { PHONE_NUMBER, PHONE_NUMBER_RAW } from '../constants';
+import { PHONE_NUMBER_RAW } from '../constants';
+import { useContent } from '../context/ContentContext';
 
 const Services = () => {
-  const services = [
-    {
-      id: 'water-softeners',
-      title: 'Water Softener Installation San Antonio',
-      icon: Droplets,
-      description: 'San Antonio has some of the HARDEST water in Texas (15-20 grains). Without a water softener, hard water destroys your appliances, clogs your pipes, and costs you hundreds in extra soap and energy bills every year.',
-      features: [
-        'Stops scale buildup that destroys appliances',
-        'Extends water heater life by 5+ years',
-        'Softer skin, shinier hair, cleaner dishes',
-        'Save up to $800/year on soap & energy',
-        'Water hardness testing available'
-      ],
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%283%29-eVGKCjJfKNFf225V5TmycvQFh6jkWZ.webp'
-    },
-    {
-      id: 'water-heaters',
-      title: 'Tankless Water Heater Installation San Antonio',
-      icon: Thermometer,
-      description: 'Tired of running out of hot water? Tankless water heaters provide UNLIMITED hot water on demand while cutting your energy bills by up to 30%. We offer same-day installation.',
-      features: [
-        'Unlimited hot water - never run out again',
-        'Save up to 30% on energy bills',
-        'Lasts 20+ years (vs 10 for tank heaters)',
-        'Same-day installation available',
-        'Same-day service available'
-      ],
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%284%29-RvHGOWWeQJaPYX7Q2X9brTxLWMrd3n.webp'
-    },
-    {
-      id: 'water-filtration',
-      title: 'Whole Home Water Filtration San Antonio',
-      icon: Filter,
-      description: 'San Antonio tap water contains chlorine, sediment, and contaminants you can taste and smell. Our whole-home filtration systems give you pure, clean water from EVERY tap - for drinking, cooking, and bathing.',
-      features: [
-        'Removes chlorine, sediment & contaminants',
-        'Better tasting water from every faucet',
-        'Protects your family from harmful chemicals',
-        'No more buying bottled water',
-        'Professional installation included'
-      ],
-      image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2026-03-24%20%282%29-XSqDPqrNjs3jJof5tMG0gyMnleXSJm.webp'
-    }
-  ];
+  const { services: dbServices } = useContent();
+
+  // Map service IDs to icons
+  const iconMap: Record<string, React.ComponentType<{ size?: number }>> = {
+    'water-softeners': Droplets,
+    'water-heaters': Thermometer,
+    'water-filtration': Filter,
+  };
+
+  const services = dbServices.map(service => ({
+    ...service,
+    icon: iconMap[service.id] || Droplets,
+  }));
 
   return (
     <div className="pt-24">
